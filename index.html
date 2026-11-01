@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bodrum Karslılar Kültür ve Dayanışma Derneği</title>
+<script>document.documentElement.className+=' js'</script>
+<meta name="description" content="Bodrum Karslılar Kültür ve Dayanışma Derneği — 2023'ten bu yana Bodrum'da Kars kültürünü yaşatıyor, hemşehri dayanışmasını büyütüyoruz. Yöresel ürünler, eğitim desteği ve etkinlikler." />
+<link rel="icon" href="assets/logo.jpg" />
+<meta property="og:title" content="Bodrum Karslılar Kültür ve Dayanışma Derneği" />
+<meta property="og:description" content="Bodrum'da Kars'ın yüreği — kültür, dayanışma ve memleket lezzetleri." />
+<meta property="og:image" content="assets/logo.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --yesil:#153f2b; --yesil-koyu:#0f2d1f; --yesil-ac:#1d5338;
+  --altin:#c9a227; --altin-ac:#e4c261;
+  --krem:#f6efe1; --krem-koyu:#ebe0c9;
+  --metin:#20291f; --kagit:#faf6ec;
+  --golge:0 20px 50px -20px rgba(15,45,31,.45);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Figtree",system-ui,sans-serif;color:var(--metin);background:var(--kagit);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,.disp{font-family:"Fraunces",Georgia,serif}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:13px;letter-spacing:.28em;text-transform:uppercase;font-weight:700;color:var(--altin)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:16px;padding:15px 28px;border-radius:999px;transition:.25s;cursor:pointer;border:2px solid transparent}
+.btn-altin{background:var(--altin);color:var(--yesil-koyu)}
+.btn-altin:hover{background:var(--altin-ac);transform:translateY(-2px)}
+.btn-cizgi{border-color:rgba(246,239,225,.45);color:var(--krem)}
+.btn-cizgi:hover{border-color:var(--altin);color:var(--altin)}
+
+/* contour / topographic texture */
+.kontur{position:absolute;inset:0;opacity:.12;pointer-events:none;
+  background-image:radial-gradient(circle at 50% 50%,transparent 38%,var(--altin) 38.4%,transparent 39%),radial-gradient(circle at 50% 50%,transparent 30%,var(--altin) 30.4%,transparent 31%),radial-gradient(circle at 50% 50%,transparent 22%,var(--altin) 22.4%,transparent 23%);
+  background-size:260px 260px;background-position:center;mix-blend-mode:overlay}
+
+/* ---- topbar ---- */
+header{position:sticky;top:0;z-index:50;background:rgba(15,45,31,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,162,39,.25)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--krem)}
+.brand img{width:46px;height:46px;border-radius:50%;border:2px solid var(--altin)}
+.brand b{font-family:"Fraunces";font-weight:600;font-size:17px;line-height:1.15;letter-spacing:.2px}
+.brand span{font-size:11px;color:var(--altin-ac);letter-spacing:.22em;text-transform:uppercase}
+.menu{display:flex;gap:30px;align-items:center}
+.menu a{color:var(--krem);font-weight:500;font-size:15px;opacity:.9;transition:.2s}
+.menu a:hover{color:var(--altin);opacity:1}
+.menu .tel{background:var(--altin);color:var(--yesil-koyu);padding:10px 20px;border-radius:999px;font-weight:700}
+.menu .tel:hover{color:var(--yesil-koyu);background:var(--altin-ac)}
+.burger{display:none;color:var(--krem);font-size:26px;background:none;border:0;cursor:pointer}
+
+/* ---- hero ---- */
+.hero{position:relative;background:linear-gradient(160deg,var(--yesil) 0%,var(--yesil-koyu) 70%);color:var(--krem);overflow:hidden;padding:90px 0 110px}
+.hero .kontur{opacity:.16}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+.hero h1{font-size:clamp(42px,6vw,78px);line-height:1.02;font-weight:900;letter-spacing:-1px;margin:18px 0 20px}
+.hero h1 em{font-style:italic;color:var(--altin-ac);font-weight:500}
+.hero p.lead{font-size:19px;max-width:520px;color:rgba(246,239,225,.85)}
+.hero .cta{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap}
+.hero-mark{display:flex;justify-content:center}
+.hero-mark .disc{position:relative;width:min(380px,80vw);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle at 50% 42%,rgba(201,162,39,.25),transparent 60%);}
+.hero-mark img{width:88%;border-radius:50%;box-shadow:0 30px 70px -25px rgba(0,0,0,.7);border:4px solid rgba(201,162,39,.5)}
+.hero-mark .ring{position:absolute;inset:-6%;border:1px dashed rgba(201,162,39,.5);border-radius:50%;animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.stats{position:relative;display:flex;gap:40px;margin-top:54px;flex-wrap:wrap}
+.stats div b{font-family:"Fraunces";font-size:34px;color:var(--altin-ac);display:block;font-weight:600}
+.stats div span{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:rgba(246,239,225,.7)}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(26px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+
+/* ---- sections ---- */
+section{padding:92px 0}
+.sec-head{max-width:720px;margin-bottom:46px}
+.sec-head h2{font-size:clamp(30px,4.2vw,46px);line-height:1.08;font-weight:600;margin:14px 0 14px;color:var(--yesil)}
+.sec-head p{font-size:18px;color:#4b5547}
+
+/* hakkında */
+.hakkinda{background:var(--krem)}
+.hak-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.hak-foto{position:relative}
+.hak-foto img{border-radius:18px;box-shadow:var(--golge);width:100%;aspect-ratio:4/3;object-fit:cover}
+.hak-foto .rozet{position:absolute;right:-18px;bottom:-18px;background:var(--yesil);color:var(--krem);padding:18px 22px;border-radius:14px;box-shadow:var(--golge);text-align:center}
+.hak-foto .rozet b{font-family:"Fraunces";font-size:30px;display:block;color:var(--altin-ac)}
+.hak-foto .rozet span{font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.hak-metin p{margin-bottom:16px;font-size:17px;color:#3c463a}
+
+/* başkan */
+.baskan{background:linear-gradient(160deg,var(--yesil) 0,var(--yesil-koyu) 100%);color:var(--krem);position:relative;overflow:hidden}
+.baskan .kontur{opacity:.1}
+.bk-grid{position:relative;display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:center}
+.bk-card{background:rgba(246,239,225,.06);border:1px solid rgba(201,162,39,.3);border-radius:20px;padding:34px;text-align:center}
+.bk-card .av{width:120px;height:120px;border-radius:50%;margin:0 auto 18px;background:var(--altin);color:var(--yesil-koyu);display:grid;place-items:center;font-family:"Fraunces";font-size:46px;font-weight:600}
+.bk-card b{font-size:22px;font-family:"Fraunces";display:block}
+.bk-card span{color:var(--altin-ac);font-size:14px;letter-spacing:.14em;text-transform:uppercase}
+.bk-metin .q{font-family:"Fraunces";font-style:italic;font-size:clamp(22px,3vw,30px);line-height:1.4;color:var(--krem)}
+.bk-metin .q::before{content:"“";color:var(--altin);font-size:60px;line-height:0;vertical-align:-22px;margin-right:6px}
+
+/* faaliyet kartları */
+.grid3{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.fcard{background:#fff;border:1px solid var(--krem-koyu);border-radius:18px;padding:30px 26px;transition:.3s}
+.fcard:hover{transform:translateY(-6px);box-shadow:var(--golge);border-color:var(--altin)}
+.fcard .ico{width:54px;height:54px;border-radius:14px;background:var(--krem);display:grid;place-items:center;font-size:26px;margin-bottom:18px;border:1px solid var(--krem-koyu)}
+.fcard h3{font-size:20px;font-weight:600;color:var(--yesil);margin-bottom:8px}
+.fcard p{font-size:15px;color:#55604f}
+
+/* yöresel ürünler */
+.urunler{background:var(--yesil-koyu);color:var(--krem);position:relative;overflow:hidden}
+.urunler .kontur{opacity:.08}
+.ur-top{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.ur-top img{border-radius:18px;box-shadow:var(--golge)}
+.ur-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:26px 0 30px}
+.ur-list li{display:flex;gap:12px;align-items:flex-start;font-size:16px}
+.ur-list li .d{color:var(--altin);font-weight:800;font-size:18px;line-height:1.5}
+.ur-cta{display:flex;align-items:center;gap:18px;background:rgba(201,162,39,.12);border:1px solid rgba(201,162,39,.4);border-radius:16px;padding:20px 24px;flex-wrap:wrap}
+.ur-cta b{font-family:"Fraunces";font-size:26px;color:var(--altin-ac)}
+
+/* galeri */
+.galeri{background:var(--krem)}
+.ggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ggrid a{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:1;box-shadow:var(--golge)}
+.ggrid img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.ggrid a:hover img{transform:scale(1.07)}
+.ggrid a::after{content:"↗";position:absolute;right:12px;top:12px;color:#fff;opacity:0;transition:.3s;font-size:20px;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.ggrid a:hover::after{opacity:1}
+
+/* iletişim */
+.iletisim{background:#fff}
+.il-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.il-card{border:1px solid var(--krem-koyu);border-radius:18px;padding:30px;display:flex;gap:18px;align-items:flex-start;margin-bottom:18px;transition:.25s}
+.il-card:hover{border-color:var(--altin);box-shadow:var(--golge)}
+.il-card . i{width:50px;height:50px;border-radius:12px;background:var(--yesil);color:var(--altin-ac);display:grid;place-items:center;font-size:22px;flex:none}
+.il-card h3{font-size:17px;color:var(--yesil);font-weight:600;margin-bottom:3px}
+.il-card p{color:#55604f;font-size:16px}
+.uyelik{background:linear-gradient(160deg,var(--yesil),var(--yesil-koyu));color:var(--krem);border-radius:22px;padding:44px;position:relative;overflow:hidden}
+.uyelik .kontur{opacity:.12}
+.uyelik h3{font-size:30px;font-weight:600;margin-bottom:12px;position:relative}
+.uyelik p{color:rgba(246,239,225,.85);margin-bottom:24px;position:relative}
+
+/* footer */
+footer{background:var(--yesil-koyu);color:rgba(246,239,225,.75);padding:50px 0 30px;border-top:3px solid var(--altin)}
+.fnav{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}
+.fnav .brand b{color:var(--krem)}
+.fsep{border-top:1px solid rgba(246,239,225,.14);margin:26px 0 16px}
+.fmini{font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+@media(max-width:860px){
+  .menu{display:none}.burger{display:block}
+  .menu.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;background:var(--yesil-koyu);padding:20px 24px;gap:16px;border-bottom:1px solid rgba(201,162,39,.3)}
+  .hero-grid,.hak-grid,.bk-grid,.ur-top,.il-grid{grid-template-columns:1fr}
+  .hero-mark{order:-1}
+  .grid3{grid-template-columns:1fr 1fr}
+  .ggrid{grid-template-columns:1fr 1fr}
+  .hak-foto .rozet{right:12px}
+}
+@media(max-width:520px){
+  .grid3,.ur-list,.fmini{grid-template-columns:1fr}
+  .stats{gap:26px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#">
+      <img src="assets/logo.jpg" alt="Bodrum Karslılar Derneği logosu" />
+      <div><b>Bodrum Karslılar Derneği</b><br><span>Kültür ve Dayanışma · 2023</span></div>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#hakkinda">Hakkımızda</a>
+      <a href="#baskan">Başkanımız</a>
+      <a href="#faaliyet">Faaliyetler</a>
+      <a href="#urunler">Yöresel Ürünler</a>
+      <a href="#galeri">Galeri</a>
+      <a class="tel" href="tel:+905431963636">0543 196 36 36</a>
+    </nav>
+    <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="kontur"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Bodrum · Muğla — Est. 2023</span>
+      <h1>Bodrum'da <em>Kars'ın</em> yüreği, memleketin sıcaklığı.</h1>
+      <p class="lead">Serhat şehri Kars'ın kültürünü Ege'de yaşatıyor; hemşehrilerimizi aynı sofrada, aynı dayanışma ruhuyla buluşturuyoruz.</p>
+      <div class="cta">
+        <a class="btn btn-altin" href="#urunler">Yöresel Ürünler →</a>
+        <a class="btn btn-cizgi" href="#iletisim">Bize Katılın</a>
+      </div>
+      <div class="stats">
+        <div><b>2023</b><span>Kuruluş</span></div>
+        <div><b>Kars</b><span>Kültür & Kimlik</span></div>
+        <div><b>Bodrum</b><span>Yeni Yuva</span></div>
+      </div>
+    </div>
+    <div class="hero-mark">
+      <div class="disc">
+        <div class="ring"></div>
+        <img src="assets/logo.jpg" alt="Dernek amblemi — Kars kalesi, kümbet ve taş köprü" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HAKKIMIZDA -->
+<section class="hakkinda" id="hakkinda">
+  <div class="wrap hak-grid">
+    <div class="hak-foto rv">
+      <img src="assets/bina.jpg" alt="Dernek binamızda bir araya gelen üyelerimiz" />
+      <div class="rozet"><b>Birlik</b><span>Dayanışma</span></div>
+    </div>
+    <div class="hak-metin rv">
+      <span class="eyebrow">Hakkımızda</span>
+      <h2 class="disp" style="font-size:clamp(28px,4vw,42px);color:var(--yesil);font-weight:600;margin:12px 0 18px">Bir memleket, iki şehir, tek yürek.</h2>
+      <p>Bodrum Karslılar Kültür ve Dayanışma Derneği, 2023 yılında Bodrum'da yaşayan Karslı hemşehrilerimizi bir araya getirmek için kuruldu. Amacımız; Kars'ın köklü kültürünü, değerlerini ve komşuluk hukukunu Ege'nin bu güzel sahilinde yaşatmaktır.</p>
+      <p>Dernek binamız; bayramlaşmaların, sohbetlerin, yardımlaşmanın ve memleket özleminin paylaşıldığı sıcak bir buluşma noktasıdır. Kapımız tüm hemşehrilerimize ve dostlarımıza açıktır.</p>
+      <p>Kültürden eğitime, dayanışmadan sosyal sorumluluğa kadar her alanda; birlik ve beraberlik ruhuyla hareket ediyoruz.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BAŞKAN -->
+<section class="baskan" id="baskan">
+  <div class="kontur"></div>
+  <div class="wrap bk-grid">
+    <div class="bk-card rv">
+      <div class="av">MY</div>
+      <b>Mehmet Yıldız</b>
+      <span>Dernek Başkanı</span>
+    </div>
+    <div class="bk-metin rv">
+      <span class="eyebrow">Başkanımızdan</span>
+      <p class="q">Hemşehrilik bağlarımızın kıymetini daha derinden hissettiğimiz bu günlerde; Kars'ın birlik ve dayanışma ruhunu Bodrum'da el ele yaşatmaya devam ediyoruz. Kapımız herkese açık, soframız herkese bir.</p>
+      <p style="margin-top:22px;color:rgba(246,239,225,.75)">— Mehmet Yıldız, Yönetim Kurulu adına</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAALİYETLER -->
+<section id="faaliyet">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Ne Yapıyoruz</span>
+      <h2>Faaliyetlerimiz</h2>
+      <p>Kültürü yaşatmaktan toplumsal dayanışmaya, dernek olarak dört ana alanda hemşehrilerimizin ve Bodrum'un yanındayız.</p>
+    </div>
+    <div class="grid3">
+      <div class="fcard rv"><div class="ico">🏔️</div><h3>Kültür & Kimlik</h3><p>Kars'ın gelenek, lezzet ve değerlerini genç kuşaklara aktarıyor, memleket kimliğini yaşatıyoruz.</p></div>
+      <div class="fcard rv"><div class="ico">🤝</div><h3>Dayanışma</h3><p>Hemşehrilerimiz arasında yardımlaşma ve komşuluk hukukunu güçlendiriyor, ihtiyaç anında yan yana duruyoruz.</p></div>
+      <div class="fcard rv"><div class="ico">🎒</div><h3>Eğitim Desteği</h3><p>Yeni eğitim yılı öncesi okullara boya ve malzeme desteğiyle öğrencilerimize nitelikli ortamlar sağlıyoruz.</p></div>
+      <div class="fcard rv"><div class="ico">🎉</div><h3>Etkinlik & Bayramlaşma</h3><p>Bayramlaşma programları ve buluşmalarla üyelerimizi bir araya getiriyor, birlikteliği pekiştiriyoruz.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- YÖRESEL ÜRÜNLER -->
+<section class="urunler" id="urunler">
+  <div class="kontur"></div>
+  <div class="wrap">
+    <div class="ur-top">
+      <img class="rv" src="assets/yoresel.jpg" alt="Kars yöresel ürünleri — kaşar, gravyer, çeçil, bal, pekmez" />
+      <div class="rv">
+        <span class="eyebrow">Kars'ın Lezzetleri</span>
+        <h2 class="disp" style="font-size:clamp(28px,4vw,42px);color:var(--krem);font-weight:600;margin:12px 0 10px">Memleketin tadı, derneğimizde.</h2>
+        <p style="color:rgba(246,239,225,.82)">Kars'ın meşhur yöresel ürünleri derneğimizde sürekli bulunur. Taze ve doğal lezzetleri hemşehrilerimize ve tüm Bodrum'a ulaştırıyoruz.</p>
+        <ul class="ur-list">
+          <li><span class="d">◆</span> Eski Kaşar</li>
+          <li><span class="d">◆</span> Yeni Kaşar</li>
+          <li><span class="d">◆</span> Gravyer</li>
+          <li><span class="d">◆</span> Küflü Çeçil (Civil)</li>
+          <li><span class="d">◆</span> Petek Balı</li>
+          <li><span class="d">◆</span> Dut Pekmezi</li>
+        </ul>
+        <div class="ur-cta">
+          <div>
+            <div style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,239,225,.7)">Sipariş & Bilgi</div>
+            <b>0543 196 36 36</b>
+          </div>
+          <a class="btn btn-altin" href="tel:+905431963636">Hemen Ara</a>
+          <a class="btn btn-cizgi" href="https://wa.me/905431963636" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERİ -->
+<section class="galeri" id="galeri">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Anılarımız</span>
+      <h2>Galeri</h2>
+      <p>Buluşmalarımızdan, etkinliklerimizden ve dayanışma çalışmalarımızdan kareler.</p>
+    </div>
+    <div class="ggrid">
+      <a class="rv" href="https://instagram.com/bodrumkarslilardernegi" target="_blank" rel="noopener"><img src="assets/bina.jpg" alt="Dernek binamızda buluşma"></a>
+      <a class="rv" href="https://instagram.com/bodrumkarslilardernegi" target="_blank" rel="noopener"><img src="assets/egitim1.jpg" alt="Eğitime destek çalışmamız"></a>
+      <a class="rv" href="https://instagram.com/bodrumkarslilardernegi" target="_blank" rel="noopener"><img src="assets/kaymakamlik.jpg" alt="Bodrum Kaymakamlığı bayramlaşma programı"></a>
+      <a class="rv" href="https://instagram.com/bodrumkarslilardernegi" target="_blank" rel="noopener"><img src="assets/hemsehri.jpg" alt="Hemşehrilerimizle bayramlaşma"></a>
+      <a class="rv" href="https://instagram.com/bodrumkarslilardernegi" target="_blank" rel="noopener"><img src="assets/egitim2.jpg" alt="Okul sınıflarına boya desteği"></a>
+      <a class="rv" href="https://instagram.com/bodrumkarslilardernegi" target="_blank" rel="noopener"><img src="assets/yoresel.jpg" alt="Kars yöresel ürünleri"></a>
+    </div>
+  </div>
+</section>
+
+<!-- İLETİŞİM -->
+<section class="iletisim" id="iletisim">
+  <div class="wrap il-grid">
+    <div class="rv">
+      <span class="eyebrow">İletişim</span>
+      <h2 class="disp" style="font-size:clamp(28px,4vw,42px);color:var(--yesil);font-weight:600;margin:12px 0 26px">Bize ulaşın</h2>
+      <a class="il-card" href="tel:+905431963636"><div class="i">📞</div><div><h3>Telefon</h3><p>0543 196 36 36</p></div></a>
+      <a class="il-card" href="https://instagram.com/bodrumkarslilardernegi" target="_blank" rel="noopener"><div class="i">📸</div><div><h3>Instagram</h3><p>@bodrumkarslilardernegi</p></div></a>
+      <div class="il-card"><div class="i">📍</div><div><h3>Adres</h3><p>Bodrum / Muğla — açık adres yakında eklenecektir.</p></div></div>
+    </div>
+    <div class="rv">
+      <div class="uyelik">
+        <div class="kontur"></div>
+        <h3 class="disp">Derneğimize üye olun</h3>
+        <p>Kars'ın birlik ve dayanışma ruhunu Bodrum'da birlikte büyütelim. Üyelik ve destek için bizimle iletişime geçin.</p>
+        <a class="btn btn-altin" href="tel:+905431963636" style="position:relative">Üyelik için ara →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fnav">
+      <a class="brand" href="#"><img src="assets/logo.jpg" alt="logo" style="width:46px;height:46px;border-radius:50%;border:2px solid var(--altin)"><div><b>Bodrum Karslılar Derneği</b><br><span style="color:var(--altin-ac);font-size:11px;letter-spacing:.2em;text-transform:uppercase">Kültür ve Dayanışma</span></div></a>
+      <nav style="display:flex;gap:24px;flex-wrap:wrap">
+        <a href="#hakkinda">Hakkımızda</a><a href="#faaliyet">Faaliyetler</a><a href="#urunler">Ürünler</a><a href="#iletisim">İletişim</a>
+      </nav>
+    </div>
+    <div class="fsep"></div>
+    <div class="fmini">
+      <span>© 2023–2026 Bodrum Karslılar Kültür ve Dayanışma Derneği</span>
+      <span>Bodrum · Muğla · Türkiye</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+setTimeout(()=>document.querySelectorAll('.rv:not(.in)').forEach(e=>e.classList.add('in')),2600);
+</script>
+</body>
+</html>
