@@ -1,0 +1,10 @@
+{
+  "brand": "Bodrum Karslılar Kültür ve Dayanışma Derneği",
+  "version": "v3 (2026-11-02)",
+  "direction": "taste-skill 'one-motif' (seed 270350527): Kars Taşköprü kemeri tek motif — foto maskeleri, kemer üstlü butonlar, kemer şeridi, footer köprü blokları. Kilim/krem ve yeşil-altın sürümleri terk edildi.",
+  "color": { "bazalt_ink": "#1f1c1c", "kirec_bg": "#e8e7e3", "surface": "#dddbd6", "begonvil_accent": "#a3285a", "muted": "#57504d" },
+  "type": "Albert Sans (tek aile)",
+  "shape": { "arch": "999px 999px 0 0 (dik pencere)", "seg": "50% 50% 0 0 / 14% 14% 0 0 (yatay foto için basık kemer)" },
+  "motion": "transitions.dev token'ları; GSAP ScrollTrigger ile köprü kurulma anı; prefers-reduced-motion destekli",
+  "checks": "taste-skill inspect 0 FAIL @1440/768/390; impeccable detect: yalnız slayt/arka plan yanlış alarmları"
+}

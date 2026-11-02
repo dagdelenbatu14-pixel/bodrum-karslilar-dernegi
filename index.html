@@ -1,361 +1,739 @@
 <!doctype html>
 <html lang="tr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bodrum Karslılar Kültür ve Dayanışma Derneği</title>
-<script>document.documentElement.className+=' js'</script>
-<meta name="description" content="Bodrum Karslılar Kültür ve Dayanışma Derneği — 2023'ten bu yana Bodrum'da Kars kültürünü yaşatıyor, hemşehri dayanışmasını büyütüyoruz. Yöresel ürünler, eğitim desteği ve etkinlikler." />
-<link rel="icon" href="assets/logo.jpg" />
-<meta property="og:title" content="Bodrum Karslılar Kültür ve Dayanışma Derneği" />
-<meta property="og:description" content="Bodrum'da Kars'ın yüreği — kültür, dayanışma ve memleket lezzetleri." />
-<meta property="og:image" content="assets/logo.jpg" />
+<meta name="description" content="2023'ten beri Bodrum'da yaşayan Karslıları buluşturan dernek: geleneksel iftar, bayramlaşma, eğitime destek ve Kars'tan gelen yöresel ürünler. Tel: 0543 196 36 36">
+<meta name="theme-color" content="#1f1c1c">
+<link rel="icon" href="img/logo.jpg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bodrum Karslılar Derneği: Kars'tan Bodrum'a bir köprü">
+<meta property="og:description" content="Bodrum'da yaşayan Karslıların kültür ve dayanışma derneği.">
+<meta property="og:image" content="img/taskopru.jpg">
+<script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NGO","name":"Bodrum Karslılar Kültür ve Dayanışma Derneği","alternateName":"Bodrum Karslılar Derneği","foundingDate":"2023","telephone":"+905431963636","address":{"@type":"PostalAddress","streetAddress":"Bitez","postalCode":"48470","addressLocality":"Bodrum","addressRegion":"Muğla","addressCountry":"TR"},"openingHours":"Mo-Sa 09:00-18:00","hasMap":"https://www.google.com/maps/place/?q=place_id:ChIJoejDR1ltvhQRt5Shr9rgDQM","sameAs":["https://www.instagram.com/bodrumkarslilardernegi/"],"logo":"img/logo.jpg","member":{"@type":"Person","name":"Mehmet Yıldız","jobTitle":"Dernek Başkanı"}}
+</script>
 <style>
 :root{
-  --yesil:#153f2b; --yesil-koyu:#0f2d1f; --yesil-ac:#1d5338;
-  --altin:#c9a227; --altin-ac:#e4c261;
-  --krem:#f6efe1; --krem-koyu:#ebe0c9;
-  --metin:#20291f; --kagit:#faf6ec;
-  --golge:0 20px 50px -20px rgba(15,45,31,.45);
+  /* Kars bazaltı + Bodrum kireci + Bodrum begonvili: iki şehir, iki renk */
+  --bg:#e8e7e3;
+  --surface:#dddbd6;
+  --ink:#1f1c1c;
+  --muted:#57504d;
+  --bazalt:#1f1c1c; --bazalt-ink:#e8e7e3; --bazalt-soft:#c9c1b8;
+  --begonvil:#a3285a; --begonvil-ink:#fbf3f5;
+  --step-small:clamp(.875rem,.85rem + .1vw,.9375rem);
+  --step-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --step-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
+  --step-head:clamp(2rem,1.3rem + 3.2vw,4rem);
+  --step-display:clamp(2.75rem,1.2rem + 5.4vw,5.5rem);
+  --m:clamp(16px,2.4vw,32px);
+  --gap:clamp(112px,12vw,200px);
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --arch:999px 999px 0 0;
+  /* Taşköprü'nün basık (segmental) kemeri: geniş fotoğrafları kesmeden taçlandırır */
+  --seg:50% 50% 0 0 / 14% 14% 0 0;
+  /* transitions.dev hareket ölçeği */
+  --duration-quick:150ms; --duration-fast:250ms; --duration-slow:400ms; --duration-very-slow:500ms;
+  --ease-smooth-out:cubic-bezier(.22,1,.36,1);
+  --stagger-dur:500ms; --stagger-distance:12px; --stagger-stagger:70ms; --stagger-blur:3px;
+  --digit-dur:500ms; --digit-distance:10px; --digit-stagger:70ms; --digit-blur:2px; --digit-ease:cubic-bezier(.34,1.45,.64,1);
+  --text-soft-dur:200ms; --text-soft-blur:2px;
+  --shake-dur-a:80ms; --shake-dur-b:60ms; --shake-distance:8px; --shake-overshoot:-3px; --shake-ease:cubic-bezier(.36,.07,.19,.97);
+  /* Taşköprü kemer dizisi: bazalt ayaklar, yarım daire gözler */
+  --kemer:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='28' viewBox='0 0 56 28'%3E%3Cpath d='M0 0H56V28H50A22 22 0 0 0 6 28H0Z' fill='%231f1c1c'/%3E%3C/svg%3E");
+  --kemer-ust:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='18' viewBox='0 0 36 18'%3E%3Cpath d='M0 0H36V18H31A13 13 0 0 0 5 18H0Z' fill='%23a3285a'/%3E%3C/svg%3E");
+  --kemer-ust-acik:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='8' viewBox='0 0 16 8'%3E%3Cpath d='M0 0H16V8H14A6 6 0 0 0 2 8H0Z' fill='%23f3a9c6'/%3E%3C/svg%3E");
+  --kemer-acik:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='28' viewBox='0 0 56 28'%3E%3Cpath d='M0 0H56V28H50A22 22 0 0 0 6 28H0Z' fill='%23e8e7e3'/%3E%3C/svg%3E");
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:"Figtree",system-ui,sans-serif;color:var(--metin);background:var(--kagit);line-height:1.6;overflow-x:hidden}
-h1,h2,h3,.disp{font-family:"Fraunces",Georgia,serif}
-a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
-.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-.eyebrow{font-size:13px;letter-spacing:.28em;text-transform:uppercase;font-weight:700;color:var(--altin)}
-.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:16px;padding:15px 28px;border-radius:999px;transition:.25s;cursor:pointer;border:2px solid transparent}
-.btn-altin{background:var(--altin);color:var(--yesil-koyu)}
-.btn-altin:hover{background:var(--altin-ac);transform:translateY(-2px)}
-.btn-cizgi{border-color:rgba(246,239,225,.45);color:var(--krem)}
-.btn-cizgi:hover{border-color:var(--altin);color:var(--altin)}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"Albert Sans",system-ui,sans-serif;font-size:var(--step-body);line-height:1.5;color:var(--ink);background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-weight:600;letter-spacing:-.035em;line-height:1}
+h3{letter-spacing:-.02em;line-height:1.15}
+p{max-width:62ch;text-wrap:pretty}
+h1,h2,h3{text-wrap:balance}
+::selection{background:var(--begonvil);color:var(--begonvil-ink)}
+:focus-visible{outline:3px solid var(--begonvil);outline-offset:3px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{padding-inline:var(--m)}
+.arch{border-radius:var(--arch);overflow:hidden}
+.arch img{width:100%;height:100%;object-fit:cover}
+.seg{border-radius:var(--seg);overflow:hidden}
+.seg img{width:100%;height:100%;object-fit:cover}
 
-/* contour / topographic texture */
-.kontur{position:absolute;inset:0;opacity:.12;pointer-events:none;
-  background-image:radial-gradient(circle at 50% 50%,transparent 38%,var(--altin) 38.4%,transparent 39%),radial-gradient(circle at 50% 50%,transparent 30%,var(--altin) 30.4%,transparent 31%),radial-gradient(circle at 50% 50%,transparent 22%,var(--altin) 22.4%,transparent 23%);
-  background-size:260px 260px;background-position:center;mix-blend-mode:overlay}
+/* buttons: kemer üstlü blok */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:54px;padding:0 30px;border:0;border-radius:27px 27px 0 0;font:600 var(--step-body)/1 "Albert Sans",sans-serif;text-decoration:none;cursor:pointer;background:var(--ink);color:var(--bg);transition:transform .25s var(--ease),background-color .25s var(--ease)}
+.btn:hover{background:var(--begonvil);color:var(--begonvil-ink);transform:translateY(-3px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn.begonvil{background:var(--begonvil);color:var(--begonvil-ink)}
+.btn.begonvil:hover{background:var(--bg);color:var(--ink)}
+.btn.acik{background:var(--bg);color:var(--ink)}
+.btn.acik:hover{background:var(--begonvil);color:var(--begonvil-ink)}
+.lnk{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px;text-decoration-color:var(--begonvil);font-weight:500;transition:color .2s}
+.lnk:hover{color:var(--begonvil)}
 
-/* ---- topbar ---- */
-header{position:sticky;top:0;z-index:50;background:rgba(15,45,31,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,162,39,.25)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
-.brand{display:flex;align-items:center;gap:12px;color:var(--krem)}
-.brand img{width:46px;height:46px;border-radius:50%;border:2px solid var(--altin)}
-.brand b{font-family:"Fraunces";font-weight:600;font-size:17px;line-height:1.15;letter-spacing:.2px}
-.brand span{font-size:11px;color:var(--altin-ac);letter-spacing:.22em;text-transform:uppercase}
-.menu{display:flex;gap:30px;align-items:center}
-.menu a{color:var(--krem);font-weight:500;font-size:15px;opacity:.9;transition:.2s}
-.menu a:hover{color:var(--altin);opacity:1}
-.menu .tel{background:var(--altin);color:var(--yesil-koyu);padding:10px 20px;border-radius:999px;font-weight:700}
-.menu .tel:hover{color:var(--yesil-koyu);background:var(--altin-ac)}
-.burger{display:none;color:var(--krem);font-size:26px;background:none;border:0;cursor:pointer}
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:40;background:var(--bg);display:flex;align-items:center;justify-content:space-between;gap:24px;height:72px;padding-inline:var(--m)}
+.mark{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:600;font-size:var(--step-body);letter-spacing:-.01em;line-height:1.1}
+.mark img{width:42px;height:42px;border-radius:50%}
+.nav ul{display:flex;gap:clamp(16px,2vw,32px);list-style:none;align-items:center}
+.nav ul a{text-decoration:none;font-weight:500;font-size:var(--step-small);padding:8px 0;transition:color .2s}
+.nav ul a:not(.btn):hover{color:var(--begonvil)}
+.nav .btn{min-height:44px;padding:0 22px;border-radius:22px 22px 0 0;font-size:var(--step-small)}
+.menu-btn{display:none;background:none;border:0;font:600 var(--step-small) "Albert Sans";color:var(--ink);padding:12px 4px;cursor:pointer}
 
-/* ---- hero ---- */
-.hero{position:relative;background:linear-gradient(160deg,var(--yesil) 0%,var(--yesil-koyu) 70%);color:var(--krem);overflow:hidden;padding:90px 0 110px}
-.hero .kontur{opacity:.16}
-.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
-.hero h1{font-size:clamp(42px,6vw,78px);line-height:1.02;font-weight:900;letter-spacing:-1px;margin:18px 0 20px}
-.hero h1 em{font-style:italic;color:var(--altin-ac);font-weight:500}
-.hero p.lead{font-size:19px;max-width:520px;color:rgba(246,239,225,.85)}
-.hero .cta{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap}
-.hero-mark{display:flex;justify-content:center}
-.hero-mark .disc{position:relative;width:min(380px,80vw);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;
-  background:radial-gradient(circle at 50% 42%,rgba(201,162,39,.25),transparent 60%);}
-.hero-mark img{width:88%;border-radius:50%;box-shadow:0 30px 70px -25px rgba(0,0,0,.7);border:4px solid rgba(201,162,39,.5)}
-.hero-mark .ring{position:absolute;inset:-6%;border:1px dashed rgba(201,162,39,.5);border-radius:50%;animation:spin 60s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.stats{position:relative;display:flex;gap:40px;margin-top:54px;flex-wrap:wrap}
-.stats div b{font-family:"Fraunces";font-size:34px;color:var(--altin-ac);display:block;font-weight:600}
-.stats div span{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:rgba(246,239,225,.7)}
+/* ---------- hero ---------- */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 var(--m) var(--m);min-height:calc(100svh - 72px)}
+.card{background:var(--surface);display:flex;flex-direction:column;align-items:flex-start;padding:0 clamp(24px,4vw,64px) 40px;position:relative}
+.card .band{height:56px;width:calc(100% + 2*clamp(24px,4vw,64px));margin-inline:calc(-1*clamp(24px,4vw,64px));background:var(--kemer);background-size:56px 56px;background-repeat:repeat-x}
+.card .logo{width:clamp(72px,6vw,96px);margin:clamp(24px,4vh,48px) 0 clamp(20px,3vh,32px);border-radius:50%}
+.card h1{font-size:min(4.6vw,5rem);max-width:none}
+.card .who{margin-top:16px;font-size:var(--step-lead);font-weight:500;letter-spacing:-.01em;line-height:1.25;max-width:24ch}
+.card .lead{margin-top:24px;max-width:40ch}
+.card .btn{margin-top:28px}
+.card .links{margin-top:auto;padding-top:40px;display:flex;flex-wrap:wrap;gap:12px 28px;font-size:var(--step-small)}
+.window{position:relative;min-height:520px}
+.window .arch{position:absolute;inset:0;background:var(--bazalt)}
+.window img{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease;transform:scale(1.04)}
+.window img.on{opacity:1;animation:drift 9s linear both}
+.window img:first-child{opacity:1}
+.js .window img:first-child:not(.on){opacity:0}
+@keyframes drift{from{transform:scale(1.04)}to{transform:scale(1.12)}}
+.t-stagger-line{display:block}
+.js .t-stagger-line{opacity:0;transform:translateY(var(--stagger-distance));filter:blur(var(--stagger-blur));transition:opacity var(--stagger-dur) var(--ease-smooth-out),transform var(--stagger-dur) var(--ease-smooth-out),filter var(--stagger-dur) var(--ease-smooth-out);transition-delay:calc(var(--n,0) * var(--stagger-stagger))}
+.js .t-stagger.is-shown .t-stagger-line{opacity:1;transform:none;filter:none}
+.card .t-stagger-line.btn{display:inline-flex}
+.window .pause{all:unset;cursor:pointer;margin-left:16px;font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;text-decoration-color:var(--begonvil)}
+.window .pause:hover{color:var(--begonvil)}
+.window .pause:focus-visible{outline:3px solid var(--begonvil);outline-offset:3px}
+.window figcaption{position:absolute;left:0;bottom:0;background:var(--bg);padding:12px 18px 0 0;font-size:var(--step-small);font-weight:500;min-width:16ch}
 
-/* reveal */
-.js .rv{opacity:0;transform:translateY(26px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+/* ---------- başkan / about ---------- */
+.about{margin:var(--gap) 20px 0;background:var(--bazalt);color:var(--bazalt-ink);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,6vw,104px);padding:clamp(40px,5vw,80px)}
+.about h2{font-size:var(--step-head);max-width:13ch;color:var(--bazalt-ink)}
+.about .portrait{margin-top:clamp(32px,4vw,56px);width:min(100%,460px)}
+.about .portrait .arch{aspect-ratio:4/5}
+.about .portrait img{object-position:50% 22%}
+.about .portrait figcaption{margin-top:14px;font-size:var(--step-small);color:var(--bazalt-soft)}
+.about .portrait figcaption b{color:var(--bazalt-ink);font-weight:600}
+.about .text{display:flex;flex-direction:column;gap:48px;max-width:46ch;padding-top:clamp(8px,1.2vw,20px)}
+.about h3{font-size:var(--step-lead);letter-spacing:-.015em;margin-bottom:12px}
+.about p{font-size:var(--step-body);color:var(--bazalt-ink)}
+.about .lnk:hover,.foot .lnk:hover{color:#f3a9c6}
+.about .role{color:var(--bazalt-soft);font-size:var(--step-small);margin-top:12px}
+.about blockquote p{font-size:var(--step-lead);line-height:1.35;letter-spacing:-.01em}
+.about blockquote footer{color:var(--bazalt-soft);font-size:var(--step-small);margin-top:12px}
+.about .btn{align-self:flex-start}
+
+/* ---------- faaliyetler ---------- */
+.work{padding:var(--gap) var(--m) 0;display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:end}
+.work h2{grid-column:1/6;font-size:var(--step-head)}
+.work .para{grid-column:7/13;font-size:var(--step-lead);line-height:1.4;letter-spacing:-.01em;max-width:44ch}
+.work .wide{grid-column:1/-1;margin-top:clamp(48px,6vw,88px)}
+.work .wide .seg{aspect-ratio:16/9;max-height:82svh;width:100%;background:var(--surface)}
+.work .wide figcaption{margin-top:14px;font-size:var(--step-small);color:var(--muted)}
+.work .wide figcaption b{color:var(--ink);font-weight:600}
+.acts{grid-column:1/-1;margin-top:clamp(56px,6vw,96px);display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:40px 32px}
+.acts div{padding-top:20px;background:var(--kemer-ust) top left/36px 18px no-repeat}
+.acts dt{font-weight:600;font-size:var(--step-lead);letter-spacing:-.015em;line-height:1.2;margin-bottom:10px}
+.acts dd{font-size:16px;line-height:1.5;color:var(--ink)}
+
+/* ---------- iki şehir: canlı köprü ---------- */
+.cities{margin-top:var(--gap);background:var(--begonvil);color:var(--begonvil-ink);padding:clamp(72px,9vw,128px) var(--m) clamp(56px,7vw,96px);position:relative;overflow:hidden}
+.cities h2{font-size:var(--step-head);max-width:16ch;color:var(--begonvil-ink)}
+.bridge{position:relative;margin-top:clamp(48px,6vw,88px);display:grid;grid-template-columns:1fr 1fr;align-items:end}
+.bridge svg{position:absolute;left:0;right:0;bottom:0;width:100%;height:100%;pointer-events:none}
+.city{position:relative;z-index:1;padding-bottom:4px}
+.city.b{text-align:right}
+.city .t{display:block;font-size:clamp(4rem,1.5rem + 6.5vw,8.5rem);font-weight:600;letter-spacing:-.06em;line-height:.85;font-variant-numeric:tabular-nums}
+.t-digit-group{display:inline-flex;align-items:baseline}
+.t-digit{display:inline-block}
+.t-digit-group.is-animating .t-digit{animation:t-digit-pop-in var(--digit-dur) var(--digit-ease) both;animation-delay:calc(var(--d,0) * var(--digit-stagger))}
+@keyframes t-digit-pop-in{0%{transform:translateY(var(--digit-distance));opacity:0;filter:blur(var(--digit-blur))}100%{transform:none;opacity:1;filter:none}}
+.city .n{display:block;font-size:var(--step-lead);font-weight:600;margin-top:12px}
+.city .d{display:block;font-size:var(--step-small);margin-top:4px}
+.cities .mid{--h:clamp(120px,11vw,170px);position:relative;z-index:1;margin:calc(-1 * var(--h)) auto 0;height:var(--h);width:min(34ch,40%);display:flex;align-items:center;justify-content:center;text-align:center;font-size:var(--step-body)}
+.cities .meta{margin-top:40px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:var(--step-small)}
+
+/* ---------- yöresel ürünler: menü ---------- */
+.menu{padding:var(--gap) var(--m) 0}
+.menu-head{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:end}
+.menu-head h2{grid-column:1/8;font-size:var(--step-head)}
+.menu-head>div{grid-column:8/13}
+.menu-head .btn{white-space:nowrap}
+.menu-head .btn{margin-top:20px}
+.cat{display:flex;justify-content:space-between;align-items:baseline;margin:96px 0 40px}
+.cat h3{font-size:clamp(2rem,1.2rem + 2vw,3.125rem);letter-spacing:-.035em}
+.cat span{font-size:var(--step-body);color:var(--muted)}
+.items{display:grid;grid-template-columns:1fr 1fr;gap:44px 64px;list-style:none}
+.item{display:grid;grid-template-columns:112px 1fr;gap:24px;align-items:start}
+.item .ph{width:112px;height:124px;background:var(--surface)}
+.item .row{display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+.item b{font-size:var(--step-body);font-weight:600}
+.item .row span{font-size:var(--step-small);color:var(--muted);white-space:nowrap}
+.item p{font-size:16px;margin-top:6px;max-width:44ch}
+.item .not{color:var(--begonvil);font-size:var(--step-small);font-weight:600;margin-top:6px}
+.item:hover .ph img{transform:scale(1.08)}
+.item .ph img{transition:transform .5s var(--ease)}
+
+/* ---------- etkinlikler: tek çerçeve ---------- */
+.events{padding:var(--gap) var(--m) 0;display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:start}
+.events .frame-wrap{grid-column:1/8}
+.frame{position:relative;width:100%;aspect-ratio:4/3;background:var(--surface);cursor:pointer;border:0;padding:0;display:block;border-radius:var(--seg);overflow:hidden}
+.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease}
+.frame img.on{opacity:1}
+.frame img:first-child{opacity:1}
+.js .frame img:first-child:not(.on){opacity:0}
+.cap{margin-top:14px;font-size:var(--step-small);color:var(--muted);min-height:1.6em}
+.cap b{color:var(--ink);font-weight:600}
+.events .list{grid-column:9/13}
+.events h2{font-size:var(--step-head);margin-bottom:40px}
+.events ol{list-style:none;display:flex;flex-direction:column;gap:6px}
+.events li button{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:4px 24px;width:100%;padding:16px 20px}
+.events li button:focus-visible{outline:3px solid var(--begonvil);outline-offset:-3px}
+.events li b{font-weight:600;font-size:var(--step-lead);letter-spacing:-.015em;line-height:1.2}
+.events li .w{font-size:var(--step-small);color:var(--muted);align-self:center}
+.events li .x{grid-column:1/-1;font-size:16px;color:var(--muted)}
+.events li button:hover{background:var(--surface)}
+.events li button[aria-current="true"]{background:var(--bazalt);color:var(--bazalt-ink)}
+.events li button[aria-current="true"] .w,.events li button[aria-current="true"] .x{color:var(--bazalt-soft)}
+
+/* ---------- memleket ---------- */
+.home{margin-top:var(--gap);padding:clamp(64px,8vw,120px) var(--m);display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;background:var(--surface);align-items:end}
+.home .names{grid-column:1/5;position:relative;z-index:1}
+.home h2{font-size:var(--step-head);margin-bottom:28px}
+.home .names ul{list-style:none}
+.home .names button{all:unset;cursor:pointer;display:block;font-size:clamp(1.5rem,1rem + 1.6vw,2.25rem);font-weight:600;letter-spacing:-.03em;line-height:1.25;color:var(--muted);transition:color var(--duration-fast),transform var(--duration-fast) var(--ease-smooth-out)}
+.home .names button:hover{color:var(--ink);transform:translateX(6px)}
+.home .names button[aria-pressed="true"]{color:var(--begonvil)}
+.home .names button:focus-visible{outline:3px solid var(--begonvil);outline-offset:4px}
+.home .stagewrap{grid-column:5/13;width:100%;max-width:calc(70svh * 4 / 3);justify-self:end}
+.home .stage{position:relative;aspect-ratio:4/3;background:var(--bazalt)}
+.home .stage img{position:absolute;inset:0;opacity:0;transition:opacity var(--duration-slow) ease}
+.home .stage img.on{opacity:1}
+.home .stage img:first-child{opacity:1}
+.js .home .stage img:first-child:not(.on){opacity:0}
+.home .fact{margin-top:18px;display:grid;grid-template-columns:auto 1fr;gap:4px 24px;align-items:baseline;max-width:none}
+.home .fact b{font-size:var(--step-lead);letter-spacing:-.015em}
+.home .fact span{font-size:var(--step-body);max-width:52ch}
+.soft{transition:opacity var(--text-soft-dur) ease-in-out,filter var(--text-soft-dur) ease-in-out}
+.soft.out{opacity:0;filter:blur(var(--text-soft-blur))}
+
+/* ---------- ekranda ---------- */
+.press{padding:var(--gap) var(--m) 0;display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:end}
+.press .vid{grid-column:1/9;aspect-ratio:16/9;position:relative;background:var(--bazalt)}
+.press .vid button{all:unset;cursor:pointer;position:absolute;inset:0}
+.press .vid img{width:100%;height:100%;object-fit:cover}
+.press .vid .play{position:absolute;left:0;top:0;background:var(--begonvil);color:var(--begonvil-ink);font-weight:600;padding:18px 28px;border-radius:0 0 30px 30px;transition:padding .25s var(--ease)}
+.press .vid button:hover .play,.press .vid button:focus-visible .play{padding:22px 36px}
+.press .vid button:focus-visible{outline:3px solid var(--begonvil);outline-offset:4px}
+.press .vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.press .txt{grid-column:9/13}
+.press h2{font-size:var(--step-head)}
+.press p{margin-top:24px}
+.press .lnk{display:inline-block;margin-top:20px}
+
+/* ---------- üyelik kuponu ---------- */
+.join{padding:var(--gap) var(--m) 0}
+.coupon{margin-inline:auto;max-width:1180px;background:var(--bazalt);color:var(--bazalt-ink);display:grid;grid-template-columns:46% 54%;position:relative}
+.coupon::before,.coupon::after{content:"";position:absolute;left:calc(46% - 16px);width:28px;height:28px;border-radius:50%;background:var(--bg)}
+.coupon::before{top:-14px}.coupon::after{bottom:-14px}
+.coupon .l{padding:48px;display:flex;flex-direction:column;justify-content:space-between;gap:32px;border-right:5px dotted var(--bg)}
+.coupon h2{font-size:clamp(1.75rem,1rem + 2.2vw,2.75rem);letter-spacing:-.03em;line-height:1.05;color:var(--bazalt-ink)}
+.coupon .l p{font-size:16px}
+.coupon .l dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:16px}
+.coupon .l dt{color:var(--bazalt-soft)}
+.coupon .l dd a{text-decoration:none;font-weight:600}
+.coupon .l dd a:hover{color:#f3a9c6}
+.coupon form{padding:48px;display:flex;flex-direction:column;gap:16px}
+.coupon .f{display:flex;flex-direction:column;gap:6px}
+.coupon label{font-size:var(--step-small);color:var(--bazalt-soft)}
+.coupon label i{font-style:normal;color:#f3a9c6}
+.t-error-msg{font-size:var(--step-small);color:#f6b4cd;opacity:0;visibility:hidden;height:0;transition:opacity 280ms ease-out,visibility 0s linear 280ms}
+.f.is-error .t-error-msg{opacity:1;visibility:visible;height:auto;transition:opacity 280ms ease-out,visibility 0s}
+.f.is-error input{outline:3px solid #f6b4cd;outline-offset:0}
+.t-input.is-shaking{animation:t-input-shake calc(var(--shake-dur-a)*2 + var(--shake-dur-b)*2) linear}
+@keyframes t-input-shake{0%{transform:translateX(0);animation-timing-function:var(--shake-ease)}28.57%{transform:translateX(var(--shake-distance));animation-timing-function:var(--shake-ease)}57.14%{transform:translateX(calc(var(--shake-distance)*-1));animation-timing-function:var(--shake-ease)}78.57%{transform:translateX(var(--shake-overshoot));animation-timing-function:var(--shake-ease)}100%{transform:translateX(0)}}
+.coupon input{height:54px;border:0;border-radius:0;background:#36312f;color:var(--bazalt-ink);font:400 16px "Albert Sans";padding:0 18px;width:100%}
+.coupon input::placeholder{color:#b9b0a8}
+.coupon input:focus{outline:3px solid var(--begonvil);outline-offset:0}
+.coupon .btn{width:100%;margin-top:6px;border-radius:28px 28px 0 0;min-height:56px}
+.coupon .perks{list-style:none;display:flex;flex-direction:column;gap:8px;font-size:16px}
+.coupon .perks li{padding-left:26px;background:var(--kemer-ust-acik) 0 .45em/16px 8px no-repeat}
+.coupon .hint{font-size:var(--step-small);color:var(--bazalt-soft);margin-top:6px}
+
+/* ---------- footer ---------- */
+.foot{margin-top:var(--gap);background:var(--bazalt);color:var(--bazalt-ink);padding:clamp(56px,7vw,96px) var(--m) 32px}
+.span{display:flex;align-items:flex-end;gap:4px;height:34svh;min-height:200px}
+.span i{flex:1;height:var(--h);background:var(--bazalt-ink);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0H100V100H86A36 52 0 0 0 14 100H0Z'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0H100V100H86A36 52 0 0 0 14 100H0Z'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat;
+  transform-origin:bottom;transition:transform 1s var(--ease)}
+.span i.b{background:var(--begonvil)}
+.foot .name{margin-top:40px;font-size:var(--step-display);font-weight:600;letter-spacing:-.045em;line-height:.95;max-width:none}
+.foot .cols{margin-top:56px;display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;row-gap:32px;font-size:15px}
+.foot .cols nav{grid-column:span 2;display:flex;flex-direction:column;gap:8px}
+.foot .cols nav b,.foot .cols .c b{font-weight:600;margin-bottom:4px}
+.foot .cols a{text-decoration:none;color:var(--bazalt-soft);transition:color .2s}
+.foot .cols a:hover{color:var(--bazalt-ink)}
+.foot .cols .c{grid-column:9/13;display:flex;flex-direction:column;gap:8px}
+.foot .cols .c a,.foot .cols .c span{color:var(--bazalt-ink)}
+.foot .credits{margin-top:56px;font-size:14px;color:var(--bazalt-soft);max-width:75ch;line-height:1.55}
+.foot .credits a{color:var(--bazalt-soft)}
+.foot .last{margin-top:24px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:14px;color:var(--bazalt-soft)}
+.foot .last .btn{min-height:44px;padding:0 20px;border-radius:22px 22px 0 0;font-size:14px}
+
+/* ---------- entrances ---------- */
+.js .rv{opacity:0;transform:translateY(16px);transition:opacity var(--duration-very-slow) var(--ease-smooth-out),transform var(--duration-very-slow) var(--ease-smooth-out);transition-delay:calc(var(--i,0) * 70ms)}
 .js .rv.in{opacity:1;transform:none}
+.js .span i{transform:scaleY(.15)}
+.js .span.in i{transform:none}
+.span i:nth-child(odd){transition-delay:.08s}.span i:nth-child(3n){transition-delay:.16s}
 
-/* ---- sections ---- */
-section{padding:92px 0}
-.sec-head{max-width:720px;margin-bottom:46px}
-.sec-head h2{font-size:clamp(30px,4.2vw,46px);line-height:1.08;font-weight:600;margin:14px 0 14px;color:var(--yesil)}
-.sec-head p{font-size:18px;color:#4b5547}
-
-/* hakkında */
-.hakkinda{background:var(--krem)}
-.hak-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.hak-foto{position:relative}
-.hak-foto img{border-radius:18px;box-shadow:var(--golge);width:100%;aspect-ratio:4/3;object-fit:cover}
-.hak-foto .rozet{position:absolute;right:-18px;bottom:-18px;background:var(--yesil);color:var(--krem);padding:18px 22px;border-radius:14px;box-shadow:var(--golge);text-align:center}
-.hak-foto .rozet b{font-family:"Fraunces";font-size:30px;display:block;color:var(--altin-ac)}
-.hak-foto .rozet span{font-size:12px;letter-spacing:.14em;text-transform:uppercase}
-.hak-metin p{margin-bottom:16px;font-size:17px;color:#3c463a}
-
-/* başkan */
-.baskan{background:linear-gradient(160deg,var(--yesil) 0,var(--yesil-koyu) 100%);color:var(--krem);position:relative;overflow:hidden}
-.baskan .kontur{opacity:.1}
-.bk-grid{position:relative;display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:center}
-.bk-card{background:rgba(246,239,225,.06);border:1px solid rgba(201,162,39,.3);border-radius:20px;padding:34px;text-align:center}
-.bk-card .av{width:120px;height:120px;border-radius:50%;margin:0 auto 18px;background:var(--altin);color:var(--yesil-koyu);display:grid;place-items:center;font-family:"Fraunces";font-size:46px;font-weight:600}
-.bk-card b{font-size:22px;font-family:"Fraunces";display:block}
-.bk-card span{color:var(--altin-ac);font-size:14px;letter-spacing:.14em;text-transform:uppercase}
-.bk-metin .q{font-family:"Fraunces";font-style:italic;font-size:clamp(22px,3vw,30px);line-height:1.4;color:var(--krem)}
-.bk-metin .q::before{content:"“";color:var(--altin);font-size:60px;line-height:0;vertical-align:-22px;margin-right:6px}
-
-/* faaliyet kartları */
-.grid3{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.fcard{background:#fff;border:1px solid var(--krem-koyu);border-radius:18px;padding:30px 26px;transition:.3s}
-.fcard:hover{transform:translateY(-6px);box-shadow:var(--golge);border-color:var(--altin)}
-.fcard .ico{width:54px;height:54px;border-radius:14px;background:var(--krem);display:grid;place-items:center;font-size:26px;margin-bottom:18px;border:1px solid var(--krem-koyu)}
-.fcard h3{font-size:20px;font-weight:600;color:var(--yesil);margin-bottom:8px}
-.fcard p{font-size:15px;color:#55604f}
-
-/* yöresel ürünler */
-.urunler{background:var(--yesil-koyu);color:var(--krem);position:relative;overflow:hidden}
-.urunler .kontur{opacity:.08}
-.ur-top{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.ur-top img{border-radius:18px;box-shadow:var(--golge)}
-.ur-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:26px 0 30px}
-.ur-list li{display:flex;gap:12px;align-items:flex-start;font-size:16px}
-.ur-list li .d{color:var(--altin);font-weight:800;font-size:18px;line-height:1.5}
-.ur-cta{display:flex;align-items:center;gap:18px;background:rgba(201,162,39,.12);border:1px solid rgba(201,162,39,.4);border-radius:16px;padding:20px 24px;flex-wrap:wrap}
-.ur-cta b{font-family:"Fraunces";font-size:26px;color:var(--altin-ac)}
-
-/* galeri */
-.galeri{background:var(--krem)}
-.ggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.ggrid a{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:1;box-shadow:var(--golge)}
-.ggrid img{width:100%;height:100%;object-fit:cover;transition:.5s}
-.ggrid a:hover img{transform:scale(1.07)}
-.ggrid a::after{content:"↗";position:absolute;right:12px;top:12px;color:#fff;opacity:0;transition:.3s;font-size:20px;text-shadow:0 2px 8px rgba(0,0,0,.5)}
-.ggrid a:hover::after{opacity:1}
-
-/* iletişim */
-.iletisim{background:#fff}
-.il-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
-.il-card{border:1px solid var(--krem-koyu);border-radius:18px;padding:30px;display:flex;gap:18px;align-items:flex-start;margin-bottom:18px;transition:.25s}
-.il-card:hover{border-color:var(--altin);box-shadow:var(--golge)}
-.il-card . i{width:50px;height:50px;border-radius:12px;background:var(--yesil);color:var(--altin-ac);display:grid;place-items:center;font-size:22px;flex:none}
-.il-card h3{font-size:17px;color:var(--yesil);font-weight:600;margin-bottom:3px}
-.il-card p{color:#55604f;font-size:16px}
-.uyelik{background:linear-gradient(160deg,var(--yesil),var(--yesil-koyu));color:var(--krem);border-radius:22px;padding:44px;position:relative;overflow:hidden}
-.uyelik .kontur{opacity:.12}
-.uyelik h3{font-size:30px;font-weight:600;margin-bottom:12px;position:relative}
-.uyelik p{color:rgba(246,239,225,.85);margin-bottom:24px;position:relative}
-
-/* footer */
-footer{background:var(--yesil-koyu);color:rgba(246,239,225,.75);padding:50px 0 30px;border-top:3px solid var(--altin)}
-.fnav{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}
-.fnav .brand b{color:var(--krem)}
-.fsep{border-top:1px solid rgba(246,239,225,.14);margin:26px 0 16px}
-.fmini{font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-
-@media(max-width:860px){
-  .menu{display:none}.burger{display:block}
-  .menu.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;background:var(--yesil-koyu);padding:20px 24px;gap:16px;border-bottom:1px solid rgba(201,162,39,.3)}
-  .hero-grid,.hak-grid,.bk-grid,.ur-top,.il-grid{grid-template-columns:1fr}
-  .hero-mark{order:-1}
-  .grid3{grid-template-columns:1fr 1fr}
-  .ggrid{grid-template-columns:1fr 1fr}
-  .hak-foto .rozet{right:12px}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .js .rv,.js .t-stagger-line{opacity:1;transform:none;filter:none}
+  .js .span i{transform:none}
 }
-@media(max-width:520px){
-  .grid3,.ur-list,.fmini{grid-template-columns:1fr}
-  .stats{gap:26px}
+
+/* ---------- tablet ---------- */
+@media (max-width:1080px){
+  .hero{grid-template-columns:1fr;min-height:0}
+  .window{order:-1;height:56svh}
+  .card{padding-top:0}
+  .card h1{font-size:min(8.4vw,5rem)}
+  .nav ul li.o{display:none}
+  .about{grid-template-columns:1fr;gap:48px}
+  .about h2{max-width:none}
+  .about .text{max-width:60ch}
+  .acts{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .events .frame-wrap{grid-column:1/-1}
+  .events .list{grid-column:1/-1;grid-row:1;margin-bottom:40px}
+  .events ol{display:grid;grid-template-columns:1fr 1fr;gap:6px 16px}
+  .home .names{grid-column:1/-1;margin-bottom:32px}
+  .home .stagewrap{grid-column:1/-1}
+  .home .names ul{display:flex;flex-wrap:wrap;gap:4px 24px}
+  .bridge{padding-top:40px}
+  .cities .mid{margin:32px 0 0;width:auto;height:auto;max-width:44ch;text-align:left;display:block}
 }
+
+/* ---------- phone ---------- */
+@media (max-width:760px){
+  .nav ul{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;align-items:flex-start;background:var(--bg);padding:8px var(--m) 24px;gap:4px;transform-origin:top center;opacity:0;visibility:hidden;transform:translateY(-6px) scale(.97);transition:opacity var(--duration-quick) var(--ease-smooth-out),transform var(--duration-quick) var(--ease-smooth-out),visibility 0s linear var(--duration-quick)}
+  .nav ul.open{opacity:1;visibility:visible;transform:none;transition:opacity var(--duration-fast) var(--ease-smooth-out),transform var(--duration-fast) var(--ease-smooth-out),visibility 0s}
+  .nav ul li.o{display:block}
+  .nav ul.open a{font-size:var(--step-body);padding:10px 0;display:block}
+  .menu-btn{display:block}
+  .mark span{max-width:15ch}
+  .hero{grid-template-columns:1fr;padding:0 12px 12px;min-height:0}
+  .window{order:-1;height:34svh;min-height:240px}
+  .card{margin-top:-24px;position:relative;z-index:1;padding:0 20px 28px;align-items:center;text-align:center;margin-inline:12px}
+  .card .band{height:40px;background-size:40px 40px;width:calc(100% + 40px);margin-inline:-20px}
+  .card .logo{display:none}
+  .card h1{margin-top:24px}
+  .card h1{font-size:9.2vw;margin-inline:auto}
+  .card .who,.card .lead{margin-inline:auto}
+  .card .links{justify-content:center;padding-top:28px}
+  .window figcaption{display:none}
+  .about{margin:var(--gap) 10px 0;padding:40px 20px 48px;grid-template-columns:1fr;gap:40px}
+  .about h2{font-size:clamp(2.1rem,8.5vw,2.6rem)}
+  .about .portrait{width:100%;margin-top:28px}
+  .work{display:block}
+  .work .para{margin-top:20px}
+  .work .wide .seg{aspect-ratio:4/3}
+  .work .wide img{object-position:30% 50%}
+  .acts{grid-template-columns:1fr;gap:28px}
+  .city .t{font-size:clamp(3.5rem,19vw,5rem)}
+  .menu-head{display:block}
+  .menu-head p{margin-top:24px}
+  .catnav{display:flex;gap:20px;position:sticky;top:72px;z-index:5;background:var(--bg);padding:14px 0;margin-top:24px}
+  .catnav a{font-weight:600;font-size:var(--step-small)}
+  .cat{margin:56px 0 28px}
+  .items{grid-template-columns:1fr;gap:28px}
+  .item{grid-template-columns:84px 1fr;gap:16px}
+  .item .ph{width:84px;height:94px}
+  .item .row{flex-wrap:wrap;gap:0 12px}
+  .events{display:flex;flex-direction:column}
+  .events .list{display:contents}
+  .events h2{order:-1;margin-bottom:28px}
+  .events .frame-wrap{width:100%}
+  .events ol{margin-top:36px;display:flex}
+  .events li button{padding:14px 12px}
+  .home{display:block}
+  .home .names{margin-bottom:24px}
+  .home .names ul{gap:2px 20px}
+  .home .names button{font-size:24px;white-space:nowrap;padding:6px 0}
+  .home .names button:hover{transform:none}
+  .home .fact{grid-template-columns:1fr}
+  .press{display:block}
+  .press .txt{margin-top:32px}
+  .coupon{grid-template-columns:1fr}
+  .coupon::before,.coupon::after{display:none}
+  .coupon .l{position:relative}
+  .coupon .l::before,.coupon .l::after{content:"";position:absolute;bottom:-16px;width:28px;height:28px;border-radius:50%;background:var(--bg)}
+  .coupon .l::before{left:-14px}.coupon .l::after{right:-14px}
+  .coupon .l{border-right:0;border-bottom:5px dotted var(--bg);padding:32px 24px}
+  .coupon form{padding:32px 24px}
+  .t-error-msg{min-height:0}
+  .span{height:22svh;min-height:140px;gap:3px}
+  .foot .cols nav{grid-column:span 6}
+  .foot .cols .c{grid-column:1/-1}
+  .foot .name{font-size:clamp(2.2rem,11vw,3rem)}
+}
+@media (min-width:761px){.catnav{display:none}}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="#">
-      <img src="assets/logo.jpg" alt="Bodrum Karslılar Derneği logosu" />
-      <div><b>Bodrum Karslılar Derneği</b><br><span>Kültür ve Dayanışma · 2023</span></div>
-    </a>
-    <nav class="menu" id="menu">
-      <a href="#hakkinda">Hakkımızda</a>
-      <a href="#baskan">Başkanımız</a>
-      <a href="#faaliyet">Faaliyetler</a>
-      <a href="#urunler">Yöresel Ürünler</a>
-      <a href="#galeri">Galeri</a>
-      <a class="tel" href="tel:+905431963636">0543 196 36 36</a>
-    </nav>
-    <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
-  </div>
+<header class="nav">
+  <a class="mark" href="#top" aria-label="Bodrum Karslılar Derneği, sayfa başı"><img src="img/logo.jpg" alt="" width="42" height="42"><span>Bodrum Karslılar Derneği</span></a>
+  <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menü</button>
+  <ul id="menu">
+    <li class="o"><a href="#biz">Biz</a></li>
+    <li><a href="#faaliyetler">Faaliyetler</a></li>
+    <li><a href="#urunler">Yöresel ürünler</a></li>
+    <li><a href="#etkinlikler">Etkinlikler</a></li>
+    <li class="o"><a href="#memleket">Kars</a></li>
+    <li><a class="btn" href="#uyelik">Üye olun</a></li>
+  </ul>
 </header>
 
+<main id="top">
+
 <!-- HERO -->
-<section class="hero">
-  <div class="kontur"></div>
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow">Bodrum · Muğla — Est. 2023</span>
-      <h1>Bodrum'da <em>Kars'ın</em> yüreği, memleketin sıcaklığı.</h1>
-      <p class="lead">Serhat şehri Kars'ın kültürünü Ege'de yaşatıyor; hemşehrilerimizi aynı sofrada, aynı dayanışma ruhuyla buluşturuyoruz.</p>
-      <div class="cta">
-        <a class="btn btn-altin" href="#urunler">Yöresel Ürünler →</a>
-        <a class="btn btn-cizgi" href="#iletisim">Bize Katılın</a>
-      </div>
-      <div class="stats">
-        <div><b>2023</b><span>Kuruluş</span></div>
-        <div><b>Kars</b><span>Kültür & Kimlik</span></div>
-        <div><b>Bodrum</b><span>Yeni Yuva</span></div>
-      </div>
-    </div>
-    <div class="hero-mark">
-      <div class="disc">
-        <div class="ring"></div>
-        <img src="assets/logo.jpg" alt="Dernek amblemi — Kars kalesi, kümbet ve taş köprü" />
-      </div>
+<section class="hero" aria-labelledby="h1">
+  <div class="card t-stagger" id="heroText">
+    <div class="band" aria-hidden="true"></div>
+    <img class="logo t-stagger-line" style="--n:0" src="img/logo.jpg" alt="Derneğin amblemi: Kars Kalesi ve Taşköprü, 2023" width="120" height="120">
+    <h1 id="h1" class="t-stagger-line" style="--n:1">Kars'tan Bodrum'a <span style="white-space:nowrap">bir köprü</span></h1>
+    <p class="who t-stagger-line" style="--n:2">Bodrum Karslılar Kültür ve Dayanışma Derneği</p>
+    <p class="lead t-stagger-line" style="--n:3">2023'ten beri Bodrum'da yaşayan Karslıları aynı sofrada, aynı bayramda ve birbirinin derdinin başında buluşturuyoruz.</p>
+    <a class="btn t-stagger-line" style="--n:4" href="#uyelik">Derneğe üye olun</a>
+    <div class="links">
+      <a class="lnk" href="#urunler">Yöresel ürünler</a>
+      <a class="lnk" href="#etkinlikler">Etkinlikler</a>
+      <a class="lnk" href="tel:+905431963636">0543 196 36 36</a>
+      <a class="lnk" href="https://www.google.com/maps/place/?q=place_id:ChIJoejDR1ltvhQRt5Shr9rgDQM" rel="noopener">Dernek binası, Bitez</a>
     </div>
   </div>
+  <figure class="window">
+    <div class="arch" id="heroImgs">
+      <img src="img/taskopru.jpg" style="object-position:42% 50%" alt="Kars Çayı üzerindeki bazalt Taşköprü ve kemerleri" width="1800" height="1195" fetchpriority="high" data-cap="Taşköprü, Kars">
+      <img src="img/kars-baltik.jpg" alt="Kar altında Kars'ın bazalt taşından Baltık mimarisi yapısı" width="1200" height="1600" loading="lazy" data-cap="Baltık yapıları, Kars">
+      <img src="img/bodrum-kalesi.jpg" style="object-position:62% 50%" alt="Bodrum Kalesi önünde demirli yelkenliler" width="1800" height="1200" loading="lazy" data-cap="Bodrum Kalesi, Bodrum">
+      <img src="img/bayramlasma.jpg" alt="Dernek binasında bayramlaşmada bir araya gelen üyeler" width="1400" height="1102" loading="lazy" data-cap="Bayramlaşma, dernek binamız">
+    </div>
+    <figcaption><span id="heroCap">Taşköprü, Kars</span><button class="pause" id="heroPause" aria-pressed="false">Durdur</button></figcaption>
+  </figure>
 </section>
 
-<!-- HAKKIMIZDA -->
-<section class="hakkinda" id="hakkinda">
-  <div class="wrap hak-grid">
-    <div class="hak-foto rv">
-      <img src="assets/bina.jpg" alt="Dernek binamızda bir araya gelen üyelerimiz" />
-      <div class="rozet"><b>Birlik</b><span>Dayanışma</span></div>
-    </div>
-    <div class="hak-metin rv">
-      <span class="eyebrow">Hakkımızda</span>
-      <h2 class="disp" style="font-size:clamp(28px,4vw,42px);color:var(--yesil);font-weight:600;margin:12px 0 18px">Bir memleket, iki şehir, tek yürek.</h2>
-      <p>Bodrum Karslılar Kültür ve Dayanışma Derneği, 2023 yılında Bodrum'da yaşayan Karslı hemşehrilerimizi bir araya getirmek için kuruldu. Amacımız; Kars'ın köklü kültürünü, değerlerini ve komşuluk hukukunu Ege'nin bu güzel sahilinde yaşatmaktır.</p>
-      <p>Dernek binamız; bayramlaşmaların, sohbetlerin, yardımlaşmanın ve memleket özleminin paylaşıldığı sıcak bir buluşma noktasıdır. Kapımız tüm hemşehrilerimize ve dostlarımıza açıktır.</p>
-      <p>Kültürden eğitime, dayanışmadan sosyal sorumluluğa kadar her alanda; birlik ve beraberlik ruhuyla hareket ediyoruz.</p>
-    </div>
+<!-- BAŞKAN / BİZ -->
+<section class="about" id="biz" aria-labelledby="biz-h">
+  <div>
+    <h2 id="biz-h" class="rv">Memleket uzakta, kapımız açık</h2>
+    <figure class="portrait rv" style="--i:1">
+      <div class="arch"><img src="img/baskan.jpg" alt="Dernek Başkanı Mehmet Yıldız" width="1000" height="1000" loading="lazy"></div>
+      <figcaption><b>Mehmet Yıldız</b>, Dernek Başkanı</figcaption>
+    </figure>
   </div>
-</section>
-
-<!-- BAŞKAN -->
-<section class="baskan" id="baskan">
-  <div class="kontur"></div>
-  <div class="wrap bk-grid">
-    <div class="bk-card rv">
-      <div class="av">MY</div>
-      <b>Mehmet Yıldız</b>
-      <span>Dernek Başkanı</span>
+  <div class="text">
+    <div class="rv" style="--i:1">
+      <h3>Neden kurulduk</h3>
+      <p>Kars'tan Bodrum'a gelen her aile yanında dilini, sofrasını ve bayramını da getirdi. Derneğimiz 2023'te bu mirası Bodrum'da birlikte yaşatmak, yeni gelen hemşehrilerimize yol göstermek ve birbirimize sahip çıkmak için kuruldu.</p>
     </div>
-    <div class="bk-metin rv">
-      <span class="eyebrow">Başkanımızdan</span>
-      <p class="q">Hemşehrilik bağlarımızın kıymetini daha derinden hissettiğimiz bu günlerde; Kars'ın birlik ve dayanışma ruhunu Bodrum'da el ele yaşatmaya devam ediyoruz. Kapımız herkese açık, soframız herkese bir.</p>
-      <p style="margin-top:22px;color:rgba(246,239,225,.75)">— Mehmet Yıldız, Yönetim Kurulu adına</p>
+    <div class="rv" style="--i:2">
+      <h3>Başkanımız</h3>
+      <p>Mehmet Yıldız derneği Bodrum Kaymakamlığı'nın bayramlaşmasından Bodrum Kent TV'nin Açık Görüş programına kadar şehrin her masasında temsil ediyor. Yönetim kurulumuzla birlikte iftar sofrasından okul ziyaretine her işin başında.</p>
+      <p class="role"><a class="lnk" href="https://www.instagram.com/mehmet_yildiz_36/" rel="noopener">Instagram: @mehmet_yildiz_36</a></p>
     </div>
+    <blockquote class="rv" style="--i:3">
+      <p>“Farklı düşüncelerin, farklı kültürlerin ve farklı yaşam biçimlerinin aynı sofrada kaynaşabildiği güçlü bir tablo.”</p>
+      <footer>Yönetim Kurulu, 3. Geleneksel İftar açıklaması</footer>
+    </blockquote>
+    <a class="btn acik rv" style="--i:4" href="#uyelik">Derneğe üye olun</a>
   </div>
 </section>
 
 <!-- FAALİYETLER -->
-<section id="faaliyet">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow">Ne Yapıyoruz</span>
-      <h2>Faaliyetlerimiz</h2>
-      <p>Kültürü yaşatmaktan toplumsal dayanışmaya, dernek olarak dört ana alanda hemşehrilerimizin ve Bodrum'un yanındayız.</p>
-    </div>
-    <div class="grid3">
-      <div class="fcard rv"><div class="ico">🏔️</div><h3>Kültür & Kimlik</h3><p>Kars'ın gelenek, lezzet ve değerlerini genç kuşaklara aktarıyor, memleket kimliğini yaşatıyoruz.</p></div>
-      <div class="fcard rv"><div class="ico">🤝</div><h3>Dayanışma</h3><p>Hemşehrilerimiz arasında yardımlaşma ve komşuluk hukukunu güçlendiriyor, ihtiyaç anında yan yana duruyoruz.</p></div>
-      <div class="fcard rv"><div class="ico">🎒</div><h3>Eğitim Desteği</h3><p>Yeni eğitim yılı öncesi okullara boya ve malzeme desteğiyle öğrencilerimize nitelikli ortamlar sağlıyoruz.</p></div>
-      <div class="fcard rv"><div class="ico">🎉</div><h3>Etkinlik & Bayramlaşma</h3><p>Bayramlaşma programları ve buluşmalarla üyelerimizi bir araya getiriyor, birlikteliği pekiştiriyoruz.</p></div>
-    </div>
+<section class="work" id="faaliyetler" aria-labelledby="work-h">
+  <h2 id="work-h" class="rv">Ne yapıyoruz</h2>
+  <p class="para rv" style="--i:1">Ramazan'da yüzlerce kişilik bir iftar sofrası kuruyoruz. Bayramda dernek binamızda bayramlaşıyoruz. Okullar açılırken boya kovalarıyla sınıflara gidiyoruz. Kars'ın kaşarını ve balını Bodrum'a getiriyoruz.</p>
+  <figure class="wide rv">
+    <div class="seg"><img src="img/iftar.jpg" alt="3. Geleneksel İftar programında Müskebi Ortakent Düğün Salonu'nda dolu masalar" width="1400" height="788" loading="lazy"></div>
+    <figcaption><b>3. Geleneksel İftar</b>, 13 Mart 2026, Müskebi Ortakent Düğün Salonu. Yaklaşık 800 misafir; beş siyasi partinin ilçe temsilcileri, kurumlar ve hemşehrilerimiz aynı sofradaydı.</figcaption>
+  </figure>
+  <dl class="acts">
+    <div class="rv"><dt>Geleneksel iftar</dt><dd>Her Ramazan hemşehrilerimizi, dostlarımızı ve Bodrum'un kurumlarını aynı sofrada buluşturuyoruz.</dd></div>
+    <div class="rv" style="--i:1"><dt>Bayramlaşma</dt><dd>Bayramın üçüncü günü dernek binamızın kapısı herkese açık; büyüklerimizin elini öpüyoruz.</dd></div>
+    <div class="rv" style="--i:2"><dt>Eğitime destek</dt><dd>Hayırsever üyelerimizle Bodrum'daki okulların ihtiyaçlarını karşılıyoruz.</dd></div>
+    <div class="rv" style="--i:3"><dt>Yöresel ürünler</dt><dd>Kars'ın kaşarını, gravyerini, balını ve pekmezini derneğimize getiriyoruz.</dd></div>
+    <div class="rv" style="--i:4"><dt>Dayanışma</dt><dd>Sevinçte de yasta da hemşehrimizin yanındayız; kimse Bodrum'da yalnız kalmasın.</dd></div>
+  </dl>
+</section>
+
+<!-- İKİ ŞEHİR (canlı) -->
+<section class="cities" aria-labelledby="cities-h">
+  <h2 id="cities-h" class="rv">Şu an Kars'ta ve Bodrum'da</h2>
+  <div class="bridge">
+    <svg viewBox="0 0 1000 300" preserveAspectRatio="none" aria-hidden="true"><path id="bL" d="M0 300V40H501V50A380 250 0 0 0 120 300Z" fill="#1f1c1c"/><path id="bR" d="M1000 300V40H499V50A380 250 0 0 1 880 300Z" fill="#1f1c1c"/></svg>
+    <p class="city a rv" style="--i:1"><span class="t t-digit-group" id="tKars">…°</span><span class="n">Kars</span><span class="d" id="dKars">1.768 metre rakım</span></p>
+    <p class="city b rv" style="--i:2"><span class="t t-digit-group" id="tBod">…°</span><span class="n">Bodrum</span><span class="d" id="dBod">deniz kıyısı</span></p>
   </div>
+  <p class="mid rv" style="--i:3" id="diff">Kars uzun ve karlı kışların, Bodrum güneşin şehri. Arada 1.700 kilometreyi aşkın yol var; derneğimiz bu yolun iki ucunu birbirine bağlıyor.</p>
+  <div class="meta"><span id="wTime">Sıcaklıklar Open-Meteo'dan anlık alınır.</span><span>Kars 40.60° K · Bodrum 37.03° K</span></div>
 </section>
 
 <!-- YÖRESEL ÜRÜNLER -->
-<section class="urunler" id="urunler">
-  <div class="kontur"></div>
-  <div class="wrap">
-    <div class="ur-top">
-      <img class="rv" src="assets/yoresel.jpg" alt="Kars yöresel ürünleri — kaşar, gravyer, çeçil, bal, pekmez" />
-      <div class="rv">
-        <span class="eyebrow">Kars'ın Lezzetleri</span>
-        <h2 class="disp" style="font-size:clamp(28px,4vw,42px);color:var(--krem);font-weight:600;margin:12px 0 10px">Memleketin tadı, derneğimizde.</h2>
-        <p style="color:rgba(246,239,225,.82)">Kars'ın meşhur yöresel ürünleri derneğimizde sürekli bulunur. Taze ve doğal lezzetleri hemşehrilerimize ve tüm Bodrum'a ulaştırıyoruz.</p>
-        <ul class="ur-list">
-          <li><span class="d">◆</span> Eski Kaşar</li>
-          <li><span class="d">◆</span> Yeni Kaşar</li>
-          <li><span class="d">◆</span> Gravyer</li>
-          <li><span class="d">◆</span> Küflü Çeçil (Civil)</li>
-          <li><span class="d">◆</span> Petek Balı</li>
-          <li><span class="d">◆</span> Dut Pekmezi</li>
-        </ul>
-        <div class="ur-cta">
-          <div>
-            <div style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,239,225,.7)">Sipariş & Bilgi</div>
-            <b>0543 196 36 36</b>
-          </div>
-          <a class="btn btn-altin" href="tel:+905431963636">Hemen Ara</a>
-          <a class="btn btn-cizgi" href="https://wa.me/905431963636" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </div>
+<section class="menu" id="urunler" aria-labelledby="urun-h">
+  <div class="menu-head">
+    <h2 id="urun-h" class="rv">Kars'tan gelen lezzetler</h2>
+    <div class="rv" style="--i:1">
+      <p>Kars'ın yöresel ürünleri derneğimizde sürekli bulunur. Fiyat ve stok bilgisi için arayın ya da WhatsApp'tan yazın: <a class="lnk" href="tel:+905431963636">0543 196 36 36</a></p>
+      <a class="btn begonvil" href="https://wa.me/905431963636?text=Merhaba%2C%20y%C3%B6resel%20%C3%BCr%C3%BCnler%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." rel="noopener">WhatsApp'tan sorun</a>
     </div>
+  </div>
+  <nav class="catnav" aria-label="Ürün grupları"><a href="#peynir">Peynirler</a><a href="#bal">Bal ve pekmez</a></nav>
+
+  <div class="cat" id="peynir"><h3>Peynirler</h3><span>4 çeşit</span></div>
+  <ul class="items">
+    <li class="item rv"><div class="ph arch"><img src="img/urun-eski-kasar.jpg" alt="Eski kaşar" width="180" height="180" loading="lazy"></div><div><div class="row"><b>Eski kaşar</b></div><p>Aylarca dinlendirilmiş, keskin ve tuzlu tadıyla Kars'ın adını taşıyan peynir. İnce dilimlenir, sıcak ekmekle yenir.</p><p class="not">Coğrafi işaretli: Kars Kaşarı</p></div></li>
+    <li class="item rv" style="--i:1"><div class="ph arch"><img src="img/urun-gravyer.jpg" alt="Kars gravyeri" width="180" height="180" loading="lazy"></div><div><div class="row"><b>Gravyer</b></div><p>Büyük tekerler hâlinde olgunlaşan, iri gözenekli, fındık tadında peynir. Kars ovasının yaz sütünden yapılır.</p><p class="not">Coğrafi işaretli: Kars Gravyeri</p></div></li>
+    <li class="item rv"><div class="ph arch"><img src="img/urun-yeni-kasar.jpg" alt="Taze kaşar" width="180" height="180" loading="lazy"></div><div><div class="row"><b>Yeni kaşar</b></div><p>Taze, yumuşak ve hafif. Kahvaltı tabağına, tosta ve fırından yeni çıkmış pideye.</p></div></li>
+    <li class="item rv" style="--i:1"><div class="ph arch"><img src="img/urun-cecil.jpg" alt="Küflü çeçil peyniri" width="180" height="180" loading="lazy"></div><div><div class="row"><b>Küflü çeçil</b></div><p>Tel tel ayrılan çeçil peynirinin küflendirilerek olgunlaştırılmış hâli. Kokusu güçlü, tadı derin; Kars sofrasının klasiği.</p></div></li>
+  </ul>
+
+  <div class="cat" id="bal"><h3>Bal ve pekmez</h3><span>2 çeşit</span></div>
+  <ul class="items">
+    <li class="item rv"><div class="ph arch"><img src="img/urun-petek-bali.jpg" alt="Petek balı" width="180" height="180" loading="lazy"></div><div><div class="row"><b>Petek balı</b></div><p>Kars yaylalarının çiçeklerinden, peteğiyle birlikte. Kahvaltıda kaşarın yanına bir dilim.</p></div></li>
+    <li class="item rv" style="--i:1"><div class="ph arch"><img src="img/urun-dut-pekmezi.jpg" alt="Dut pekmezi" width="180" height="180" loading="lazy"></div><div><div class="row"><b>Dut pekmezi</b></div><p>Koyu kıvamlı, dut kokulu. Tahinle karıştırılır, kış sabahlarının tatlısıdır.</p></div></li>
+  </ul>
+</section>
+
+<!-- ETKİNLİKLER -->
+<section class="events" id="etkinlikler" aria-labelledby="ev-h">
+  <div class="frame-wrap rv">
+    <button class="frame" id="frame" aria-label="Sonraki fotoğraf">
+      <img src="img/ev-iftar.jpg" alt="3. Geleneksel İftar programında dolu salon" width="1200" height="900" loading="lazy">
+      <img src="img/ev-bayram.jpg" alt="Dernek binasında bayramlaşmada üyeler" width="1200" height="900" loading="lazy">
+      <img src="img/ev-kaymakam.jpg" alt="Bodrum Kaymakamlığı bayramlaşma programında dernek temsilcileri" width="1200" height="900" loading="lazy">
+      <img src="img/ev-okul.jpg" alt="Şehit Mahmut Coşkunsu Ortaokulu önünde boya bağışı" width="1000" height="750" loading="lazy">
+      <img src="img/ev-hemsehri.jpg" alt="Dernek binasının önünde hemşehrilerle toplu fotoğraf" width="827" height="620" loading="lazy">
+    </button>
+    <p class="cap" id="cap" aria-live="polite"><b>3. Geleneksel İftar</b>, Ortakent</p>
+  </div>
+  <div class="list">
+    <h2 id="ev-h" class="rv">Bu yıl birlikte</h2>
+    <ol id="evlist">
+      <li class="rv" style="--i:1"><button aria-current="true"><b>3. Geleneksel İftar</b><span class="w">13 Mart 2026</span><span class="x">Müskebi Ortakent Düğün Salonu, yaklaşık 800 misafir</span></button></li>
+      <li class="rv" style="--i:2"><button><b>Bayramlaşma</b><span class="w">Kurban Bayramı 2026</span><span class="x">Bayramın üçüncü günü dernek binamızda üyelerimiz ve dostlarımızla</span></button></li>
+      <li class="rv" style="--i:3"><button><b>Kaymakamlık bayramlaşması</b><span class="w">Kurban Bayramı 2026</span><span class="x">Trafo Cafe; Başkan Mehmet Yıldız ve YK Üyesi Abdülbaki Aydın katıldı</span></button></li>
+      <li class="rv" style="--i:4"><button><b>Eğitime destek</b><span class="w">Okullar açılmadan</span><span class="x">Konacık Şehit Mahmut Coşkunsu Ortaokulu'nun boya ihtiyacı karşılandı</span></button></li>
+      <li class="rv" style="--i:5"><button><b>Bayram buluşması</b><span class="w">Dernek binası</span><span class="x">Hemşehrilerimizle kapımızın önünde</span></button></li>
+    </ol>
   </div>
 </section>
 
-<!-- GALERİ -->
-<section class="galeri" id="galeri">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow">Anılarımız</span>
-      <h2>Galeri</h2>
-      <p>Buluşmalarımızdan, etkinliklerimizden ve dayanışma çalışmalarımızdan kareler.</p>
+<!-- MEMLEKET -->
+<section class="home" id="memleket" aria-labelledby="home-h">
+  <div class="names">
+    <h2 id="home-h" class="rv">Memleketten kareler</h2>
+    <ul id="places">
+      <li><button aria-pressed="true" data-t="Kars Kalesi" data-f="12. yüzyıldan beri şehrin tepesinde duruyor. Amblemimizin üst yarısı.">Kars Kalesi</button></li>
+      <li><button aria-pressed="false" data-t="Taşköprü" data-f="16. yüzyıldan kalma, kesme bazalttan. Amblemimizdeki köprü; bu sitedeki her kemer ondan.">Taşköprü</button></li>
+      <li><button aria-pressed="false" data-t="Baltık yapıları" data-f="1878–1918 arasındaki Rus döneminden kalan bazalt cepheler Kars'a kendine özgü bir yüz verir.">Baltık yapıları</button></li>
+      <li><button aria-pressed="false" data-t="Kars ovası" data-f="Şehir deniz seviyesinden 1.768 metre yüksekte. Kışları uzun ve karlı, yazları serin.">Kars ovası</button></li>
+      <li><button aria-pressed="false" data-t="Kars Çayı" data-f="Kalenin eteğinden akan çay; Taşköprü bu suyun üstünde, eski mahalle iki yakasında.">Kars Çayı</button></li>
+      <li><button aria-pressed="false" data-t="Bodrum Kalesi" data-f="Yeni yurdumuzun simgesi: 15. yüzyıldan kalma kale, Karslıların ikinci memleketinin kıyısında.">Bodrum Kalesi</button></li>
+    </ul>
+  </div>
+  <figure class="stagewrap rv" style="--i:1">
+    <div class="stage seg" id="stage">
+      <img src="img/yer-kars-kalesi.jpg" alt="Kars Kalesi ve altındaki eski mahalle" width="1200" height="900" loading="lazy">
+      <img src="img/yer-taskopru-kale.jpg" alt="Taşköprü'nün üzerinden Kars Kalesi'ne bakış" width="1200" height="900" loading="lazy">
+      <img src="img/yer-baltik.jpg" alt="Kars'ta karlı bir günde bazalt Baltık yapısı" width="1200" height="900" loading="lazy">
+      <img src="img/yer-panorama.jpg" alt="Kalenin üstünden Kars şehri ve ovası" width="1200" height="900" loading="lazy">
+      <img src="img/yer-kars-cayi.jpg" alt="Kars Çayı, kalenin eteğindeki eski mahalle ve köprü" width="1200" height="900" loading="lazy">
+      <img src="img/yer-bodrum-kalesi.jpg" alt="Bodrum Kalesi ve yelkenliler" width="1200" height="900" loading="lazy">
     </div>
-    <div class="ggrid">
-      <a class="rv" href="https://instagram.com/bodrumkarslilardernegi" target="_blank" rel="noopener"><img src="assets/bina.jpg" alt="Dernek binamızda buluşma"></a>
-      <a class="rv" href="https://instagram.com/bodrumkarslilardernegi" target="_blank" rel="noopener"><img src="assets/egitim1.jpg" alt="Eğitime destek çalışmamız"></a>
-      <a class="rv" href="https://instagram.com/bodrumkarslilardernegi" target="_blank" rel="noopener"><img src="assets/kaymakamlik.jpg" alt="Bodrum Kaymakamlığı bayramlaşma programı"></a>
-      <a class="rv" href="https://instagram.com/bodrumkarslilardernegi" target="_blank" rel="noopener"><img src="assets/hemsehri.jpg" alt="Hemşehrilerimizle bayramlaşma"></a>
-      <a class="rv" href="https://instagram.com/bodrumkarslilardernegi" target="_blank" rel="noopener"><img src="assets/egitim2.jpg" alt="Okul sınıflarına boya desteği"></a>
-      <a class="rv" href="https://instagram.com/bodrumkarslilardernegi" target="_blank" rel="noopener"><img src="assets/yoresel.jpg" alt="Kars yöresel ürünleri"></a>
-    </div>
+    <figcaption class="fact" aria-live="polite"><b id="factT" class="soft">Kars Kalesi</b><span id="factF" class="soft">12. yüzyıldan beri şehrin tepesinde duruyor. Amblemimizin üst yarısı.</span></figcaption>
+  </figure>
+</section>
+
+<!-- EKRANDA -->
+<section class="press" aria-labelledby="press-h">
+  <div class="vid rv" id="vid">
+    <button aria-label="Açık Görüş programını oynat (YouTube)">
+      <img src="assets/video-acikgorus.jpg" alt="Bodrum Kent TV Açık Görüş programında Mehmet Yıldız" width="1280" height="720" loading="lazy">
+      <span class="play">Programı izleyin</span>
+    </button>
+  </div>
+  <div class="txt rv" style="--i:1">
+    <h2 id="press-h">Ekranda derneğimiz</h2>
+    <p>Bodrum Kent TV'nin Açık Görüş programında başkanımız Mehmet Yıldız, derneğin çalışmalarını ve Bodrum'daki Karslıları anlattı.</p>
+    <a class="lnk" href="https://www.youtube.com/watch?v=TAkYO8GKCbk" rel="noopener">YouTube'da açın</a>
   </div>
 </section>
 
-<!-- İLETİŞİM -->
-<section class="iletisim" id="iletisim">
-  <div class="wrap il-grid">
-    <div class="rv">
-      <span class="eyebrow">İletişim</span>
-      <h2 class="disp" style="font-size:clamp(28px,4vw,42px);color:var(--yesil);font-weight:600;margin:12px 0 26px">Bize ulaşın</h2>
-      <a class="il-card" href="tel:+905431963636"><div class="i">📞</div><div><h3>Telefon</h3><p>0543 196 36 36</p></div></a>
-      <a class="il-card" href="https://instagram.com/bodrumkarslilardernegi" target="_blank" rel="noopener"><div class="i">📸</div><div><h3>Instagram</h3><p>@bodrumkarslilardernegi</p></div></a>
-      <div class="il-card"><div class="i">📍</div><div><h3>Adres</h3><p>Bodrum / Muğla — açık adres yakında eklenecektir.</p></div></div>
+<!-- ÜYELİK -->
+<section class="join" id="uyelik" aria-labelledby="join-h">
+  <div class="coupon rv">
+    <div class="l">
+      <h2 id="join-h">Üye olun, sofraya katılın</h2>
+      <dl>
+        <dt>Telefon</dt><dd><a href="tel:+905431963636">0543 196 36 36</a></dd>
+        <dt>Instagram</dt><dd><a href="https://www.instagram.com/bodrumkarslilardernegi/" rel="noopener">@bodrumkarslilardernegi</a></dd>
+        <dt>Dernek binası</dt><dd>Bitez, 48470 Bodrum/Muğla · <a href="https://www.google.com/maps/place/?q=place_id:ChIJoejDR1ltvhQRt5Shr9rgDQM" rel="noopener">Haritada aç</a></dd>
+        <dt>Açık</dt><dd>Pazartesi–Cumartesi 09:00–18:00, Pazar kapalı</dd>
+      </dl>
+      <ul class="perks">
+        <li>İftar, bayramlaşma ve buluşma duyuruları doğrudan size gelir.</li>
+        <li>Kars'tan gelen yöresel ürünlerden ilk siz haberdar olursunuz.</li>
+        <li>Bodrum'daki hemşehrilerinizle tanışır, birbirimize destek oluruz.</li>
+      </ul>
+      <p>Formu doldurun; başvurunuz WhatsApp mesajı olarak hazırlanır, yönetim kurulumuz size döner.</p>
     </div>
-    <div class="rv">
-      <div class="uyelik">
-        <div class="kontur"></div>
-        <h3 class="disp">Derneğimize üye olun</h3>
-        <p>Kars'ın birlik ve dayanışma ruhunu Bodrum'da birlikte büyütelim. Üyelik ve destek için bizimle iletişime geçin.</p>
-        <a class="btn btn-altin" href="tel:+905431963636" style="position:relative">Üyelik için ara →</a>
-      </div>
-    </div>
+    <form id="form" action="https://wa.me/905431963636" method="get" novalidate>
+      <div class="f"><label for="f-ad">Ad soyad <i>*</i></label><input class="t-input" id="f-ad" name="ad" autocomplete="name" required aria-describedby="e-ad"><span class="t-error-msg" id="e-ad">Adınızı ve soyadınızı yazın.</span></div>
+      <div class="f"><label for="f-tel">Telefon <i>*</i></label><input class="t-input" id="f-tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="05xx xxx xx xx" required aria-describedby="e-tel"><span class="t-error-msg" id="e-tel">Size dönebilmemiz için 10 haneli telefon numaranızı yazın.</span></div>
+      <div class="f"><label for="f-kars">Kars'ta memleketiniz</label><input class="t-input" id="f-kars" name="kars" placeholder="İlçe ya da köy"></div>
+      <div class="f"><label for="f-bod">Bodrum'da yaşadığınız yer</label><input class="t-input" id="f-bod" name="bodrum" placeholder="Mahalle"></div>
+      <button class="btn begonvil" type="submit">WhatsApp'tan başvurun</button>
+    </form>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <div class="fnav">
-      <a class="brand" href="#"><img src="assets/logo.jpg" alt="logo" style="width:46px;height:46px;border-radius:50%;border:2px solid var(--altin)"><div><b>Bodrum Karslılar Derneği</b><br><span style="color:var(--altin-ac);font-size:11px;letter-spacing:.2em;text-transform:uppercase">Kültür ve Dayanışma</span></div></a>
-      <nav style="display:flex;gap:24px;flex-wrap:wrap">
-        <a href="#hakkinda">Hakkımızda</a><a href="#faaliyet">Faaliyetler</a><a href="#urunler">Ürünler</a><a href="#iletisim">İletişim</a>
-      </nav>
-    </div>
-    <div class="fsep"></div>
-    <div class="fmini">
-      <span>© 2023–2026 Bodrum Karslılar Kültür ve Dayanışma Derneği</span>
-      <span>Bodrum · Muğla · Türkiye</span>
-    </div>
+</main>
+
+<footer class="foot">
+  <div class="span" aria-hidden="true">
+    <i style="--h:62%;--r:38%"></i><i style="--h:78%;--r:40%"></i><i class="b" style="--h:100%;--r:42%"></i><i style="--h:88%;--r:40%"></i><i style="--h:70%;--r:38%"></i><i style="--h:94%;--r:42%"></i><i style="--h:66%;--r:38%"></i>
   </div>
+  <p class="name">Bodrum Karslılar Derneği</p>
+  <div class="cols">
+    <nav aria-label="Dernek"><b>Dernek</b><a href="#biz">Biz</a><a href="#faaliyetler">Faaliyetler</a><a href="#uyelik">Üyelik</a></nav>
+    <nav aria-label="Keşfet"><b>Keşfet</b><a href="#urunler">Yöresel ürünler</a><a href="#etkinlikler">Etkinlikler</a><a href="#memleket">Kars</a></nav>
+    <nav aria-label="Takip"><b>Takip</b><a href="https://www.instagram.com/bodrumkarslilardernegi/" rel="noopener">Instagram</a><a href="https://www.youtube.com/watch?v=TAkYO8GKCbk" rel="noopener">Açık Görüş</a></nav>
+    <div class="c"><b>Bodrum Karslılar Kültür ve Dayanışma Derneği</b><a href="https://www.google.com/maps/place/?q=place_id:ChIJoejDR1ltvhQRt5Shr9rgDQM" rel="noopener">Bitez, 48470 Bodrum/Muğla</a><span>Pzt–Cmt 09:00–18:00 · Kuruluş 2023</span><a href="tel:+905431963636">0543 196 36 36</a></div>
+  </div>
+  <p class="credits">Fotoğraflar: dernek ve başkanlık fotoğrafları @bodrumkarslilardernegi ve @mehmet_yildiz_36 hesaplarından. Kars ve Bodrum manzaraları Wikimedia Commons'tan: “Kars Taşköprü 3740”, “3430” ve “3427”, Dosseman (CC BY-SA 4.0); “Kars, castello, veduta 01”, Francesco Bini (CC BY-SA 4.0); “Kars Panorama”, Bjørn Christian Tørrissen (CC BY-SA 3.0); “Kars Gotik mimarisi”, Redlabubu (CC0); “Bodrum Kalesi ve Yelkenliler 2015”, Hamdigumus (CC0). Video: Bodrum Kent TV. Hava durumu: Open-Meteo.</p>
+  <div class="last"><span>© 2026 Bodrum Karslılar Derneği</span><a class="btn acik" href="#top">Başa dön</a></div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script>
-const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
-document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
-document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
-setTimeout(()=>document.querySelectorAll('.rv:not(.in)').forEach(e=>e.classList.add('in')),2600);
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $=function(id){return document.getElementById(id)};
+
+  // giriş metni: transitions.dev "texts reveal"
+  requestAnimationFrame(function(){requestAnimationFrame(function(){$('heroText').classList.add('is-shown')})});
+
+  // menü (dropdown)
+  var mb=document.querySelector('.menu-btn'), mu=$('menu');
+  function closeMenu(){mu.classList.remove('open');mb.setAttribute('aria-expanded','false')}
+  mb.addEventListener('click',function(){var o=mu.classList.toggle('open');mb.setAttribute('aria-expanded',String(o))});
+  mu.addEventListener('click',function(e){if(e.target.closest('a'))closeMenu()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mu.classList.contains('open')){closeMenu();mb.focus()}});
+
+  // bölüm girişleri
+  var els=document.querySelectorAll('.rv,.span');
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){io.observe(el)});
+    setTimeout(function(){els.forEach(function(el){el.classList.add('in')})},3500); // güvenlik: içerik asla gizli kalmaz
+  } else els.forEach(function(el){el.classList.add('in')});
+
+  // yumuşak metin değişimi (transitions.dev "text swap soft" mantığı, blok metin için)
+  function soft(el,html){
+    if(reduce){el.innerHTML=html;return}
+    clearTimeout(el._t);el.classList.add('out');
+    el._t=setTimeout(function(){el.innerHTML=html;el.classList.remove('out')},200);
+  }
+
+  // kahraman penceresi: Kars → Bodrum yavaş geçiş
+  var hi=[].slice.call(document.querySelectorAll('#heroImgs img')), hc=$('heroCap'), h=0, ht;
+  hi[0].classList.add('on');
+  function heroNext(){hi[h].classList.remove('on');h=(h+1)%hi.length;hi[h].classList.add('on');hc.textContent=hi[h].dataset.cap}
+  var wide=matchMedia('(min-width: 761px)'), paused=false, hp=$('heroPause');
+  function heroPlay(){clearInterval(ht);if(!reduce&&!paused&&wide.matches&&!document.hidden)ht=setInterval(heroNext,5600)}
+  hp.addEventListener('click',function(){paused=!paused;hp.setAttribute('aria-pressed',String(paused));hp.textContent=paused?'Oynat':'Durdur';heroPlay()});
+  if(reduce)hp.hidden=true;
+  wide.addEventListener('change',heroPlay);
+  document.addEventListener('visibilitychange',heroPlay);heroPlay();
+
+  // etkinlikler: tek çerçeve + liste
+  var fi=[].slice.call(document.querySelectorAll('#frame img')), lb=[].slice.call(document.querySelectorAll('#evlist button')), cap=$('cap'), f=0;
+  var caps=['<b>3. Geleneksel İftar</b>, Ortakent','<b>Bayramlaşma</b>, dernek binamız','<b>Kaymakamlık bayramlaşması</b>, Trafo Cafe','<b>Boya bağışı</b>, Şehit Mahmut Coşkunsu Ortaokulu','<b>Bayram buluşması</b>, dernek binamızın önü'];
+  cap.classList.add('soft');
+  fi[0].classList.add('on');
+  function show(i){if(i===f)return;fi[f].classList.remove('on');lb[f].setAttribute('aria-current','false');f=i;fi[f].classList.add('on');lb[f].setAttribute('aria-current','true');soft(cap,caps[f])}
+  $('frame').addEventListener('click',function(){show((f+1)%fi.length)});
+  lb.forEach(function(b,i){b.addEventListener('click',function(){show(i)})});
+
+  // memleket: isim seç, kemer içindeki kare değişsin
+  var si=[].slice.call(document.querySelectorAll('#stage img')), pb=[].slice.call(document.querySelectorAll('#places button')), p=0;
+  si[0].classList.add('on');
+  pb.forEach(function(b,i){b.addEventListener('click',function(){if(i===p)return;si[p].classList.remove('on');pb[p].setAttribute('aria-pressed','false');p=i;si[p].classList.add('on');b.setAttribute('aria-pressed','true');soft($('factT'),b.dataset.t);soft($('factF'),b.dataset.f)})});
+
+  // video: tıklayınca yükle
+  document.querySelector('#vid button').addEventListener('click',function(){$('vid').innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/TAkYO8GKCbk?autoplay=1" title="Bodrum Kent TV, Açık Görüş: Mehmet Yıldız" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>'});
+
+  // üyelik: doğrula (transitions.dev "error state shake"), WhatsApp mesajı hazırla
+  function err(id,on){
+    var inp=$(id),w=inp.parentNode;
+    w.classList.toggle('is-error',on);inp.setAttribute('aria-invalid',on?'true':'false');
+    if(on&&!reduce){inp.classList.remove('is-shaking');void inp.offsetWidth;inp.classList.add('is-shaking');setTimeout(function(){inp.classList.remove('is-shaking')},300)}
+  }
+  ['f-ad','f-tel'].forEach(function(id){$(id).addEventListener('input',function(){if(this.parentNode.classList.contains('is-error'))err(id,false)})});
+  $('form').addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=function(id){return $(id).value.trim()};
+    var badAd=v('f-ad').length<3, digits=v('f-tel').replace(/\D/g,'').replace(/^(90|0)/,''), badTel=digits.length!==10;
+    err('f-ad',badAd);err('f-tel',badTel);
+    if(badAd||badTel){$(badAd?'f-ad':'f-tel').focus();return}
+    var t='Merhaba, Bodrum Karslılar Derneği\'ne üye olmak istiyorum.\nAd soyad: '+v('f-ad')+'\nTelefon: '+v('f-tel')+(v('f-kars')?'\nKars\'ta memleketim: '+v('f-kars'):'')+(v('f-bod')?'\nBodrum\'da yaşadığım yer: '+v('f-bod'):'');
+    window.open('https://wa.me/905431963636?text='+encodeURIComponent(t),'_blank','noopener');
+  });
+
+  // canlı köprü: iki şehrin anlık sıcaklığı, rakamlar "number pop-in" ile gelir
+  function digits(el,str){
+    el.classList.remove('is-animating');el.replaceChildren();
+    str.split('').forEach(function(ch,i){var sp=document.createElement('span');sp.className='t-digit';sp.textContent=ch;sp.style.setProperty('--d',i);el.appendChild(sp)});
+    void el.offsetHeight;el.classList.add('is-animating');
+  }
+  var codes={0:'açık',1:'az bulutlu',2:'parçalı bulutlu',3:'kapalı',45:'sisli',48:'kırağılı sis',51:'çisenti',53:'çisenti',55:'yoğun çisenti',61:'hafif yağmur',63:'yağmurlu',65:'sağanak',66:'dondurucu yağmur',67:'dondurucu yağmur',71:'hafif kar',73:'karlı',75:'yoğun kar',77:'kar taneleri',80:'sağanak',81:'sağanak',82:'kuvvetli sağanak',85:'kar sağanağı',86:'kuvvetli kar',95:'gök gürültülü',96:'dolu',99:'dolu'};
+  function deg(x){return (x<0?'−':'')+Math.abs(Math.round(x))+'°'}
+  fetch('https://api.open-meteo.com/v1/forecast?latitude=40.6013,37.0344&longitude=43.0975,27.4305&current=temperature_2m,weather_code&timezone=Europe%2FIstanbul')
+    .then(function(r){if(!r.ok)throw 0;return r.json()})
+    .then(function(d){
+      var k=d[0].current,b=d[1].current,diff=Math.round(b.temperature_2m)-Math.round(k.temperature_2m);
+      digits($('tKars'),deg(k.temperature_2m));digits($('tBod'),deg(b.temperature_2m));
+      $('dKars').textContent='1.768 metre, şu an '+(codes[k.weather_code]||'');
+      $('dBod').textContent='deniz kıyısı, şu an '+(codes[b.weather_code]||'');
+      $('diff').textContent=(diff===0?'Bugün iki şehir aynı sıcaklıkta. ':'Bugün aradaki fark '+Math.abs(diff)+' derece. ')+'Arada 1.700 kilometreyi aşkın yol var; derneğimiz bu yolun iki ucunu birbirine bağlıyor.';
+      $('wTime').textContent='Son ölçüm '+k.time.slice(11,16)+' (Türkiye saati), Open-Meteo';
+    }).catch(function(){document.querySelectorAll('.city .t').forEach(function(e){e.hidden=true})});
+
+  // imza an (GSAP ScrollTrigger): kaydırdıkça köprünün iki yarısı Kars ve Bodrum'dan gelip ortada buluşur
+  addEventListener('load',function(){
+    if(!window.gsap||!window.ScrollTrigger)return; // GSAP yüklenmezse köprü zaten kurulu durur
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.matchMedia().add('(prefers-reduced-motion: no-preference)',function(){
+      gsap.timeline({scrollTrigger:{trigger:'.bridge',start:'top 95%',end:'center 72%',scrub:.6}})
+        .fromTo('#bL',{x:-470},{x:0,ease:'none'},0)
+        .fromTo('#bR',{x:470},{x:0,ease:'none'},0);
+    });
+  });
+})();
 </script>
 </body>
 </html>
