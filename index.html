@@ -5,9 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bodrum Karslılar Kültür ve Dayanışma Derneği</title>
 <meta name="description" content="2023'ten beri Bodrum'da yaşayan Karslıları buluşturan dernek: geleneksel iftar, bayramlaşma, eğitime destek ve Kars'tan gelen yöresel ürünler. Tel: 0543 196 36 36">
-<meta name="theme-color" content="#1f1c1c">
-<link rel="icon" href="img/logo.jpg">
+<meta name="theme-color" content="#e8e7e3">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Bodrum Karslılar Derneği">
 <meta property="og:title" content="Bodrum Karslılar Derneği: Kars'tan Bodrum'a bir köprü">
 <meta property="og:description" content="Bodrum'da yaşayan Karslıların kültür ve dayanışma derneği.">
 <meta property="og:image" content="https://dagdelenbatu14-pixel.github.io/bodrum-karslilar-dernegi/img/og.jpg">
@@ -20,6 +22,8 @@
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://api.open-meteo.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NGO","name":"Bodrum Karslılar Kültür ve Dayanışma Derneği","alternateName":"Bodrum Karslılar Derneği","foundingDate":"2023","telephone":"+905431963636","address":{"@type":"PostalAddress","streetAddress":"Bitez","postalCode":"48470","addressLocality":"Bodrum","addressRegion":"Muğla","addressCountry":"TR"},"openingHours":"Mo-Sa 09:00-18:00","hasMap":"https://www.google.com/maps/place/?q=place_id:ChIJoejDR1ltvhQRt5Shr9rgDQM","sameAs":["https://www.instagram.com/bodrumkarslilardernegi/"],"logo":"https://dagdelenbatu14-pixel.github.io/bodrum-karslilar-dernegi/img/logo.jpg","url":"https://dagdelenbatu14-pixel.github.io/bodrum-karslilar-dernegi/","member":{"@type":"Person","name":"Mehmet Yıldız","jobTitle":"Dernek Başkanı"}}
@@ -58,7 +62,10 @@
   --kemer-acik:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='28' viewBox='0 0 56 28'%3E%3Cpath d='M0 0H56V28H50A22 22 0 0 0 6 28H0Z' fill='%23e8e7e3'/%3E%3C/svg%3E");
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:88px;-webkit-tap-highlight-color:transparent}
+a,button,input,label{touch-action:manipulation}
+.skip{position:absolute;left:var(--m);top:-80px;z-index:60;background:var(--ink);color:var(--bg);padding:12px 18px;font-weight:600;text-decoration:none;transition:top var(--duration-quick) var(--ease-smooth-out)}
+.skip:focus{top:12px}
 body{font-family:"Albert Sans",system-ui,sans-serif;font-size:var(--step-body);line-height:1.5;color:var(--ink);background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
@@ -97,7 +104,7 @@ h1,h2,h3{text-wrap:balance}
 .menu-btn{display:none;background:none;border:0;font:600 var(--step-small) "Albert Sans";color:var(--ink);padding:12px 4px;cursor:pointer}
 
 /* ---------- hero ---------- */
-.hero{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 var(--m) var(--m);min-height:calc(100svh - 72px)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;padding:0 var(--m) var(--m);min-height:calc(100svh - 72px)}
 .card{background:var(--surface);display:flex;flex-direction:column;align-items:flex-start;padding:0 clamp(24px,4vw,64px) 40px;position:relative}
 .card .band{height:56px;width:calc(100% + 2*clamp(24px,4vw,64px));margin-inline:calc(-1*clamp(24px,4vw,64px));background:var(--kemer);background-size:56px 56px;background-repeat:repeat-x}
 .card .logo{width:clamp(72px,6vw,96px);margin:clamp(24px,4vh,48px) 0 clamp(20px,3vh,32px);border-radius:50%}
@@ -150,7 +157,7 @@ h1,h2,h3{text-wrap:balance}
 .acts{grid-column:1/-1;margin-top:clamp(56px,6vw,96px);display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:40px 32px}
 .acts div{padding-top:20px;background:var(--kemer-ust) top left/36px 18px no-repeat}
 .acts dt{font-weight:600;font-size:var(--step-lead);letter-spacing:-.015em;line-height:1.2;margin-bottom:10px}
-.acts dd{font-size:16px;line-height:1.5;color:var(--ink)}
+.acts dd{font-size:1rem;line-height:1.5;color:var(--ink)}
 
 /* ---------- iki şehir: canlı köprü ---------- */
 .cities{margin-top:var(--gap);background:var(--begonvil);color:var(--begonvil-ink);padding:clamp(72px,9vw,128px) var(--m) clamp(56px,7vw,96px);position:relative;overflow:hidden}
@@ -185,7 +192,7 @@ h1,h2,h3{text-wrap:balance}
 .item .row{display:flex;justify-content:space-between;gap:16px;align-items:baseline}
 .item b{font-size:var(--step-body);font-weight:600}
 .item .row span{font-size:var(--step-small);color:var(--muted);white-space:nowrap}
-.item p{font-size:16px;margin-top:6px;max-width:44ch}
+.item p{font-size:1rem;margin-top:6px;max-width:44ch}
 .item .not{color:var(--begonvil);font-size:var(--step-small);font-weight:600;margin-top:6px}
 .item:hover .ph img{transform:scale(1.08)}
 .item .ph img{transition:transform .5s var(--ease)}
@@ -194,7 +201,7 @@ h1,h2,h3{text-wrap:balance}
 .events{padding:var(--gap) var(--m) 0;display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:start}
 .events .frame-wrap{grid-column:1/8}
 .frame{position:relative;width:100%;aspect-ratio:4/3;background:var(--surface);cursor:pointer;border:0;padding:0;display:block;border-radius:var(--seg);overflow:hidden}
-.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease}
+.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 300ms var(--ease-smooth-out)}
 .frame img.on{opacity:1}
 .frame img:first-child{opacity:1}
 .js .frame img:first-child:not(.on){opacity:0}
@@ -207,7 +214,7 @@ h1,h2,h3{text-wrap:balance}
 .events li button:focus-visible{outline:3px solid var(--begonvil);outline-offset:-3px}
 .events li b{font-weight:600;font-size:var(--step-lead);letter-spacing:-.015em;line-height:1.2}
 .events li .w{font-size:var(--step-small);color:var(--muted);align-self:center}
-.events li .x{grid-column:1/-1;font-size:16px;color:var(--muted)}
+.events li .x{grid-column:1/-1;font-size:1rem;color:var(--muted)}
 .events li button:hover{background:var(--surface)}
 .events li button[aria-current="true"]{background:var(--bazalt);color:var(--bazalt-ink)}
 .events li button[aria-current="true"] .w,.events li button[aria-current="true"] .x{color:var(--bazalt-soft)}
@@ -223,7 +230,7 @@ h1,h2,h3{text-wrap:balance}
 .home .names button:focus-visible{outline:3px solid var(--begonvil);outline-offset:4px}
 .home .stagewrap{grid-column:5/13;width:100%;max-width:calc(70svh * 4 / 3);justify-self:end}
 .home .stage{position:relative;aspect-ratio:4/3;background:var(--bazalt)}
-.home .stage img{position:absolute;inset:0;opacity:0;transition:opacity var(--duration-slow) ease}
+.home .stage img{position:absolute;inset:0;opacity:0;transition:opacity 300ms var(--ease-smooth-out)}
 .home .stage img.on{opacity:1}
 .home .stage img:first-child{opacity:1}
 .js .home .stage img:first-child:not(.on){opacity:0}
@@ -254,8 +261,8 @@ h1,h2,h3{text-wrap:balance}
 .coupon::before{top:-14px}.coupon::after{bottom:-14px}
 .coupon .l{padding:48px;display:flex;flex-direction:column;justify-content:space-between;gap:32px;border-right:5px dotted var(--bg)}
 .coupon h2{font-size:clamp(1.75rem,1rem + 2.2vw,2.75rem);letter-spacing:-.03em;line-height:1.05;color:var(--bazalt-ink)}
-.coupon .l p{font-size:16px}
-.coupon .l dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:16px}
+.coupon .l p{font-size:1rem}
+.coupon .l dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:1rem}
 .coupon .l dt{color:var(--bazalt-soft)}
 .coupon .l dd a{text-decoration:none;font-weight:600}
 .coupon .l dd a:hover{color:#f3a9c6}
@@ -268,11 +275,11 @@ h1,h2,h3{text-wrap:balance}
 .f.is-error input{outline:3px solid #f6b4cd;outline-offset:0}
 .t-input.is-shaking{animation:t-input-shake calc(var(--shake-dur-a)*2 + var(--shake-dur-b)*2) linear}
 @keyframes t-input-shake{0%{transform:translateX(0);animation-timing-function:var(--shake-ease)}28.57%{transform:translateX(var(--shake-distance));animation-timing-function:var(--shake-ease)}57.14%{transform:translateX(calc(var(--shake-distance)*-1));animation-timing-function:var(--shake-ease)}78.57%{transform:translateX(var(--shake-overshoot));animation-timing-function:var(--shake-ease)}100%{transform:translateX(0)}}
-.coupon input{height:54px;border:0;border-radius:0;background:#36312f;color:var(--bazalt-ink);font:400 16px "Albert Sans";padding:0 18px;width:100%}
+.coupon input{height:54px;border:0;border-radius:0;background:#36312f;color:var(--bazalt-ink);font:400 1rem "Albert Sans";padding:0 18px;width:100%}
 .coupon input::placeholder{color:#b9b0a8}
 .coupon input:focus{outline:3px solid var(--begonvil);outline-offset:0}
 .coupon .btn{width:100%;margin-top:6px;border-radius:28px 28px 0 0;min-height:56px}
-.coupon .perks{list-style:none;display:flex;flex-direction:column;gap:8px;font-size:16px}
+.coupon .perks{list-style:none;display:flex;flex-direction:column;gap:8px;font-size:1rem}
 .coupon .perks li{padding-left:26px;background:var(--kemer-ust-acik) 0 .45em/16px 8px no-repeat}
 .coupon .hint{font-size:var(--step-small);color:var(--bazalt-soft);margin-top:6px}
 
@@ -285,17 +292,17 @@ h1,h2,h3{text-wrap:balance}
   transform-origin:bottom;transition:transform 1s var(--ease)}
 .span i.b{background:var(--begonvil)}
 .foot .name{margin-top:40px;font-size:var(--step-display);font-weight:600;letter-spacing:-.045em;line-height:.95;max-width:none}
-.foot .cols{margin-top:56px;display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;row-gap:32px;font-size:15px}
+.foot .cols{margin-top:56px;display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;row-gap:32px;font-size:0.9375rem}
 .foot .cols nav{grid-column:span 2;display:flex;flex-direction:column;gap:8px}
 .foot .cols nav b,.foot .cols .c b{font-weight:600;margin-bottom:4px}
 .foot .cols a{text-decoration:none;color:var(--bazalt-soft);transition:color .2s}
 .foot .cols a:hover{color:var(--bazalt-ink)}
 .foot .cols .c{grid-column:9/13;display:flex;flex-direction:column;gap:8px}
 .foot .cols .c a,.foot .cols .c span{color:var(--bazalt-ink)}
-.foot .credits{margin-top:56px;font-size:14px;color:var(--bazalt-soft);max-width:75ch;line-height:1.55}
+.foot .credits{margin-top:56px;font-size:0.875rem;color:var(--bazalt-soft);max-width:75ch;line-height:1.55}
 .foot .credits a{color:var(--bazalt-soft)}
-.foot .last{margin-top:24px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:14px;color:var(--bazalt-soft)}
-.foot .last .btn{min-height:44px;padding:0 20px;border-radius:22px 22px 0 0;font-size:14px}
+.foot .last{margin-top:24px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:0.875rem;color:var(--bazalt-soft)}
+.foot .last .btn{min-height:44px;padding:0 20px;border-radius:22px 22px 0 0;font-size:0.875rem}
 
 /* ---------- entrances ---------- */
 .js .rv{opacity:0;transform:translateY(16px);transition:opacity var(--duration-very-slow) var(--ease-smooth-out),transform var(--duration-very-slow) var(--ease-smooth-out);transition-delay:calc(var(--i,0) * 70ms)}
@@ -376,7 +383,7 @@ h1,h2,h3{text-wrap:balance}
   .home{display:block}
   .home .names{margin-bottom:24px}
   .home .names ul{gap:2px 20px}
-  .home .names button{font-size:24px;white-space:nowrap;padding:6px 0}
+  .home .names button{font-size:1.5rem;white-space:nowrap;padding:6px 0}
   .home .names button:hover{transform:none}
   .home .fact{grid-template-columns:1fr}
   .press{display:block}
@@ -395,10 +402,13 @@ h1,h2,h3{text-wrap:balance}
   .foot .name{font-size:clamp(2.2rem,11vw,3rem)}
 }
 @media (min-width:761px){.catnav{display:none}}
+@media (hover:none){.btn:hover,.home .names button:hover{transform:none}.item:hover .ph img{transform:none}}
+@media (max-width:760px){#peynir,#bal{scroll-margin-top:140px}}
 </style>
 </head>
 <body>
 
+<a class="skip" href="#top">İçeriğe geç</a>
 <header class="nav">
   <a class="mark" href="#top" aria-label="Bodrum Karslılar Derneği, sayfa başı"><img src="img/logo.jpg" alt="" width="42" height="42"><span>Bodrum Karslılar Derneği</span></a>
   <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menü</button>
@@ -432,9 +442,9 @@ h1,h2,h3{text-wrap:balance}
   </div>
   <figure class="window">
     <div class="arch" id="heroImgs">
-      <img src="img/taskopru.jpg" style="object-position:42% 50%" alt="Kars Çayı üzerindeki bazalt Taşköprü ve kemerleri" width="1800" height="1195" fetchpriority="high" data-cap="Taşköprü, Kars">
-      <img src="img/kars-baltik.jpg" alt="Kar altında Kars'ın bazalt taşından Baltık mimarisi yapısı" width="1200" height="1600" loading="lazy" data-cap="Baltık yapıları, Kars">
-      <img src="img/bodrum-kalesi.jpg" style="object-position:62% 50%" alt="Bodrum Kalesi önünde demirli yelkenliler" width="1800" height="1200" loading="lazy" data-cap="Bodrum Kalesi, Bodrum">
+      <img src="img/taskopru.jpg" srcset="img/taskopru-800.jpg 800w, img/taskopru.jpg 1400w" sizes="(max-width:1080px) 100vw, 50vw" style="object-position:42% 50%" alt="Kars Çayı üzerindeki bazalt Taşköprü ve kemerleri" width="1400" height="930" fetchpriority="high" data-cap="Taşköprü, Kars">
+      <img src="img/kars-baltik.jpg" alt="Kar altında Kars'ın bazalt taşından Baltık mimarisi yapısı" width="1000" height="1333" loading="lazy" data-cap="Baltık yapıları, Kars">
+      <img src="img/bodrum-kalesi.jpg" style="object-position:62% 50%" alt="Bodrum Kalesi önünde demirli yelkenliler" width="1400" height="933" loading="lazy" data-cap="Bodrum Kalesi, Bodrum">
       <img src="img/bayramlasma.jpg" alt="Dernek binasında bayramlaşmada bir araya gelen üyeler" width="1400" height="1102" loading="lazy" data-cap="Bayramlaşma, dernek binamız">
     </div>
     <figcaption><span id="heroCap">Taşköprü, Kars</span><button class="pause" id="heroPause" aria-pressed="false">Durdur</button></figcaption>
@@ -609,8 +619,8 @@ h1,h2,h3{text-wrap:balance}
     <form id="form" action="https://wa.me/905431963636" method="get" novalidate>
       <div class="f"><label for="f-ad">Ad soyad <i>*</i></label><input class="t-input" id="f-ad" name="ad" autocomplete="name" required aria-describedby="e-ad"><span class="t-error-msg" id="e-ad">Adınızı ve soyadınızı yazın.</span></div>
       <div class="f"><label for="f-tel">Telefon <i>*</i></label><input class="t-input" id="f-tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="05xx xxx xx xx" required aria-describedby="e-tel"><span class="t-error-msg" id="e-tel">Size dönebilmemiz için 10 haneli telefon numaranızı yazın.</span></div>
-      <div class="f"><label for="f-kars">Kars'ta memleketiniz</label><input class="t-input" id="f-kars" name="kars" placeholder="İlçe ya da köy"></div>
-      <div class="f"><label for="f-bod">Bodrum'da yaşadığınız yer</label><input class="t-input" id="f-bod" name="bodrum" placeholder="Mahalle"></div>
+      <div class="f"><label for="f-kars">Kars'ta memleketiniz</label><input class="t-input" id="f-kars" name="kars" autocomplete="off" placeholder="Örn. Sarıkamış, Kağızman…"></div>
+      <div class="f"><label for="f-bod">Bodrum'da yaşadığınız yer</label><input class="t-input" id="f-bod" name="bodrum" autocomplete="off" placeholder="Örn. Bitez, Ortakent…"></div>
       <button class="btn begonvil" type="submit">WhatsApp'tan başvurun</button>
     </form>
   </div>
