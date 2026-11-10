@@ -20,13 +20,14 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://dagdelenbatu14-pixel.github.io/bodrum-karslilar-dernegi/">
 <script>document.documentElement.classList.add('js')</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/albert-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" type="image/webp" imagesrcset="img/h-iftar-760.webp 760w, img/h-iftar.webp 1440w" imagesizes="100vw" fetchpriority="high">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NGO","name":"Bodrum Karslılar Kültür ve Dayanışma Derneği","alternateName":"Bodrum Karslılar Derneği","foundingDate":"2023","telephone":"+905431963636","address":{"@type":"PostalAddress","streetAddress":"Bitez","postalCode":"48470","addressLocality":"Bodrum","addressRegion":"Muğla","addressCountry":"TR"},"openingHours":"Mo-Sa 09:00-18:00","hasMap":"https://www.google.com/maps/place/?q=place_id:ChIJoejDR1ltvhQRt5Shr9rgDQM","sameAs":["https://www.instagram.com/bodrumkarslilardernegi/"],"logo":"https://dagdelenbatu14-pixel.github.io/bodrum-karslilar-dernegi/img/logo.jpg","url":"https://dagdelenbatu14-pixel.github.io/bodrum-karslilar-dernegi/","founder":{"@type":"Person","name":"Kasım Aydın"},"member":{"@type":"Person","name":"Mehmet Yıldız","jobTitle":"Dernek Başkanı"}}
 </script>
 <style>
+@font-face{font-family:"Albert Sans";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/albert-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Albert Sans";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/albert-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 :root{
   /* Kars bazaltı + Bodrum kireci + bayrak kırmızısı */
   --bg:#e8e7e3;
@@ -123,8 +124,8 @@ p{max-width:62ch;text-wrap:pretty}
 .window .seg{position:relative;aspect-ratio:2.35/1;background:var(--bazalt)}
 .window img{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease;transform:scale(1.03)}
 .window img.on{opacity:1;animation:drift 9s linear both}
-.window img:first-child{opacity:1}
-.js .window img:first-child:not(.on){opacity:0}
+.window picture:first-child img{opacity:1}
+.js .window picture:first-child img:not(.on){opacity:0}
 @keyframes drift{from{transform:scale(1.03)}to{transform:scale(1.09)}}
 .window figcaption{margin-top:14px;display:flex;justify-content:space-between;gap:16px;font-size:var(--step-small);color:var(--muted)}
 .window figcaption b{color:var(--ink);font-weight:600}
@@ -218,6 +219,18 @@ p{max-width:62ch;text-wrap:pretty}
 .gal img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
 .gal a:hover img{transform:scale(1.05)}
 .gal-more{margin-top:24px;font-size:var(--step-small)}
+.lb{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100%;height:100%;color:var(--bazalt-ink)}
+.lb::backdrop{background:rgba(20,18,18,.92)}
+.lb[open]{display:grid;grid-template-rows:auto 1fr auto;gap:12px;padding:16px var(--m) 24px}
+.lb .bar{display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:var(--step-small)}
+.lb figure{display:grid;place-items:center;min-height:0}
+.lb img{max-width:100%;max-height:calc(100svh - 170px);width:auto;height:auto;object-fit:contain}
+.lb figcaption{text-align:center;font-size:var(--step-small);color:var(--bazalt-soft)}
+.lb .nav2{display:flex;justify-content:center;gap:12px}
+.lb button{min-height:48px;padding:0 22px;border:0;border-radius:24px 24px 0 0;background:var(--bazalt-ink);color:var(--ink);font:600 var(--step-small) "Albert Sans",sans-serif;cursor:pointer;transition:background-color .2s}
+.lb button:hover{background:var(--kirmizi);color:var(--kirmizi-ink)}
+.lb button:focus-visible{outline:3px solid var(--kirmizi-acik);outline-offset:3px}
+.form-note{font-size:var(--step-small);color:var(--bazalt-soft);margin-top:4px}
 
 /* ---------- memleket ---------- */
 .home{margin-top:var(--gap);padding:clamp(64px,8vw,120px) var(--m);display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;background:var(--surface);align-items:end}
@@ -232,8 +245,8 @@ p{max-width:62ch;text-wrap:pretty}
 .home .stage{position:relative;aspect-ratio:4/3;background:var(--bazalt)}
 .home .stage img{position:absolute;inset:0;opacity:0;transition:opacity 300ms var(--ease-smooth-out)}
 .home .stage img.on{opacity:1}
-.home .stage img:first-child{opacity:1}
-.js .home .stage img:first-child:not(.on){opacity:0}
+.home .stage picture:first-child img{opacity:1}
+.js .home .stage picture:first-child img:not(.on){opacity:0}
 .home .fact{margin-top:18px;display:grid;grid-template-columns:auto 1fr;gap:4px 24px;align-items:baseline;max-width:none}
 .home .fact b{font-size:var(--step-lead);letter-spacing:-.015em}
 .home .fact span{font-size:var(--step-body);max-width:52ch}
@@ -431,9 +444,9 @@ p{max-width:62ch;text-wrap:pretty}
   </div>
   <figure class="window">
     <div class="seg" id="heroImgs">
-      <img src="img/h-iftar.jpg" alt="3. Geleneksel İftar'da dolu salon, yaklaşık 800 misafir" width="1440" height="810" fetchpriority="high" data-cap="<b>3. Geleneksel İftar</b>, Ortakent · Mart 2026">
-      <img src="img/h-kadin.jpg" alt="Kadın üyelerimiz dernek binasının önünde" width="1440" height="810" loading="lazy" data-cap="<b>Kadın üyelerimizin kahvaltısı</b>, dernek binamız · Şubat 2026">
-      <img src="img/h-bayram.jpg" style="object-position:50% 25%" alt="Bayramlaşmada bir araya gelen hemşehrilerimiz" width="1440" height="810" loading="lazy" data-cap="<b>Bayramlaşma</b>, dernek binamız · 2025">
+      <picture><source type="image/webp" srcset="img/h-iftar-760.webp 760w, img/h-iftar.webp 1440w" sizes="100vw"><img srcset="img/h-iftar-760.jpg 760w, img/h-iftar.jpg 1440w" sizes="100vw" src="img/h-iftar.jpg" fetchpriority="high" alt="3. Geleneksel İftar'da dolu salon, yaklaşık 800 misafir" width="1440" height="810" data-cap="&lt;b&gt;3. Geleneksel İftar&lt;/b&gt;, Ortakent · Mart 2026"></picture>
+      <picture><source type="image/webp" srcset="img/h-kadin-760.webp 760w, img/h-kadin.webp 1440w" sizes="100vw"><img srcset="img/h-kadin-760.jpg 760w, img/h-kadin.jpg 1440w" sizes="100vw" src="img/h-kadin.jpg" loading="lazy" alt="Kadın üyelerimiz dernek binasının önünde" width="1440" height="810" data-cap="&lt;b&gt;Kadın üyelerimizin kahvaltısı&lt;/b&gt;, dernek binamız · Şubat 2026"></picture>
+      <picture><source type="image/webp" srcset="img/h-bayram-760.webp 760w, img/h-bayram.webp 1440w" sizes="100vw"><img srcset="img/h-bayram-760.jpg 760w, img/h-bayram.jpg 1440w" sizes="100vw" src="img/h-bayram.jpg" loading="lazy" style="object-position:50% 25%" alt="Bayramlaşmada bir araya gelen hemşehrilerimiz" width="1440" height="810" data-cap="&lt;b&gt;Bayramlaşma&lt;/b&gt;, dernek binamız · 2025"></picture>
     </div>
     <figcaption><span id="heroCap"><b>3. Geleneksel İftar</b>, Ortakent · Mart 2026</span><button class="pause" id="heroPause" aria-pressed="false">Durdur</button></figcaption>
   </figure>
@@ -459,7 +472,7 @@ p{max-width:62ch;text-wrap:pretty}
 <!-- BAŞKAN -->
 <section class="baskan dark" id="baskan" aria-labelledby="baskan-h">
   <figure class="portrait rv">
-    <div class="arch"><img src="img/baskan.jpg" alt="Dernek Başkanı Mehmet Yıldız" width="1000" height="1000" loading="lazy"></div>
+    <div class="arch"><picture><source type="image/webp" srcset="img/baskan-560.webp 560w, img/baskan.webp 1000w" sizes="(max-width:1080px) 90vw, 460px"><img srcset="img/baskan-560.jpg 560w, img/baskan.jpg 1000w" sizes="(max-width:1080px) 90vw, 460px" src="img/baskan.jpg" alt="Dernek Başkanı Mehmet Yıldız" width="1000" height="1000" loading="lazy"></picture></div>
     <figcaption><b>Mehmet Yıldız</b>, Dernek Başkanı</figcaption>
   </figure>
   <div class="text">
@@ -472,7 +485,7 @@ p{max-width:62ch;text-wrap:pretty}
     <div class="row">
       <p class="bio rv" style="--i:2">Mehmet Yıldız 2025'te göreve başlayan yönetim kurulumuzun başkanı. Derneği Kaymakamlık ve Milli Eğitim ziyaretlerinden Bodrum Kent TV'nin Açık Görüş programına kadar şehrin her masasında temsil ediyor.</p>
       <figure class="kursu rv" style="--i:3">
-        <div class="seg"><img src="img/baskan-kursu.jpg" alt="Başkan Mehmet Yıldız iftar programında konuşma yaparken" width="1200" height="900" loading="lazy"></div>
+        <div class="seg"><picture><source type="image/webp" srcset="img/baskan-kursu-640.webp 640w, img/baskan-kursu.webp 1200w" sizes="(max-width:760px) 90vw, 30vw"><img srcset="img/baskan-kursu-640.jpg 640w, img/baskan-kursu.jpg 1200w" sizes="(max-width:760px) 90vw, 30vw" src="img/baskan-kursu.jpg" alt="Başkan Mehmet Yıldız iftar programında konuşma yaparken" width="1200" height="900" loading="lazy"></picture></div>
         <figcaption>3. Geleneksel İftar'da konuşurken, Mart 2026</figcaption>
       </figure>
     </div>
@@ -490,12 +503,12 @@ p{max-width:62ch;text-wrap:pretty}
     <p class="rv" style="--i:1">Yılın her döneminde bir araya geliyoruz: Ramazan'da iftar, bayramlarda bayramlaşma, kışın kahvaltı sofraları, okullar açılırken eğitime destek.</p>
   </div>
   <ul class="acts">
-    <li class="act rv"><div class="seg"><img src="img/f-iftar.jpg" alt="İftar yemeğine hoş geldiniz afişi önünde dernek yöneticileri ve misafirler" width="1200" height="900" loading="lazy"></div><h3>Geleneksel iftar</h3><p>Her Ramazan hemşehrilerimizi, dostlarımızı ve Bodrum'un kurumlarını aynı sofrada buluşturuyoruz. 2026'daki üçüncüsünde yaklaşık 800 misafirimiz vardı.</p></li>
-    <li class="act rv" style="--i:1"><div class="seg"><img src="img/f-kadin.jpg" alt="Kadın üyelerimiz dernek binasında kahvaltı sofrasında" width="1200" height="900" loading="lazy"></div><h3>Kadın buluşmaları</h3><p>Kadın üyelerimiz dernek binamızda kahvaltı sofraları kuruyor. Muhabbet çoğalıyor, dayanışma büyüyor.</p></li>
-    <li class="act rv" style="--i:2"><div class="seg"><img src="img/f-buyukler.jpg" alt="Bayramda büyüklerimizi ziyaret eden dernek yöneticileri" width="1200" height="900" loading="lazy"></div><h3>Büyüklerimiz yalnız değil</h3><p>Bayramlarda yaşlı ve hasta büyüklerimizi evlerinde ziyaret ediyor, kuşakları aynı sofrada buluşturuyoruz.</p></li>
-    <li class="act rv"><div class="seg"><img src="img/f-okul.jpg" alt="Yönetim kurulu üyelerimiz okul ziyaretinde" width="1200" height="900" loading="lazy"></div><h3>Eğitime destek</h3><p>Okulların boya ihtiyacını karşılıyor, dar gelirli ailelerin çocuklarına kırtasiye alışveriş çeki ulaştırıyoruz.</p></li>
-    <li class="act rv" style="--i:1"><div class="seg"><img src="img/f-hidirellez.jpg" alt="Hıdırellez Şenliği'nde derneğin yöresel ürün standı" width="1200" height="900" loading="lazy"></div><h3>Şenlikler ve yöresel ürünler</h3><p>Bodrum Hıdırellez Şenliği'nde standımızla Kars lezzetlerini tanıttık; geliri özel çocuklar için projelere ve derneğimize ayırdık.</p></li>
-    <li class="act rv" style="--i:2"><div class="seg"><img src="img/f-kaymakam.jpg" alt="Dernek yöneticileri Bodrum Kaymakamı ile" width="1200" height="900" loading="lazy"></div><h3>Kurumlarla iş birliği</h3><p>Kaymakamlık, İlçe Milli Eğitim ve belediyeyle görüşüyor; hemşehrilerimizin sesini doğru kapılara taşıyoruz.</p></li>
+    <li class="act rv"><div class="seg"><picture><source type="image/webp" srcset="img/f-iftar-640.webp 640w, img/f-iftar.webp 1200w" sizes="(max-width:760px) 92vw, (max-width:1080px) 46vw, 31vw"><img srcset="img/f-iftar-640.jpg 640w, img/f-iftar.jpg 1200w" sizes="(max-width:760px) 92vw, (max-width:1080px) 46vw, 31vw" src="img/f-iftar.jpg" alt="İftar yemeğine hoş geldiniz afişi önünde dernek yöneticileri ve misafirler" width="1200" height="900" loading="lazy"></picture></div><h3>Geleneksel iftar</h3><p>Her Ramazan hemşehrilerimizi, dostlarımızı ve Bodrum'un kurumlarını aynı sofrada buluşturuyoruz. 2026'daki üçüncüsünde yaklaşık 800 misafirimiz vardı.</p></li>
+    <li class="act rv" style="--i:1"><div class="seg"><picture><source type="image/webp" srcset="img/f-kadin-640.webp 640w, img/f-kadin.webp 1200w" sizes="(max-width:760px) 92vw, (max-width:1080px) 46vw, 31vw"><img srcset="img/f-kadin-640.jpg 640w, img/f-kadin.jpg 1200w" sizes="(max-width:760px) 92vw, (max-width:1080px) 46vw, 31vw" src="img/f-kadin.jpg" alt="Kadın üyelerimiz dernek binasında kahvaltı sofrasında" width="1200" height="900" loading="lazy"></picture></div><h3>Kadın buluşmaları</h3><p>Kadın üyelerimiz dernek binamızda kahvaltı sofraları kuruyor. Muhabbet çoğalıyor, dayanışma büyüyor.</p></li>
+    <li class="act rv" style="--i:2"><div class="seg"><picture><source type="image/webp" srcset="img/f-buyukler-640.webp 640w, img/f-buyukler.webp 1200w" sizes="(max-width:760px) 92vw, (max-width:1080px) 46vw, 31vw"><img srcset="img/f-buyukler-640.jpg 640w, img/f-buyukler.jpg 1200w" sizes="(max-width:760px) 92vw, (max-width:1080px) 46vw, 31vw" src="img/f-buyukler.jpg" alt="Bayramda büyüklerimizi ziyaret eden dernek yöneticileri" width="1200" height="900" loading="lazy"></picture></div><h3>Büyüklerimiz yalnız değil</h3><p>Bayramlarda yaşlı ve hasta büyüklerimizi evlerinde ziyaret ediyor, kuşakları aynı sofrada buluşturuyoruz.</p></li>
+    <li class="act rv"><div class="seg"><picture><source type="image/webp" srcset="img/f-okul-640.webp 640w, img/f-okul.webp 1200w" sizes="(max-width:760px) 92vw, (max-width:1080px) 46vw, 31vw"><img srcset="img/f-okul-640.jpg 640w, img/f-okul.jpg 1200w" sizes="(max-width:760px) 92vw, (max-width:1080px) 46vw, 31vw" src="img/f-okul.jpg" alt="Yönetim kurulu üyelerimiz okul ziyaretinde" width="1200" height="900" loading="lazy"></picture></div><h3>Eğitime destek</h3><p>Okulların boya ihtiyacını karşılıyor, dar gelirli ailelerin çocuklarına kırtasiye alışveriş çeki ulaştırıyoruz.</p></li>
+    <li class="act rv" style="--i:1"><div class="seg"><picture><source type="image/webp" srcset="img/f-hidirellez-640.webp 640w, img/f-hidirellez.webp 1200w" sizes="(max-width:760px) 92vw, (max-width:1080px) 46vw, 31vw"><img srcset="img/f-hidirellez-640.jpg 640w, img/f-hidirellez.jpg 1200w" sizes="(max-width:760px) 92vw, (max-width:1080px) 46vw, 31vw" src="img/f-hidirellez.jpg" alt="Hıdırellez Şenliği'nde derneğin yöresel ürün standı" width="1200" height="900" loading="lazy"></picture></div><h3>Şenlikler ve yöresel ürünler</h3><p>Bodrum Hıdırellez Şenliği'nde standımızla Kars lezzetlerini tanıttık; geliri özel çocuklar için projelere ve derneğimize ayırdık.</p></li>
+    <li class="act rv" style="--i:2"><div class="seg"><picture><source type="image/webp" srcset="img/f-kaymakam-640.webp 640w, img/f-kaymakam.webp 1200w" sizes="(max-width:760px) 92vw, (max-width:1080px) 46vw, 31vw"><img srcset="img/f-kaymakam-640.jpg 640w, img/f-kaymakam.jpg 1200w" sizes="(max-width:760px) 92vw, (max-width:1080px) 46vw, 31vw" src="img/f-kaymakam.jpg" alt="Dernek yöneticileri Bodrum Kaymakamı ile" width="1200" height="900" loading="lazy"></picture></div><h3>Kurumlarla iş birliği</h3><p>Kaymakamlık, İlçe Milli Eğitim ve belediyeyle görüşüyor; hemşehrilerimizin sesini doğru kapılara taşıyoruz.</p></li>
   </ul>
 </section>
 
@@ -557,16 +570,16 @@ p{max-width:62ch;text-wrap:pretty}
 
   <div class="cat" id="peynir"><h3>Peynirler</h3><span>4 çeşit</span></div>
   <ul class="items">
-    <li class="item rv"><div class="ph arch"><img src="img/urun-eski-kasar.jpg" alt="Eski kaşar" width="180" height="180" loading="lazy"></div><div><div class="row"><b>Eski kaşar</b></div><p>Aylarca dinlendirilmiş, keskin ve tuzlu tadıyla Kars'ın adını taşıyan peynir. İnce dilimlenir, sıcak ekmekle yenir.</p><p class="not">Coğrafi işaretli: Kars Kaşarı</p></div></li>
-    <li class="item rv" style="--i:1"><div class="ph arch"><img src="img/urun-gravyer.jpg" alt="Kars gravyeri" width="180" height="180" loading="lazy"></div><div><div class="row"><b>Gravyer</b></div><p>Büyük tekerler hâlinde olgunlaşan, iri gözenekli, fındık tadında peynir. Kars ovasının yaz sütünden yapılır.</p><p class="not">Coğrafi işaretli: Kars Gravyeri</p></div></li>
-    <li class="item rv"><div class="ph arch"><img src="img/urun-yeni-kasar.jpg" alt="Taze kaşar" width="180" height="180" loading="lazy"></div><div><div class="row"><b>Yeni kaşar</b></div><p>Taze, yumuşak ve hafif. Kahvaltı tabağına, tosta ve fırından yeni çıkmış pideye.</p></div></li>
-    <li class="item rv" style="--i:1"><div class="ph arch"><img src="img/urun-cecil.jpg" alt="Küflü çeçil peyniri" width="180" height="180" loading="lazy"></div><div><div class="row"><b>Küflü çeçil</b></div><p>Tel tel ayrılan çeçil peynirinin küflendirilerek olgunlaştırılmış hâli. Kokusu güçlü, tadı derin; Kars sofrasının klasiği.</p></div></li>
+    <li class="item rv"><div class="ph arch"><picture><source type="image/webp" srcset="img/urun-eski-kasar.webp"><img src="img/urun-eski-kasar.jpg" alt="Eski kaşar" width="180" height="180" loading="lazy"></picture></div><div><div class="row"><b>Eski kaşar</b></div><p>Aylarca dinlendirilmiş, keskin ve tuzlu tadıyla Kars'ın adını taşıyan peynir. İnce dilimlenir, sıcak ekmekle yenir.</p><p class="not">Coğrafi işaretli: Kars Kaşarı</p></div></li>
+    <li class="item rv" style="--i:1"><div class="ph arch"><picture><source type="image/webp" srcset="img/urun-gravyer.webp"><img src="img/urun-gravyer.jpg" alt="Kars gravyeri" width="180" height="180" loading="lazy"></picture></div><div><div class="row"><b>Gravyer</b></div><p>Büyük tekerler hâlinde olgunlaşan, iri gözenekli, fındık tadında peynir. Kars ovasının yaz sütünden yapılır.</p><p class="not">Coğrafi işaretli: Kars Gravyeri</p></div></li>
+    <li class="item rv"><div class="ph arch"><picture><source type="image/webp" srcset="img/urun-yeni-kasar.webp"><img src="img/urun-yeni-kasar.jpg" alt="Taze kaşar" width="180" height="180" loading="lazy"></picture></div><div><div class="row"><b>Yeni kaşar</b></div><p>Taze, yumuşak ve hafif. Kahvaltı tabağına, tosta ve fırından yeni çıkmış pideye.</p></div></li>
+    <li class="item rv" style="--i:1"><div class="ph arch"><picture><source type="image/webp" srcset="img/urun-cecil.webp"><img src="img/urun-cecil.jpg" alt="Küflü çeçil peyniri" width="180" height="180" loading="lazy"></picture></div><div><div class="row"><b>Küflü çeçil</b></div><p>Tel tel ayrılan çeçil peynirinin küflendirilerek olgunlaştırılmış hâli. Kokusu güçlü, tadı derin; Kars sofrasının klasiği.</p></div></li>
   </ul>
 
   <div class="cat" id="bal"><h3>Bal ve pekmez</h3><span>2 çeşit</span></div>
   <ul class="items">
-    <li class="item rv"><div class="ph arch"><img src="img/urun-petek-bali.jpg" alt="Petek balı" width="180" height="180" loading="lazy"></div><div><div class="row"><b>Petek balı</b></div><p>Kars yaylalarının çiçeklerinden, peteğiyle birlikte. Kahvaltıda kaşarın yanına bir dilim.</p></div></li>
-    <li class="item rv" style="--i:1"><div class="ph arch"><img src="img/urun-dut-pekmezi.jpg" alt="Dut pekmezi" width="180" height="180" loading="lazy"></div><div><div class="row"><b>Dut pekmezi</b></div><p>Koyu kıvamlı, dut kokulu. Tahinle karıştırılır, kış sabahlarının tatlısıdır.</p></div></li>
+    <li class="item rv"><div class="ph arch"><picture><source type="image/webp" srcset="img/urun-petek-bali.webp"><img src="img/urun-petek-bali.jpg" alt="Petek balı" width="180" height="180" loading="lazy"></picture></div><div><div class="row"><b>Petek balı</b></div><p>Kars yaylalarının çiçeklerinden, peteğiyle birlikte. Kahvaltıda kaşarın yanına bir dilim.</p></div></li>
+    <li class="item rv" style="--i:1"><div class="ph arch"><picture><source type="image/webp" srcset="img/urun-dut-pekmezi.webp"><img src="img/urun-dut-pekmezi.jpg" alt="Dut pekmezi" width="180" height="180" loading="lazy"></picture></div><div><div class="row"><b>Dut pekmezi</b></div><p>Koyu kıvamlı, dut kokulu. Tahinle karıştırılır, kış sabahlarının tatlısıdır.</p></div></li>
   </ul>
 </section>
 
@@ -578,14 +591,14 @@ p{max-width:62ch;text-wrap:pretty}
     <p class="rv" style="--i:1">İftar sofralarından bayramlaşmalara, kadın buluşmalarından şenliklere. Fotoğrafa dokunun, büyük hâlini açın.</p>
   </div>
   <ul class="gal">
-    <li class="rv"><a href="img/g-iftar9.jpg"><img src="img/g-iftar9.jpg" alt="İftar programında dernek yöneticileri ve misafirler" width="800" height="800" loading="lazy"></a></li>
-    <li class="rv" style="--i:1"><a href="img/g-kaymakamlik.jpg"><img src="img/g-kaymakamlik.jpg" alt="Kaymakamlık bayramlaşmasında dernek temsilcileri" width="800" height="800" loading="lazy"></a></li>
-    <li class="rv" style="--i:2"><a href="img/g-kadin.jpg"><img src="img/g-kadin.jpg" alt="Kadın üyelerimizin kahvaltı sofrası" width="800" height="800" loading="lazy"></a></li>
-    <li class="rv" style="--i:3"><a href="img/g-hidirellez.jpg"><img src="img/g-hidirellez.jpg" alt="Hıdırellez Şenliği'nde dernek standı ve gönüllüler" width="800" height="800" loading="lazy"></a></li>
-    <li class="rv"><a href="img/g-bayram.jpg"><img src="img/g-bayram.jpg" alt="Dernek binasında bayram sohbeti" width="800" height="800" loading="lazy"></a></li>
-    <li class="rv" style="--i:1"><a href="img/g-iftar10.jpg"><img src="img/g-iftar10.jpg" alt="İftar sofrasında hemşehrilerimiz" width="800" height="800" loading="lazy"></a></li>
-    <li class="rv" style="--i:2"><a href="img/g-buyukler.jpg"><img src="img/g-buyukler.jpg" alt="Büyüklerimizle bayram ziyareti" width="800" height="800" loading="lazy"></a></li>
-    <li class="rv" style="--i:3"><a href="img/g-bayram25.jpg"><img src="img/g-bayram25.jpg" alt="2025 bayramlaşmasında dernek binasında toplu fotoğraf" width="800" height="800" loading="lazy"></a></li>
+    <li class="rv"><a href="img/g-iftar9.jpg"><picture><source type="image/webp" srcset="img/g-iftar9-420.webp 420w, img/g-iftar9.webp 800w" sizes="(max-width:760px) 46vw, (max-width:1080px) 31vw, 23vw"><img srcset="img/g-iftar9-420.jpg 420w, img/g-iftar9.jpg 800w" sizes="(max-width:760px) 46vw, (max-width:1080px) 31vw, 23vw" src="img/g-iftar9.jpg" alt="İftar programında dernek yöneticileri ve misafirler" width="800" height="800" loading="lazy"></picture></a></li>
+    <li class="rv" style="--i:1"><a href="img/g-kaymakamlik.jpg"><picture><source type="image/webp" srcset="img/g-kaymakamlik-420.webp 420w, img/g-kaymakamlik.webp 800w" sizes="(max-width:760px) 46vw, (max-width:1080px) 31vw, 23vw"><img srcset="img/g-kaymakamlik-420.jpg 420w, img/g-kaymakamlik.jpg 800w" sizes="(max-width:760px) 46vw, (max-width:1080px) 31vw, 23vw" src="img/g-kaymakamlik.jpg" alt="Kaymakamlık bayramlaşmasında dernek temsilcileri" width="800" height="800" loading="lazy"></picture></a></li>
+    <li class="rv" style="--i:2"><a href="img/g-kadin.jpg"><picture><source type="image/webp" srcset="img/g-kadin-420.webp 420w, img/g-kadin.webp 800w" sizes="(max-width:760px) 46vw, (max-width:1080px) 31vw, 23vw"><img srcset="img/g-kadin-420.jpg 420w, img/g-kadin.jpg 800w" sizes="(max-width:760px) 46vw, (max-width:1080px) 31vw, 23vw" src="img/g-kadin.jpg" alt="Kadın üyelerimizin kahvaltı sofrası" width="800" height="800" loading="lazy"></picture></a></li>
+    <li class="rv" style="--i:3"><a href="img/g-hidirellez.jpg"><picture><source type="image/webp" srcset="img/g-hidirellez-420.webp 420w, img/g-hidirellez.webp 800w" sizes="(max-width:760px) 46vw, (max-width:1080px) 31vw, 23vw"><img srcset="img/g-hidirellez-420.jpg 420w, img/g-hidirellez.jpg 800w" sizes="(max-width:760px) 46vw, (max-width:1080px) 31vw, 23vw" src="img/g-hidirellez.jpg" alt="Hıdırellez Şenliği'nde dernek standı ve gönüllüler" width="800" height="800" loading="lazy"></picture></a></li>
+    <li class="rv"><a href="img/g-bayram.jpg"><picture><source type="image/webp" srcset="img/g-bayram-420.webp 420w, img/g-bayram.webp 800w" sizes="(max-width:760px) 46vw, (max-width:1080px) 31vw, 23vw"><img srcset="img/g-bayram-420.jpg 420w, img/g-bayram.jpg 800w" sizes="(max-width:760px) 46vw, (max-width:1080px) 31vw, 23vw" src="img/g-bayram.jpg" alt="Dernek binasında bayram sohbeti" width="800" height="800" loading="lazy"></picture></a></li>
+    <li class="rv" style="--i:1"><a href="img/g-iftar10.jpg"><picture><source type="image/webp" srcset="img/g-iftar10-420.webp 420w, img/g-iftar10.webp 800w" sizes="(max-width:760px) 46vw, (max-width:1080px) 31vw, 23vw"><img srcset="img/g-iftar10-420.jpg 420w, img/g-iftar10.jpg 800w" sizes="(max-width:760px) 46vw, (max-width:1080px) 31vw, 23vw" src="img/g-iftar10.jpg" alt="İftar sofrasında hemşehrilerimiz" width="800" height="800" loading="lazy"></picture></a></li>
+    <li class="rv" style="--i:2"><a href="img/g-buyukler.jpg"><picture><source type="image/webp" srcset="img/g-buyukler-420.webp 420w, img/g-buyukler.webp 800w" sizes="(max-width:760px) 46vw, (max-width:1080px) 31vw, 23vw"><img srcset="img/g-buyukler-420.jpg 420w, img/g-buyukler.jpg 800w" sizes="(max-width:760px) 46vw, (max-width:1080px) 31vw, 23vw" src="img/g-buyukler.jpg" alt="Büyüklerimizle bayram ziyareti" width="800" height="800" loading="lazy"></picture></a></li>
+    <li class="rv" style="--i:3"><a href="img/g-bayram25.jpg"><picture><source type="image/webp" srcset="img/g-bayram25-420.webp 420w, img/g-bayram25.webp 800w" sizes="(max-width:760px) 46vw, (max-width:1080px) 31vw, 23vw"><img srcset="img/g-bayram25-420.jpg 420w, img/g-bayram25.jpg 800w" sizes="(max-width:760px) 46vw, (max-width:1080px) 31vw, 23vw" src="img/g-bayram25.jpg" alt="2025 bayramlaşmasında dernek binasında toplu fotoğraf" width="800" height="800" loading="lazy"></picture></a></li>
   </ul>
   <p class="gal-more"><a class="lnk" href="https://www.instagram.com/bodrumkarslilardernegi/" rel="noopener">Daha fazla fotoğraf Instagram'da</a></p>
 </section>
@@ -605,12 +618,12 @@ p{max-width:62ch;text-wrap:pretty}
   </div>
   <figure class="stagewrap rv" style="--i:1">
     <div class="stage seg" id="stage">
-      <img src="img/yer-kars-kalesi.jpg" alt="Kars Kalesi ve altındaki eski mahalle" width="1200" height="900" loading="lazy">
-      <img src="img/yer-taskopru-kale.jpg" alt="Taşköprü'nün üzerinden Kars Kalesi'ne bakış" width="1200" height="900" loading="lazy">
-      <img src="img/yer-baltik.jpg" alt="Kars'ta karlı bir günde bazalt Baltık yapısı" width="1200" height="900" loading="lazy">
-      <img src="img/yer-panorama.jpg" alt="Kalenin üstünden Kars şehri ve ovası" width="1200" height="900" loading="lazy">
-      <img src="img/yer-kars-cayi.jpg" alt="Kars Çayı, kalenin eteğindeki eski mahalle ve köprü" width="1200" height="900" loading="lazy">
-      <img src="img/yer-bodrum-kalesi.jpg" alt="Bodrum Kalesi ve yelkenliler" width="1200" height="900" loading="lazy">
+      <picture><source type="image/webp" srcset="img/yer-kars-kalesi-640.webp 640w, img/yer-kars-kalesi.webp 1200w" sizes="(max-width:1080px) 92vw, 60vw"><img srcset="img/yer-kars-kalesi-640.jpg 640w, img/yer-kars-kalesi.jpg 1200w" sizes="(max-width:1080px) 92vw, 60vw" src="img/yer-kars-kalesi.jpg" alt="Kars Kalesi ve altındaki eski mahalle" width="1200" height="900" loading="lazy"></picture>
+      <picture><source type="image/webp" srcset="img/yer-taskopru-kale-640.webp 640w, img/yer-taskopru-kale.webp 1200w" sizes="(max-width:1080px) 92vw, 60vw"><img srcset="img/yer-taskopru-kale-640.jpg 640w, img/yer-taskopru-kale.jpg 1200w" sizes="(max-width:1080px) 92vw, 60vw" src="img/yer-taskopru-kale.jpg" alt="Taşköprü'nün üzerinden Kars Kalesi'ne bakış" width="1200" height="900" loading="lazy"></picture>
+      <picture><source type="image/webp" srcset="img/yer-baltik-640.webp 640w, img/yer-baltik.webp 1200w" sizes="(max-width:1080px) 92vw, 60vw"><img srcset="img/yer-baltik-640.jpg 640w, img/yer-baltik.jpg 1200w" sizes="(max-width:1080px) 92vw, 60vw" src="img/yer-baltik.jpg" alt="Kars'ta karlı bir günde bazalt Baltık yapısı" width="1200" height="900" loading="lazy"></picture>
+      <picture><source type="image/webp" srcset="img/yer-panorama-640.webp 640w, img/yer-panorama.webp 1200w" sizes="(max-width:1080px) 92vw, 60vw"><img srcset="img/yer-panorama-640.jpg 640w, img/yer-panorama.jpg 1200w" sizes="(max-width:1080px) 92vw, 60vw" src="img/yer-panorama.jpg" alt="Kalenin üstünden Kars şehri ve ovası" width="1200" height="900" loading="lazy"></picture>
+      <picture><source type="image/webp" srcset="img/yer-kars-cayi-640.webp 640w, img/yer-kars-cayi.webp 1200w" sizes="(max-width:1080px) 92vw, 60vw"><img srcset="img/yer-kars-cayi-640.jpg 640w, img/yer-kars-cayi.jpg 1200w" sizes="(max-width:1080px) 92vw, 60vw" src="img/yer-kars-cayi.jpg" alt="Kars Çayı, kalenin eteğindeki eski mahalle ve köprü" width="1200" height="900" loading="lazy"></picture>
+      <picture><source type="image/webp" srcset="img/yer-bodrum-kalesi-640.webp 640w, img/yer-bodrum-kalesi.webp 1200w" sizes="(max-width:1080px) 92vw, 60vw"><img srcset="img/yer-bodrum-kalesi-640.jpg 640w, img/yer-bodrum-kalesi.jpg 1200w" sizes="(max-width:1080px) 92vw, 60vw" src="img/yer-bodrum-kalesi.jpg" alt="Bodrum Kalesi ve yelkenliler" width="1200" height="900" loading="lazy"></picture>
     </div>
     <figcaption class="fact" aria-live="polite"><b id="factT" class="soft">Kars Kalesi</b><span id="factF" class="soft">12. yüzyıldan beri şehrin tepesinde duruyor. Amblemimizin üst yarısı.</span></figcaption>
   </figure>
@@ -620,7 +633,7 @@ p{max-width:62ch;text-wrap:pretty}
 <!-- BASINDA BİZ -->
 <section class="press" aria-labelledby="press-h">
   <div class="vid rv" id="vid">
-    <button aria-label="Açık Görüş programını oynat (YouTube)">
+    <button aria-label="Programı izleyin: Açık Görüş, Bodrum Kent TV (YouTube)">
       <img src="assets/video-acikgorus.jpg" alt="Bodrum Kent TV Açık Görüş programında Mehmet Yıldız" width="1280" height="720" loading="lazy">
       <span class="play">Programı izleyin</span>
     </button>
@@ -661,11 +674,18 @@ p{max-width:62ch;text-wrap:pretty}
       <div class="f"><label for="f-kars">Kars'ta memleketiniz</label><input class="t-input" id="f-kars" name="kars" autocomplete="off" placeholder="Örn. Sarıkamış, Kağızman…"></div>
       <div class="f"><label for="f-bod">Bodrum'da yaşadığınız yer</label><input class="t-input" id="f-bod" name="bodrum" autocomplete="off" placeholder="Örn. Bitez, Ortakent…"></div>
       <button class="btn kirmizi" type="submit">WhatsApp'tan başvurun</button>
+      <p class="form-note">Bilgileriniz sitede saklanmaz; WhatsApp'ta mesaj olarak açılır. <a class="lnk" href="kvkk.html">Aydınlatma metni</a></p>
     </form>
   </div>
 </section>
 
 </main>
+
+<dialog class="lb" id="lb" aria-label="Fotoğraf görüntüleyici">
+  <div class="bar"><span id="lbCount" aria-live="polite"></span><button id="lbClose">Kapat</button></div>
+  <figure><img id="lbImg" src="" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <div class="nav2"><button id="lbPrev">Önceki</button><button id="lbNext">Sonraki</button></div>
+</dialog>
 
 <footer class="foot dark">
   <div class="span" aria-hidden="true">
@@ -675,7 +695,7 @@ p{max-width:62ch;text-wrap:pretty}
   <div class="cols">
     <nav aria-label="Dernek"><b>Dernek</b><a href="#biz">Hakkımızda</a><a href="#baskan">Başkan</a><a href="#yonetim">Yönetim kurulu</a><a href="#uyelik">Üyelik</a></nav>
     <nav aria-label="Keşfet"><b>Keşfet</b><a href="#faaliyetler">Faaliyetler</a><a href="#haberler">Haberler</a><a href="#galeri">Galeri</a><a href="#urunler">Yöresel ürünler</a></nav>
-    <nav aria-label="Takip"><b>Takip</b><a href="https://www.instagram.com/bodrumkarslilardernegi/" rel="noopener">Instagram</a><a href="https://www.youtube.com/watch?v=TAkYO8GKCbk" rel="noopener">Açık Görüş</a></nav>
+    <nav aria-label="Takip"><b>Takip</b><a href="https://www.instagram.com/bodrumkarslilardernegi/" rel="noopener">Instagram</a><a href="https://www.youtube.com/watch?v=TAkYO8GKCbk" rel="noopener">Açık Görüş</a><a href="kvkk.html">KVKK aydınlatma metni</a></nav>
     <div class="c"><b>Bodrum Karslılar Kültür ve Dayanışma Derneği</b><a href="https://www.google.com/maps/place/?q=place_id:ChIJoejDR1ltvhQRt5Shr9rgDQM" rel="noopener">Bitez, 48470 Bodrum/Muğla</a><span>Pzt–Cmt 09:00–18:00 · Kuruluş 2023</span><a href="tel:+905431963636">0543 196 36 36</a></div>
   </div>
   <p class="credits">Fotoğraflar: dernek ve başkanlık fotoğrafları @bodrumkarslilardernegi ve @mehmet_yildiz_36 hesaplarından. Kars ve Bodrum manzaraları Wikimedia Commons'tan: “Kars Taşköprü 3430” ve “3427”, Dosseman (CC BY-SA 4.0); “Kars, castello, veduta 01”, Francesco Bini (CC BY-SA 4.0); “Kars Panorama”, Bjørn Christian Tørrissen (CC BY-SA 3.0); “Kars Gotik mimarisi”, Redlabubu (CC0); “Bodrum Kalesi ve Yelkenliler 2015”, Hamdigumus (CC0). Video: Bodrum Kent TV.</p>
@@ -727,6 +747,19 @@ p{max-width:62ch;text-wrap:pretty}
   if(si.length){
     si[0].classList.add('on');
     pb.forEach(function(b,i){b.addEventListener('click',function(){if(i===p)return;si[p].classList.remove('on');pb[p].setAttribute('aria-pressed','false');p=i;si[p].classList.add('on');b.setAttribute('aria-pressed','true');soft($('factT'),b.dataset.t);soft($('factF'),b.dataset.f)})});
+  }
+
+  // galeri: büyük görüntüleyici (JS yoksa bağlantı fotoğrafı açar)
+  var lb=$('lb'), gl=[].slice.call(document.querySelectorAll('.gal a')), gi=0, last=null;
+  function lbShow(i){gi=(i+gl.length)%gl.length;var im=gl[gi].querySelector('img');$('lbImg').src=gl[gi].getAttribute('href');$('lbImg').alt=im.alt;$('lbCap').textContent=im.alt;$('lbCount').textContent=(gi+1)+' / '+gl.length}
+  if(lb.showModal){
+    gl.forEach(function(a,i){a.addEventListener('click',function(e){e.preventDefault();last=a;lbShow(i);lb.showModal()})});
+    $('lbClose').addEventListener('click',function(){lb.close()});
+    $('lbPrev').addEventListener('click',function(){lbShow(gi-1)});
+    $('lbNext').addEventListener('click',function(){lbShow(gi+1)});
+    lb.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')lbShow(gi-1);if(e.key==='ArrowRight')lbShow(gi+1)});
+    lb.addEventListener('click',function(e){if(e.target===lb)lb.close()});
+    lb.addEventListener('close',function(){if(last)last.focus()});
   }
 
   // video: tıklayınca yükle
