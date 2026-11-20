@@ -21,7 +21,7 @@
 <link rel="canonical" href="https://dagdelenbatu14-pixel.github.io/bodrum-karslilar-dernegi/">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preload" href="fonts/albert-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" type="image/webp" imagesrcset="img/h-iftar-760.webp 760w, img/h-iftar.webp 1440w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" imagesrcset="img/h-kadin-760.webp 760w, img/h-kadin.webp 1440w" imagesizes="100vw" fetchpriority="high">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NGO","name":"Bodrum Karslılar Kültür ve Dayanışma Derneği","alternateName":"Bodrum Karslılar Derneği","foundingDate":"2023","telephone":"+905431963636","address":{"@type":"PostalAddress","streetAddress":"Bitez","postalCode":"48470","addressLocality":"Bodrum","addressRegion":"Muğla","addressCountry":"TR"},"openingHours":"Mo-Sa 09:00-18:00","hasMap":"https://www.google.com/maps/place/?q=place_id:ChIJoejDR1ltvhQRt5Shr9rgDQM","sameAs":["https://www.instagram.com/bodrumkarslilardernegi/"],"logo":"https://dagdelenbatu14-pixel.github.io/bodrum-karslilar-dernegi/img/logo.jpg","url":"https://dagdelenbatu14-pixel.github.io/bodrum-karslilar-dernegi/","founder":{"@type":"Person","name":"Kasım Aydın"},"member":{"@type":"Person","name":"Mehmet Yıldız","jobTitle":"Dernek Başkanı"}}
 </script>
@@ -144,8 +144,9 @@ p{max-width:62ch;text-wrap:pretty}
 .biz dd{font-weight:600;font-size:var(--step-lead);letter-spacing:-.015em;line-height:1.25;margin-top:4px}
 
 /* ---------- başkan ---------- */
-.baskan{margin:var(--gap) 20px 0;background:var(--bazalt);color:var(--bazalt-ink);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,6vw,104px);padding:clamp(40px,5vw,80px)}
-.baskan .portrait{width:min(100%,460px)}
+.baskan{margin-top:var(--gap);background:var(--bazalt);color:var(--bazalt-ink);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,6vw,104px);padding:clamp(64px,8vw,120px) var(--m)}
+.baskan .portrait{width:min(100%,460px);align-self:start;position:sticky;top:96px}
+#iletisim{scroll-margin-top:120px}
 .baskan .portrait .arch{aspect-ratio:4/5}
 .baskan .portrait img{object-position:50% 22%}
 .baskan figcaption{margin-top:14px;font-size:var(--step-small);color:var(--bazalt-soft)}
@@ -195,10 +196,11 @@ p{max-width:62ch;text-wrap:pretty}
 
 /* ---------- yöresel ürünler ---------- */
 .menu{padding:var(--gap) var(--m) 0}
-.menu-head{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:end}
+.menu-head{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:start}
 .menu-head h2{grid-column:1/8;font-size:var(--step-head)}
 .menu-head>div{grid-column:8/13}
 .menu-head .btn{white-space:nowrap;margin-top:20px}
+.menu-head .lnk{white-space:nowrap}
 .cat{display:flex;justify-content:space-between;align-items:baseline;margin:88px 0 40px}
 .cat h3{font-size:clamp(2rem,1.2rem + 2vw,3.125rem);letter-spacing:-.035em}
 .cat span{font-size:var(--step-body);color:var(--muted)}
@@ -258,8 +260,9 @@ p{max-width:62ch;text-wrap:pretty}
 .press .vid{grid-column:1/9;aspect-ratio:16/9;position:relative;background:var(--bazalt)}
 .press .vid button{all:unset;cursor:pointer;position:absolute;inset:0}
 .press .vid img{width:100%;height:100%;object-fit:cover}
-.press .vid .play{position:absolute;left:0;top:0;background:var(--kirmizi);color:var(--kirmizi-ink);font-weight:600;padding:18px 28px;border-radius:0 0 30px 30px;transition:padding .25s var(--ease)}
-.press .vid button:hover .play,.press .vid button:focus-visible .play{padding:22px 36px}
+.press .vid .play{position:absolute;left:50%;top:50%;translate:-50% -50%;display:flex;align-items:center;gap:12px;white-space:nowrap;background:var(--kirmizi);color:var(--kirmizi-ink);font-weight:600;padding:16px 28px 16px 22px;border-radius:999px;box-shadow:0 12px 32px rgb(0 0 0/.35);transition:scale .25s var(--ease)}
+.press .vid .play::before{content:"";border-left:14px solid currentColor;border-block:9px solid transparent}
+.press .vid button:hover .play,.press .vid button:focus-visible .play{scale:1.06}
 .press .vid button:focus-visible{outline:3px solid var(--kirmizi);outline-offset:4px}
 .press .vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .press .txt{grid-column:9/13}
@@ -298,8 +301,8 @@ p{max-width:62ch;text-wrap:pretty}
 
 /* ---------- footer ---------- */
 .foot{margin-top:var(--gap);background:var(--bazalt);color:var(--bazalt-ink);padding:clamp(56px,7vw,96px) var(--m) 32px}
-.span{display:flex;align-items:flex-end;gap:4px;height:30svh;min-height:180px}
-.span i{flex:1;height:var(--h);background:var(--bazalt-ink);
+.span{display:flex;align-items:flex-end;height:22svh;min-height:150px;max-height:240px}
+.span i{flex:1;height:100%;margin-inline-end:-1px;background:var(--bazalt-ink);
   -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0H100V100H86A36 52 0 0 0 14 100H0Z'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat;
           mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0H100V100H86A36 52 0 0 0 14 100H0Z'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat;
   transform-origin:bottom;transition:transform 1s var(--ease)}
@@ -340,7 +343,7 @@ p{max-width:62ch;text-wrap:pretty}
   .biz dl{grid-template-columns:repeat(2,minmax(0,1fr))}
   .baskan{grid-template-columns:1fr}
   .baskan .portrait{width:min(100%,420px)}
-  .baskan .text{order:-1}
+  .baskan .portrait{position:static}
   .acts{grid-template-columns:repeat(2,minmax(0,1fr))}
   .yk ul{grid-template-columns:repeat(3,minmax(0,1fr))}
   .gal{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -365,7 +368,7 @@ p{max-width:62ch;text-wrap:pretty}
   .window .seg{aspect-ratio:4/3}
   .window figcaption{flex-direction:column;gap:6px}
   .biz dl{grid-template-columns:1fr 1fr;gap:20px}
-  .baskan{margin:var(--gap) 10px 0;padding:36px 20px 44px}
+  .baskan{padding:56px var(--m) 64px;gap:32px}
   .baskan .row{grid-template-columns:1fr}
   .acts{grid-template-columns:1fr;gap:44px}
   .news li{grid-template-columns:1fr;gap:4px}
@@ -398,7 +401,8 @@ p{max-width:62ch;text-wrap:pretty}
   .coupon .l::before,.coupon .l::after{content:"";position:absolute;bottom:-16px;width:28px;height:28px;border-radius:50%;background:var(--bg)}
   .coupon .l::before{left:-14px}.coupon .l::after{right:-14px}
   .coupon form{padding:32px 24px}
-  .span{height:20svh;min-height:130px;gap:3px}
+  .span{height:110px;min-height:0}
+  .span i:nth-child(n+6){display:none}
   .foot .cols nav{grid-column:span 6}
   .foot .cols .c{grid-column:1/-1}
   .foot .name{font-size:clamp(2.2rem,11vw,3rem)}
@@ -420,6 +424,8 @@ p{max-width:62ch;text-wrap:pretty}
     <li><a href="#haberler">Haberler</a></li>
     <li class="o"><a href="#yonetim">Yönetim</a></li>
     <li><a href="#urunler">Ürünler</a></li>
+    <li class="o"><a href="#galeri">Galeri</a></li>
+    <li><a href="#iletisim">İletişim</a></li>
     <li><a class="btn kirmizi" href="#uyelik">Üye olun</a></li>
   </ul>
 </header>
@@ -444,11 +450,11 @@ p{max-width:62ch;text-wrap:pretty}
   </div>
   <figure class="window">
     <div class="seg" id="heroImgs">
-      <picture><source type="image/webp" srcset="img/h-iftar-760.webp 760w, img/h-iftar.webp 1440w" sizes="100vw"><img srcset="img/h-iftar-760.jpg 760w, img/h-iftar.jpg 1440w" sizes="100vw" src="img/h-iftar.jpg" fetchpriority="high" alt="3. Geleneksel İftar'da dolu salon, yaklaşık 800 misafir" width="1440" height="810" data-cap="&lt;b&gt;3. Geleneksel İftar&lt;/b&gt;, Ortakent · Mart 2026"></picture>
-      <picture><source type="image/webp" srcset="img/h-kadin-760.webp 760w, img/h-kadin.webp 1440w" sizes="100vw"><img srcset="img/h-kadin-760.jpg 760w, img/h-kadin.jpg 1440w" sizes="100vw" src="img/h-kadin.jpg" loading="lazy" alt="Kadın üyelerimiz dernek binasının önünde" width="1440" height="810" data-cap="&lt;b&gt;Kadın üyelerimizin kahvaltısı&lt;/b&gt;, dernek binamız · Şubat 2026"></picture>
+      <picture><source type="image/webp" srcset="img/h-kadin-760.webp 760w, img/h-kadin.webp 1440w" sizes="100vw"><img srcset="img/h-kadin-760.jpg 760w, img/h-kadin.jpg 1440w" sizes="100vw" src="img/h-kadin.jpg" fetchpriority="high" alt="Kadın üyelerimiz dernek binasının önünde" width="1440" height="810" data-cap="&lt;b&gt;Kadın üyelerimizin kahvaltısı&lt;/b&gt;, dernek binamız · Şubat 2026"></picture>
       <picture><source type="image/webp" srcset="img/h-bayram-760.webp 760w, img/h-bayram.webp 1440w" sizes="100vw"><img srcset="img/h-bayram-760.jpg 760w, img/h-bayram.jpg 1440w" sizes="100vw" src="img/h-bayram.jpg" loading="lazy" style="object-position:50% 25%" alt="Bayramlaşmada bir araya gelen hemşehrilerimiz" width="1440" height="810" data-cap="&lt;b&gt;Bayramlaşma&lt;/b&gt;, dernek binamız · 2025"></picture>
+      <picture><source type="image/webp" srcset="img/h-iftar-760.webp 760w, img/h-iftar.webp 1440w" sizes="100vw"><img srcset="img/h-iftar-760.jpg 760w, img/h-iftar.jpg 1440w" sizes="100vw" src="img/h-iftar.jpg" loading="lazy" alt="3. Geleneksel İftar'da dolu salon, yaklaşık 800 misafir" width="1440" height="810" data-cap="&lt;b&gt;3. Geleneksel İftar&lt;/b&gt;, Ortakent · Mart 2026"></picture>
     </div>
-    <figcaption><span id="heroCap"><b>3. Geleneksel İftar</b>, Ortakent · Mart 2026</span><button class="pause" id="heroPause" aria-pressed="false">Durdur</button></figcaption>
+    <figcaption><span id="heroCap"><b>Kadın üyelerimizin kahvaltısı</b>, dernek binamız · Şubat 2026</span><button class="pause" id="heroPause" aria-pressed="false">Durdur</button></figcaption>
   </figure>
 </section>
 
@@ -519,6 +525,9 @@ p{max-width:62ch;text-wrap:pretty}
     <p class="rv" style="--i:1">Derneğimizden son gelişmeler. Tüm paylaşımlarımız için <a class="lnk" href="https://www.instagram.com/bodrumkarslilardernegi/" rel="noopener">Instagram sayfamızı</a> takip edin.</p>
   </div>
   <ol class="news">
+    <li class="rv"><time datetime="2026-11-11">11 Kasım 2026</time><h3>Kentin geleceğini birlikte konuştuk</h3><a class="lnk go" href="https://www.instagram.com/p/DfmS0rfDtdQ/" rel="noopener">Fotoğraflar</a><p>Derneğimizi ziyaret eden AK Parti Bodrum İlçe Başkanı Seha Ergene ve yönetimiyle hemşehrilik bağlarımızı, Bodrum'un turizm, altyapı ve kent yaşamı ihtiyaçlarını konuştuk.</p></li>
+    <li class="rv"><time datetime="2026-10-05">5 Ekim 2026</time><h3>Kars'ın yöresel ürünleri derneğimizde</h3><a class="lnk go" href="#urunler">Ürünler</a><p>Eski kaşar, yeni kaşar, gravyer, küflü çeçil, petek balı ve dut pekmezi dernek binamızda. Bilgi için 0543 196 36 36.</p></li>
+    <li class="rv"><time datetime="2026-08-12">12 Ağustos 2026</time><h3>Konacık'ta bir okulun sınıflarını boyattık</h3><a class="lnk go" href="https://www.instagram.com/reel/Db-y-fCPpik/" rel="noopener">Haberi izle</a><p>Hayırsever üyelerimizin katkısıyla Şehit Mahmut Coşkunsu Ortaokulu'nun boya ihtiyacını karşıladık; öğrenciler yeni öğretim yılına yenilenmiş sınıflarda başlıyor.</p></li>
     <li class="rv"><time datetime="2026-05-31">31 Mayıs 2026</time><h3>Kurban Bayramı'nda bayramlaştık</h3><a class="lnk go" href="https://www.instagram.com/p/DZAwpoDjKwq/" rel="noopener">Fotoğraflar</a><p>Bayramın üçüncü günü dernek binamızda üyelerimiz ve dostlarımızla buluştuk; Kaymakamlığın Trafo Cafe'deki bayramlaşmasına da katıldık.</p></li>
     <li class="rv"><time datetime="2026-03-13">13 Mart 2026</time><h3>3. Geleneksel İftar: 800 misafir aynı sofrada</h3><a class="lnk go" href="https://www.instagram.com/p/DV8RSxgjEwv/" rel="noopener">Fotoğraflar</a><p>Müskebi Ortakent Düğün Salonu'nda hemşehrilerimiz, beş siyasi partinin ilçe temsilcileri ve kurumlar bir araya geldi.</p></li>
     <li class="rv"><time datetime="2026-02-05">5 Şubat 2026</time><h3>Kadın üyelerimizin kahvaltısı</h3><a class="lnk go" href="https://www.instagram.com/p/DUYEPXLjKkO/" rel="noopener">Fotoğraflar</a><p>Dernek binamızda kurulan kahvaltı sofrasında kadın üyelerimiz buluştu; organizasyonu da kendileri hazırladı.</p></li>
@@ -645,6 +654,7 @@ p{max-width:62ch;text-wrap:pretty}
       <li><a class="lnk" href="https://www.youtube.com/watch?v=TAkYO8GKCbk" rel="noopener">Açık Görüş, Bodrum Kent TV (YouTube)</a></li>
       <li><a class="lnk" href="https://www.egealternatif.com/haber/bodrum-karslilar-dernegi-kahvaltisinda-kusaklar-bulustu-birlik-dayanisma-ve-hasret-ayni-sofrada_54009/" rel="noopener">Kahvaltıda kuşaklar buluştu, Ege Alternatif</a></li>
       <li><a class="lnk" href="https://www.instagram.com/reel/DV24VWrjBnG/" rel="noopener">3. Geleneksel İftar haberi, Ege Alternatif</a></li>
+      <li><a class="lnk" href="https://www.instagram.com/reel/Db-y-fCPpik/" rel="noopener">Eğitime anlamlı destek, Ege Alternatif</a></li>
     </ul>
   </div>
 </section>
@@ -660,7 +670,7 @@ p{max-width:62ch;text-wrap:pretty}
         <li>Kars'tan gelen yöresel ürünlerden ilk siz haberdar olursunuz.</li>
         <li>Bodrum'daki hemşehrilerinizle tanışır, birbirimize destek oluruz.</li>
       </ul>
-      <dl>
+      <dl id="iletisim">
         <dt>Telefon</dt><dd><a href="tel:+905431963636">0543 196 36 36</a></dd>
         <dt>Dernek binası</dt><dd>Bitez, 48470 Bodrum/Muğla · <a href="https://www.google.com/maps/place/?q=place_id:ChIJoejDR1ltvhQRt5Shr9rgDQM" rel="noopener">Haritada aç</a></dd>
         <dt>Açık</dt><dd>Pazartesi–Cumartesi 09:00–18:00</dd>
@@ -689,7 +699,7 @@ p{max-width:62ch;text-wrap:pretty}
 
 <footer class="foot dark">
   <div class="span" aria-hidden="true">
-    <i style="--h:62%"></i><i style="--h:78%"></i><i class="b" style="--h:100%"></i><i style="--h:88%"></i><i style="--h:70%"></i><i style="--h:94%"></i><i style="--h:66%"></i>
+    <i></i><i></i><i class="b"></i><i></i><i></i><i></i><i></i>
   </div>
   <p class="name">Bodrum Karslılar Derneği</p>
   <div class="cols">
