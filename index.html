@@ -156,6 +156,9 @@ p{max-width:62ch;text-wrap:pretty}
 .baskan blockquote{border:0}
 .baskan blockquote p{font-size:var(--step-lead);line-height:1.4;letter-spacing:-.01em;max-width:46ch}
 .baskan blockquote p + p{margin-top:16px;font-size:var(--step-body);line-height:1.55;letter-spacing:0;color:var(--bazalt-soft)}
+.baskan .mesaj p,.baskan .mesaj p + p{font-size:clamp(1.0625rem,.95rem + .35vw,1.25rem);line-height:1.65;letter-spacing:0;color:var(--bazalt-ink);max-width:62ch}
+.baskan .mesaj p + p{margin-top:18px}
+.baskan .mesaj footer{margin-top:22px;font-size:var(--step-body)}
 .baskan blockquote footer{margin-top:16px;font-size:var(--step-small);color:var(--bazalt-soft)}
 .baskan blockquote footer b{color:var(--bazalt-ink);font-weight:600}
 .baskan .bio{color:var(--bazalt-ink)}
@@ -192,14 +195,12 @@ p{max-width:62ch;text-wrap:pretty}
 .yk details{margin-top:40px}
 .yk summary{cursor:pointer;font-weight:600;font-size:var(--step-body);width:max-content;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px;text-decoration-color:var(--kirmizi)}
 .yk details ul{margin-top:16px;color:var(--muted)}
-.yk-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,340px);gap:clamp(40px,6vw,96px);align-items:start}
-.yk-grid .kurucu{grid-column:2;grid-row:1}
-.yk-grid .yk-list{grid-column:1;grid-row:1}
-.kurucu .seg{aspect-ratio:4/5;background:var(--bg)}
-.kurucu figcaption{display:flex;flex-direction:column;margin-bottom:18px}
+.kurucu{margin-top:56px;max-width:760px;display:grid;grid-template-columns:clamp(120px,22vw,220px) 1fr;gap:clamp(20px,3vw,36px);align-items:center;background:var(--bg);padding:clamp(16px,2vw,24px);border-radius:24px 24px 0 0}
+.kurucu .seg{grid-column:1;grid-row:1;aspect-ratio:4/5;background:var(--surface)}
+.kurucu figcaption{grid-column:2;grid-row:1;display:flex;flex-direction:column}
 .kurucu figcaption span{font-size:var(--step-small);color:var(--muted)}
 .kurucu figcaption b{font-size:var(--step-lead);font-weight:600;letter-spacing:-.015em;margin-top:4px}
-.kurucu figcaption .ne{margin-top:8px;max-width:34ch}
+.kurucu figcaption .ne{margin-top:10px;max-width:34ch;font-size:var(--step-body);color:var(--ink)}
 .yk .note{margin-top:32px;font-size:var(--step-small);color:var(--muted)}
 
 /* ---------- yöresel ürünler ---------- */
@@ -354,9 +355,6 @@ p{max-width:62ch;text-wrap:pretty}
   .baskan .portrait{position:static}
   .acts{grid-template-columns:repeat(2,minmax(0,1fr))}
   .yk ul{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .yk-grid{grid-template-columns:1fr}
-  .yk-grid .kurucu,.yk-grid .yk-list{grid-column:1;grid-row:auto}
-  .kurucu{max-width:360px;margin-top:48px}
   .gal{grid-template-columns:repeat(3,minmax(0,1fr))}
   .gal li:nth-child(-n+4) a{border-radius:0}
   .gal li:nth-child(-n+3) a{border-radius:var(--seg)}
@@ -493,11 +491,11 @@ p{max-width:62ch;text-wrap:pretty}
     <figcaption><b>Mehmet Yıldız</b>, Dernek Başkanı</figcaption>
   </figure>
   <div class="text">
-    <h2 id="baskan-h" class="rv">Başkanımızdan</h2>
-    <blockquote class="rv" style="--i:1">
-      <p>“Şehir yabancı, sokaklar yabancı, insanlar yabancı… Derneğimiz tam da bu sessizliği paylaşmak için kuruldu. Evlerin içindeki sessizliği bölmek, büyüklerimizi bir araya getirmek için kuruldu.”</p>
-      <p>“Bodrum'da yaşayan birçok büyüğümüz kış aylarında çocuklarının yanına geliyor ve zamanla yalnız kalıyor. Aynı zamanda üç, hatta dört kuşağı bir araya getirmeyi önemsiyoruz. Amacımız; memleket kültürü ile Bodrum'un kültürü arasında bir denge kurmak. Genç bir yönetimimiz var.”</p>
-      <footer><b>Mehmet Yıldız</b>, kuşakları buluşturan dernek kahvaltısında, Aralık 2025</footer>
+    <h2 id="baskan-h" class="rv">Başkanın mesajı</h2>
+    <blockquote class="rv mesaj" style="--i:1">
+      <p>Kars’tan Bodrum’a uzanan yol, içimizden bazıları için 60 yılı bulan bir ömrün hikâyesidir. Yola çıktığımız Kars, Ani’nin surlarında ve taş yapılarında yüzyılların izini, âşıkların sazında kuşakların hafızasını taşıyan kadim bir şehirdir. Yerleştiğimiz Bodrum ise antik Halikarnassos’un mirasından Bodrum Kalesi’ne uzanan tarihiyle, denizcilik kültürüyle ve bugün dünyanın dört bir yanından insanları ağırlayan turizmiyle kendine özgü bir kenttir. Biz Kars’ın sofrasını, türküsünü ve komşuluk geleneğini Bodrum’daki evlerimizde, mahallelerimizde yaşattık. Burada çalıştık, aileler kurduk, çocuklarımızı büyüttük. Bodrum’un dünyaya açılan bir turizm kenti olmasında, bu kenti var eden binlerce insanla birlikte bizim de emeğimiz var. Gurbet diye geldiğimiz Bodrum, yıllar içinde bizim de memleketimiz oldu.</p>
+      <p>Bugün çocuklarımızın hafızasında Kars’tan taşıdığımız türkülerle Bodrum’da biriktirdiğimiz hatıralar yan yana. İki şehrin birbirine en çok yakıştığı yer, birlikte kurduğumuz bu hayattır.</p>
+      <footer><b>Mehmet Yıldız</b>, Dernek Başkanı</footer>
     </blockquote>
     <div class="row">
       <p class="bio rv" style="--i:2">Mehmet Yıldız 2025'te göreve başlayan yönetim kurulumuzun başkanı. Derneği Kaymakamlık ve Milli Eğitim ziyaretlerinden Bodrum Kent TV'nin Açık Görüş programına kadar şehrin her masasında temsil ediyor.</p>
@@ -580,7 +578,7 @@ p{max-width:62ch;text-wrap:pretty}
   </div>
   <figure class="kurucu rv">
     <figcaption><span>Kurucu başkanımız</span><b>Kasım Aydın</b><span class="ne">Derneğimiz 2023'te onun başkanlığında kuruldu.</span></figcaption>
-    <div class="seg"><picture><source type="image/webp" srcset="img/kurucu-560.webp 560w, img/kurucu.webp 780w" sizes="(max-width:760px) 92vw, 340px"><img srcset="img/kurucu-560.jpg 560w, img/kurucu.jpg 780w" sizes="(max-width:760px) 92vw, 340px" src="img/kurucu.jpg" alt="Kurucu başkan Kasım Aydın, dernek binasındaki makam odasında" width="780" height="975" loading="lazy"></picture></div>
+    <div class="seg"><picture><source type="image/webp" srcset="img/kurucu-560.webp 560w, img/kurucu.webp 780w" sizes="(max-width:760px) 120px, 220px"><img srcset="img/kurucu-560.jpg 560w, img/kurucu.jpg 780w" sizes="(max-width:760px) 120px, 220px" src="img/kurucu.jpg" alt="Kurucu başkan Kasım Aydın, dernek binasındaki makam odasında" width="780" height="975" loading="lazy"></picture></div>
   </figure>
   </div>
 </section>
