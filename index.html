@@ -140,6 +140,14 @@ p{max-width:62ch;text-wrap:pretty}
 .biz .body p:first-child{font-size:var(--step-lead);line-height:1.4;letter-spacing:-.01em}
 .biz dl{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:clamp(24px,3vw,40px)}
 .biz dl div{padding-top:20px;background:var(--kemer-ust) top left/36px 18px no-repeat}
+.biz dl .kisi{padding-top:0;background:none;display:grid;grid-template-columns:56px 1fr;grid-template-rows:1fr auto auto;column-gap:14px}
+.biz .kisi dd{display:contents}
+.biz .kisi dt{grid-column:2;grid-row:2}
+.biz .kisi a{grid-column:2;grid-row:3;font-weight:600;font-size:var(--step-lead);letter-spacing:-.015em;line-height:1.25;margin-top:4px}
+.biz .kisi picture{grid-column:1;grid-row:1/4;align-self:end;width:56px;height:66px;border-radius:var(--arch);overflow:hidden;background:var(--surface)}
+.biz .kisi img{width:100%;height:100%;object-fit:cover;object-position:50% 0}
+.biz .kisi a{color:inherit;text-decoration:none}
+.biz .kisi a:hover{text-decoration:underline;text-decoration-color:var(--kirmizi);text-underline-offset:4px}
 .biz dt{font-size:var(--step-small);color:var(--muted)}
 .biz dd{font-weight:600;font-size:var(--step-lead);letter-spacing:-.015em;line-height:1.25;margin-top:4px}
 
@@ -377,6 +385,7 @@ p{max-width:62ch;text-wrap:pretty}
   .window .seg{aspect-ratio:4/3}
   .window figcaption{flex-direction:column;gap:6px}
   .biz dl{grid-template-columns:1fr 1fr;gap:20px}
+  .biz dl .kisi{grid-column:1/-1;order:-1}
   .baskan{padding:56px var(--m) 64px;gap:32px}
   .baskan .row{grid-template-columns:1fr}
   .acts{grid-template-columns:1fr;gap:44px}
@@ -477,7 +486,7 @@ p{max-width:62ch;text-wrap:pretty}
     </div>
     <dl>
       <div class="rv"><dt>Kuruluş</dt><dd>2023, Bodrum</dd></div>
-      <div class="rv" style="--i:1"><dt>Kurucu başkan</dt><dd>Kasım Aydın</dd></div>
+      <div class="rv kisi" style="--i:1"><dt>Dernek başkanı</dt><dd><picture><source type="image/webp" srcset="img/baskan-av.webp"><img src="img/baskan-av.jpg" alt="Dernek Başkanı Mehmet Yıldız" width="160" height="190" loading="lazy"></picture><a href="#baskan">Mehmet Yıldız</a></dd></div>
       <div class="rv" style="--i:2"><dt>Dernek binası</dt><dd>Bitez, Bodrum</dd></div>
       <div class="rv" style="--i:3"><dt>Açık</dt><dd>Pzt–Cmt 09:00–18:00</dd></div>
     </dl>
