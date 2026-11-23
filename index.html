@@ -196,8 +196,10 @@ p{max-width:62ch;text-wrap:pretty}
 .yk-grid .kurucu{grid-column:2;grid-row:1}
 .yk-grid .yk-list{grid-column:1;grid-row:1}
 .kurucu .seg{aspect-ratio:4/5;background:var(--bg)}
-.kurucu figcaption{margin-top:14px;font-size:var(--step-small);color:var(--muted);max-width:34ch}
-.kurucu figcaption b{color:var(--ink);font-weight:600}
+.kurucu figcaption{display:flex;flex-direction:column;margin-bottom:18px}
+.kurucu figcaption span{font-size:var(--step-small);color:var(--muted)}
+.kurucu figcaption b{font-size:var(--step-lead);font-weight:600;letter-spacing:-.015em;margin-top:4px}
+.kurucu figcaption .ne{margin-top:8px;max-width:34ch}
 .yk .note{margin-top:32px;font-size:var(--step-small);color:var(--muted)}
 
 /* ---------- yöresel ürünler ---------- */
@@ -354,7 +356,7 @@ p{max-width:62ch;text-wrap:pretty}
   .yk ul{grid-template-columns:repeat(3,minmax(0,1fr))}
   .yk-grid{grid-template-columns:1fr}
   .yk-grid .kurucu,.yk-grid .yk-list{grid-column:1;grid-row:auto}
-  .kurucu{max-width:360px}
+  .kurucu{max-width:360px;margin-top:48px}
   .gal{grid-template-columns:repeat(3,minmax(0,1fr))}
   .gal li:nth-child(-n+4) a{border-radius:0}
   .gal li:nth-child(-n+3) a{border-radius:var(--seg)}
@@ -556,10 +558,6 @@ p{max-width:62ch;text-wrap:pretty}
     <p class="rv" style="--i:1">2025 döneminde göreve başlayan yönetim ve denetim kurulumuz. Derneğimizin kurucu başkanı Kasım Aydın'dır.</p>
   </div>
   <div class="yk-grid">
-  <figure class="kurucu rv">
-    <div class="seg"><picture><source type="image/webp" srcset="img/kurucu-560.webp 560w, img/kurucu.webp 780w" sizes="(max-width:760px) 92vw, 340px"><img srcset="img/kurucu-560.jpg 560w, img/kurucu.jpg 780w" sizes="(max-width:760px) 92vw, 340px" src="img/kurucu.jpg" alt="Kurucu başkan Kasım Aydın, dernek binasındaki makam odasında" width="780" height="975" loading="lazy"></picture></div>
-    <figcaption><b>Kasım Aydın</b>, kurucu başkanımız. Derneğimiz 2023'te onun başkanlığında kuruldu.</figcaption>
-  </figure>
   <div class="yk-list">
   <dl class="top">
     <div class="rv"><dt>Başkan</dt><dd>Mehmet Yıldız</dd></div>
@@ -580,6 +578,10 @@ p{max-width:62ch;text-wrap:pretty}
     </ul>
   </details>
   </div>
+  <figure class="kurucu rv">
+    <figcaption><span>Kurucu başkanımız</span><b>Kasım Aydın</b><span class="ne">Derneğimiz 2023'te onun başkanlığında kuruldu.</span></figcaption>
+    <div class="seg"><picture><source type="image/webp" srcset="img/kurucu-560.webp 560w, img/kurucu.webp 780w" sizes="(max-width:760px) 92vw, 340px"><img srcset="img/kurucu-560.jpg 560w, img/kurucu.jpg 780w" sizes="(max-width:760px) 92vw, 340px" src="img/kurucu.jpg" alt="Kurucu başkan Kasım Aydın, dernek binasındaki makam odasında" width="780" height="975" loading="lazy"></picture></div>
+  </figure>
   </div>
 </section>
 
