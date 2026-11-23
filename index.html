@@ -192,6 +192,12 @@ p{max-width:62ch;text-wrap:pretty}
 .yk details{margin-top:40px}
 .yk summary{cursor:pointer;font-weight:600;font-size:var(--step-body);width:max-content;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px;text-decoration-color:var(--kirmizi)}
 .yk details ul{margin-top:16px;color:var(--muted)}
+.yk-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,340px);gap:clamp(40px,6vw,96px);align-items:start}
+.yk-grid .kurucu{grid-column:2;grid-row:1}
+.yk-grid .yk-list{grid-column:1;grid-row:1}
+.kurucu .seg{aspect-ratio:4/5;background:var(--bg)}
+.kurucu figcaption{margin-top:14px;font-size:var(--step-small);color:var(--muted);max-width:34ch}
+.kurucu figcaption b{color:var(--ink);font-weight:600}
 .yk .note{margin-top:32px;font-size:var(--step-small);color:var(--muted)}
 
 /* ---------- yöresel ürünler ---------- */
@@ -346,6 +352,9 @@ p{max-width:62ch;text-wrap:pretty}
   .baskan .portrait{position:static}
   .acts{grid-template-columns:repeat(2,minmax(0,1fr))}
   .yk ul{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .yk-grid{grid-template-columns:1fr}
+  .yk-grid .kurucu,.yk-grid .yk-list{grid-column:1;grid-row:auto}
+  .kurucu{max-width:360px}
   .gal{grid-template-columns:repeat(3,minmax(0,1fr))}
   .gal li:nth-child(-n+4) a{border-radius:0}
   .gal li:nth-child(-n+3) a{border-radius:var(--seg)}
@@ -546,6 +555,12 @@ p{max-width:62ch;text-wrap:pretty}
     <h2 id="yk-h" class="rv">Yönetim kurulumuz</h2>
     <p class="rv" style="--i:1">2025 döneminde göreve başlayan yönetim ve denetim kurulumuz. Derneğimizin kurucu başkanı Kasım Aydın'dır.</p>
   </div>
+  <div class="yk-grid">
+  <figure class="kurucu rv">
+    <div class="seg"><picture><source type="image/webp" srcset="img/kurucu-560.webp 560w, img/kurucu.webp 780w" sizes="(max-width:760px) 92vw, 340px"><img srcset="img/kurucu-560.jpg 560w, img/kurucu.jpg 780w" sizes="(max-width:760px) 92vw, 340px" src="img/kurucu.jpg" alt="Kurucu başkan Kasım Aydın, dernek binasındaki makam odasında" width="780" height="975" loading="lazy"></picture></div>
+    <figcaption><b>Kasım Aydın</b>, kurucu başkanımız. Derneğimiz 2023'te onun başkanlığında kuruldu.</figcaption>
+  </figure>
+  <div class="yk-list">
   <dl class="top">
     <div class="rv"><dt>Başkan</dt><dd>Mehmet Yıldız</dd></div>
     <div class="rv" style="--i:1"><dt>Başkan Yardımcısı</dt><dd>Ramazan İpek</dd></div>
@@ -564,6 +579,8 @@ p{max-width:62ch;text-wrap:pretty}
       <li>Mehmet Kılıç</li><li>Enes Ataş</li><li>Mehmet Karagöl</li><li>İsmail Karataş</li><li>Nüsret Püskürlü</li><li>Menderes Kılıç</li><li>Ahmet Yerlikaya</li><li>Mehmet İlkan</li><li>Hasan Oğuzkutluk</li><li>Ömer Tozan (denetim)</li><li>Ayşe Yıldız (denetim)</li>
     </ul>
   </details>
+  </div>
+  </div>
 </section>
 
 <!-- YÖRESEL ÜRÜNLER -->
