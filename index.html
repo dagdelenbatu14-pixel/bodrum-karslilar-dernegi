@@ -140,12 +140,9 @@ p{max-width:62ch;text-wrap:pretty}
 .biz .body p:first-child{font-size:var(--step-lead);line-height:1.4;letter-spacing:-.01em}
 .biz dl{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:clamp(24px,3vw,40px)}
 .biz dl div{padding-top:20px;background:var(--kemer-ust) top left/36px 18px no-repeat}
-.biz dl .kisi{padding-top:0;background:none;display:grid;grid-template-columns:56px 1fr;grid-template-rows:1fr auto auto;column-gap:14px}
-.biz .kisi dd{display:contents}
-.biz .kisi dt{grid-column:2;grid-row:2}
-.biz .kisi .ad{grid-column:2;grid-row:3;font-weight:600;font-size:var(--step-lead);letter-spacing:-.015em;line-height:1.25;margin-top:4px}
-.biz .kisi picture{grid-column:1;grid-row:1/4;align-self:end;width:56px;height:66px;border-radius:var(--arch);overflow:hidden;background:var(--surface)}
-.biz .kisi img{width:100%;height:100%;object-fit:cover;object-position:50% 0}
+.biz dl .kisi{position:relative;padding-left:70px;background-position:70px 0}
+.biz .kisi picture{position:absolute;left:0;top:0;bottom:0;width:56px;border-radius:var(--arch);overflow:hidden;background:var(--surface)}
+.biz .kisi img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
 .biz dt{font-size:var(--step-small);color:var(--muted)}
 .biz dd{font-weight:600;font-size:var(--step-lead);letter-spacing:-.015em;line-height:1.25;margin-top:4px}
 
