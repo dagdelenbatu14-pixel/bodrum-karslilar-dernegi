@@ -42,7 +42,7 @@
   --step-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
   --step-head:clamp(2rem,1.3rem + 3.2vw,4rem);
   --step-display:clamp(2.75rem,1.2rem + 5.4vw,5.5rem);
-  --m:clamp(16px,2.4vw,32px);
+  --m:max(clamp(16px,2.4vw,32px),calc((100vw - 1440px) / 2));
   --gap:clamp(104px,11vw,184px);
   --ease:cubic-bezier(.2,.7,.2,1);
   --arch:999px 999px 0 0;
@@ -160,7 +160,7 @@ p{max-width:62ch;text-wrap:pretty}
 .baskan blockquote footer b{color:var(--bazalt-ink);font-weight:600}
 .baskan .bio{color:var(--bazalt-ink)}
 .baskan .kursu .seg{aspect-ratio:4/3;background:#36312f}
-.baskan .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:end}
+.baskan .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:start}
 .baskan .acts2{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center}
 
 /* ---------- faaliyetler ---------- */
